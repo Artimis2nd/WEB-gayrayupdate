@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ปัญหา Tile บน NES/FC · คู่มือทำ ROM Hack · เกเรแปลไทย</title>
+<meta name="description" content="ทำไมการขยาย ROM แล้วแก้ Pointer อย่างเดียวไม่พอสำหรับแปลเกม NES/Famicom เป็นไทย อธิบายข้อจำกัด CHR-ROM/PPU ตาราง Mapper และ 5 ทางแก้เมื่อ tile ไม่พอ">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Sarabun"', "ui-sans-serif", "system-ui", "sans-serif"],
+          pixel: ['"Press Start 2P"', "ui-monospace", "monospace"],
+        },
+        colors: {
+          paper: "#dbdadd", card: "#ecebee", edge: "#adaab5",
+          ink: "#59575e", muted: "#726f79", accent: "#cf3a3a",
+          go: "#2f9e5c", navy: "#3a56c4",
+        },
+        boxShadow: { pop: "3px 3px 0 #59575e", "pop-sm": "2px 2px 0 #59575e" },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #dbdadd; }
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-track { background: #c9c7cd; }
+  ::-webkit-scrollbar-thumb { background: #93909c; border: 3px solid #c9c7cd; }
+  [hidden] { display: none !important; }
+  .pix { font-family: "Press Start 2P", ui-monospace, "Courier New", monospace; }
+  :target { scroll-margin-top: 5rem; }
+  .prose-th p { margin-top: .6rem; line-height: 1.85; }
+  .prose-th ul, .prose-th ol { margin-top: .5rem; }
+  .wt-table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  .wt-table th, .wt-table td { border: 1px solid #adaab5; padding: 5px 8px; text-align: left; vertical-align: top; }
+  .wt-table th { background: #d6d4da; font-weight: 700; }
+  .wt-table tbody tr:nth-child(even) { background: #e3e1e6; }
+  .note { border-left: 4px solid #cf3a3a; background: #f0dede; padding: 10px 12px; border-radius: 4px; margin-top: .7rem; }
+  .good { border-left: 4px solid #2f9e5c; background: #dfeee5; padding: 10px 12px; border-radius: 4px; margin-top: .7rem; }
+  .step { border: 2px solid #59575e; background: #ecebee; border-radius: 8px; padding: 12px 14px; box-shadow: 3px 3px 0 #59575e; }
+  .tab { display: inline-flex; align-items: center; border: 2px solid #59575e; border-radius: 8px; padding: .45rem .8rem; font-size: 13px; font-weight: 700; background: #ecebee; color: #59575e; white-space: nowrap; }
+  .tab:hover { background: #d6d4da; }
+  .tab.active { background: #59575e; color: #fff; }
+  figure { margin-top: 1rem; }
+  figcaption { margin-top: .4rem; font-size: 12px; color: #726f79; }
+</style>
+</head>
+<body class="min-h-screen font-sans text-ink antialiased">
+
+<header id="top" class="sticky top-0 z-40 border-b-2 border-ink bg-paper/95 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:px-6">
+    <div class="min-w-0 flex-1">
+      <p class="text-sm font-bold tracking-wide text-accent">บทความ · ROM HACK</p>
+      <h1 class="text-lg font-bold leading-tight sm:text-xl">ปัญหา Tile บน NES/FC</h1>
+      <p class="mt-0.5 text-xs text-muted">ส่วนหนึ่งของ "คู่มือทำ ROM Hack" · เกี่ยวข้องกับ: FC (NES) · อัปเดตล่าสุด 11 ก.ย. 2569</p>
+    </div>
+    <div class="flex shrink-0 items-center gap-2">
+      <a href="../../index.html" class="inline-flex items-center gap-1.5 rounded border-2 border-ink bg-card px-3 py-2 text-sm font-bold shadow-pop-sm transition hover:bg-ink hover:text-white active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+        หน้าแรก
+      </a>
+      <a href="#toc" class="inline-flex items-center gap-1.5 rounded border-2 border-ink bg-card px-3 py-2 text-sm font-bold shadow-pop-sm transition hover:bg-ink hover:text-white active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        สารบัญ
+      </a>
+    </div>
+  </div>
+  <div class="mx-auto flex max-w-6xl flex-wrap gap-2 px-4 pb-3 sm:px-6">
+    <a href="romhack-guide.html" class="tab">1) บทนำ</a>
+    <a href="romhack-sfc-pipeline.html" class="tab">2) กรรมวิธี SFC เต็มรูปแบบ</a>
+    <a href="romhack-nes-tiles.html" class="tab active">3) ปัญหา Tile บน NES/FC</a>
+    <a href="romhack-nes-vs-snes.html" class="tab">4) เลือกเครื่อง/เลือกเกม</a>
+  </div>
+</header>
+
+<div class="mx-auto max-w-6xl gap-8 px-4 py-6 sm:px-6 lg:flex">
+
+  <aside id="toc" class="mb-6 shrink-0 lg:mb-0 lg:w-60 lg:sticky lg:top-20 lg:self-start">
+    <nav class="rounded-lg border-2 border-ink bg-card p-4 text-sm shadow-pop-sm">
+      <p class="mb-2 text-base font-bold text-ink">สารบัญ</p>
+      <ol class="space-y-1.5">
+        <li><a class="block hover:text-accent" href="#myth">1. จุดที่มักเข้าใจคลาดเคลื่อน</a></li>
+        <li><a class="block hover:text-accent" href="#why">2. ทำไม Pointer อย่างเดียวไม่พอ</a></li>
+        <li><a class="block hover:text-accent" href="#mapper">3. เช็ก Mapper ของ ROM ก่อน</a></li>
+        <li><a class="block hover:text-accent" href="#viewer">4. ดู Pattern Table จริงในเกม</a></li>
+        <li><a class="block hover:text-accent" href="#options">5. ถ้า Tile ไม่พอ มีทางเลือกอะไรบ้าง</a></li>
+        <li><a class="block hover:text-accent" href="#mapper0">6. กรณี Mapper 0 (ข้อจำกัดจริง)</a></li>
+        <li><a class="block hover:text-accent" href="#checklist">7. ลำดับการแก้ปัญหาที่แนะนำ</a></li>
+      </ol>
+      <hr class="my-3 border-edge">
+      <a class="block text-[13px] hover:text-accent" href="romhack-guide.html">← กลับหน้าบทนำ</a>
+    </nav>
+  </aside>
+
+  <main class="prose-th min-w-0 flex-1 space-y-10">
+
+    <section class="rounded-lg border-2 border-edge bg-card p-4 text-sm">
+      <p>คำถามที่เจอบ่อยที่สุดตอนแปลเกม NES/Famicom เป็นไทย: <i>"ผมเข้าใจว่าแค่เพิ่มพื้นที่ ROM แล้วให้ pointer ชี้ไปที่ใหม่ก็พอ
+        แต่ทำไมเกมยังขึ้น tile ผิด หรือมีที่ไม่พอใส่ฟอนต์ไทย?"</i></p>
+      <p class="mt-1"><b>คำตอบสั้น:</b> ความเข้าใจเรื่อง "เพิ่มพื้นที่ ROM แล้วแก้ pointer ให้ชี้ไปที่ใหม่" ถูกต้อง — แต่ใช้ได้กับ
+        <b>"ข้อมูลข้อความ/script"</b> เท่านั้น ส่วน <b>"tile ของ NES/FC"</b> เป็นอีกชั้นหนึ่งที่แยกจากกันโดยสิ้นเชิง
+        นี่คือสาเหตุที่ทำให้ NES/FC ยากกว่า SFC มากในหลายเกม</p>
+    </section>
+
+    <!-- 1 -->
+    <section id="myth">
+      <h2 class="text-xl font-bold text-navy">1. จุดที่มักเข้าใจคลาดเคลื่อน</h2>
+      <p>บน Famicom มี 3 เรื่องที่แยกกันโดยสิ้นเชิง อย่าปนกัน:</p>
+      <table class="wt-table mt-2">
+        <thead><tr><th>สิ่งที่เพิ่มได้</th><th>เก็บอะไร</th><th>ข้อจำกัดหลัก</th></tr></thead>
+        <tbody>
+          <tr><td><b>PRG-ROM</b></td><td>โค้ด, script, pointer, ข้อมูลเกม</td><td>ขยายได้ แต่ต้องรองรับขนาดที่เพิ่มและ bank switching ของ mapper</td></tr>
+          <tr><td><b>CHR-ROM</b></td><td>รูป tile/font</td><td>PPU มองเห็น tile ได้พร้อมกันเพียง <b>8 KB</b> หรือสูงสุด 512 tile ขนาด 8×8 แบบ 2bpp เท่านั้น ไม่ว่า cartridge จะมี CHR มากแค่ไหน</td></tr>
+          <tr><td><b>VRAM/PPU</b></td><td>tile ที่กำลังใช้แสดงบนจอจริง</td><td>ถูกจำกัดโดยฮาร์ดแวร์ และ tile index บน tilemap มีเพียง 1 byte (อ้างอิงได้ 0–255 ต่อ pattern table)</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-2 text-sm text-muted">PPU ของ NES มี pattern table 2 ชุด ชุดละ 256 tile รวมอ้างอิงได้พร้อมกัน 512 tile ที่ช่วง <code>$0000–$1FFF</code>
+        และ tile 8×8 หนึ่งชิ้นใช้ 16 ไบต์ในโหมดกราฟิกมาตรฐานของ NES (อ้างอิง: NESdev Wiki)</p>
+      <div class="note">ดังนั้น ต่อให้ใส่ CHR เพิ่มลงท้าย ROM ได้ ก็<b>ไม่ได้แปลว่าเกมจะเรียก tile ชุดใหม่นั้นได้ทันที</b> เพราะเกมต้องมี mapper และโค้ดสำหรับสลับ bank ที่ถูกต้องด้วย</div>
+    </section>
+
+    <!-- 2 -->
+    <section id="why">
+      <h2 class="text-xl font-bold text-navy">2. ทำไม Pointer อย่างเดียวจึงไม่พอ</h2>
+      <p>ตัวอย่าง logic ของข้อความบน NES:</p>
+      <pre class="mt-2 overflow-x-auto rounded border-2 border-edge bg-card p-3 text-[12px] leading-tight">Pointer script
+  -> อ่านรหัสตัวอักษร เช่น $41
+  -> แปลง $41 เป็น tile index
+  -> เขียน tile index ลง nametable
+  -> PPU ดึงรูป tile จาก CHR bank ที่กำลัง active</pre>
+      <p class="mt-2">ถ้าเพิ่ม glyph ไทยไว้ใน CHR bank ใหม่ เช่น bank 3 แต่เกมยังเปิดใช้ CHR bank 0 อยู่:</p>
+      <pre class="mt-2 overflow-x-auto rounded border-2 border-edge bg-card p-3 text-[12px] leading-tight">ข้อความเรียก tile $80
+  -> PPU ยังหา tile $80 ใน CHR bank 0
+  -> ได้ภาพผิด หรือเป็น tile ว่าง</pre>
+      <p class="mt-2">กล่าวคือ <b>pointer ข้อความชี้ไปยัง script ได้</b> แต่ tile index ในข้อความยังอ้างอิงได้เฉพาะ tile ที่ "ถูกโหลด/ถูก bank-switch มาอยู่ใน PPU ตอนนั้น" เท่านั้น</p>
+    </section>
+
+    <!-- 3 -->
+    <section id="mapper">
+      <h2 class="text-xl font-bold text-navy">3. สิ่งที่ต้องเช็กเป็นอันดับแรก: Mapper ของ ROM</h2>
+      <p>เปิด ROM ด้วย <b>Mesen</b> หรือ <b>FCEUX Debugger</b> แล้วดู iNES/NES 2.0 header ว่าใช้ mapper หมายเลขอะไร รวมถึงขนาด PRG และ CHR ปัจจุบัน</p>
+      <table class="wt-table mt-2">
+        <thead><tr><th>Mapper/รูปแบบ</th><th>ความเป็นไปได้ในการเพิ่มฟอนต์ไทย</th></tr></thead>
+        <tbody>
+          <tr><td><b>NROM / Mapper 0</b></td><td>ยากที่สุด: ไม่มี bank switching เลย CHR-ROM ที่ใช้ได้มี 8 KB ตายตัวตลอดเกม</td></tr>
+          <tr><td><b>UxROM / Mapper 2</b></td><td>สลับ PRG ได้ แต่โดยทั่วไป CHR เป็น RAM หรือขนาดตายตัว ต้องดูเกมจริงเป็นรายเกม</td></tr>
+          <tr><td><b>CNROM / Mapper 3</b></td><td>สลับ CHR ได้ทีละ 8 KB ทั้งชุด — ใช้เพิ่มชุดฟอนต์ได้ แต่ทั้งฉาก/สไปรต์อาจเปลี่ยนพร้อมกันหมด</td></tr>
+          <tr><td><b>MMC1 / Mapper 1</b></td><td>ยืดหยุ่นขึ้น สลับ PRG/CHR bank ได้ (CHR เป็นชุด 4KB หรือ 8KB)</td></tr>
+          <tr><td><b>MMC3 / Mapper 4</b></td><td>เหมาะกับงานนี้มากกว่าเพื่อน เพราะสลับ CHR เป็นธนาคารเล็กระดับ 1 KB/2 KB ได้ (สลับเฉพาะฟอนต์โดยไม่กระทบฉากทั้งหมด)</td></tr>
+          <tr><td><b>Bandai FCG / Mapper 159</b></td><td>คล้ายกลุ่ม MMC ทั่วไป สลับ PRG/CHR bank ได้ และมักมี RAM สำรอง — ตรวจ manual ของ mapper นี้ก่อนใช้งานจริง</td></tr>
+          <tr><td><b>CHR-RAM</b></td><td>เขียน tile เข้า PPU RAM ระหว่างเกมได้ แต่ต้องมี routine upload, จังหวะ VBlank และพื้นที่ PRG สำหรับเก็บฟอนต์</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-2 text-sm text-muted">NES แสดงข้อมูล tile ได้พร้อมกัน 8 KiB เท่านั้น แม้ cartridge จะเก็บ CHR ได้มากกว่านั้น โดยอาศัย mapper สำหรับสลับ bank (อ้างอิง: NESdev Wiki — CHR ROM vs. CHR RAM)</p>
+    </section>
+
+    <!-- 4 -->
+    <section id="viewer">
+      <h2 class="text-xl font-bold text-navy">4. ดู Pattern Table จริงในเกม</h2>
+      <p>นี่คือตัวอย่างจริงจาก Pattern Table Viewer (เครื่องมือในตัว debugger เช่น Mesen/FCEUX) ของเกม NES เกมหนึ่ง
+        แสดง <b>Pattern Table 0000</b> และ <b>Pattern Table 1000</b> — รวมกัน 512 tile ขนาด 8×8 คือทั้งหมดที่ PPU "มองเห็น" ได้ในเวลาเดียวกัน</p>
+      <figure>
+        <img src="nes-ppu-pattern-tables.png" alt="ตัวอย่าง Pattern Table Viewer ของ NES แสดง Pattern Table 0000 กับ 1000 รวม 512 tile"
+          class="mx-auto w-full max-w-lg rounded border-2 border-ink shadow-pop-sm">
+        <figcaption class="text-center">ตัวอย่างจาก Pattern Table Viewer — ฝั่งซ้าย (0000) มักเป็นฟอนต์/ตัวอักษร ฝั่งขวา (1000) มักเป็นกราฟิกฉาก/UI ·
+          ที่มา: <a class="text-accent underline" href="https://www.nesdev.org/wiki/PPU_pattern_tables" target="_blank" rel="noopener">NESdev Wiki</a></figcaption>
+      </figure>
+      <p class="mt-3">สังเกตว่าฟอนต์ตัวอักษร (แถวบนซ้าย) กับกราฟิกฉาก/เมนู (ฝั่งขวา) อยู่ใน <b>คนละ pattern table</b> ของเกมนี้ —
+        นี่คือสิ่งที่ต้องไปตรวจดูก่อนว่าเกมที่กำลังแปลจัดวางแบบไหน เพราะจะกำหนดว่ามี "ที่ว่าง" ให้ฟอนต์ไทยกี่ tile จริงๆ</p>
+    </section>
+
+    <!-- 5 -->
+    <section id="options">
+      <h2 class="text-xl font-bold text-navy">5. ถ้า "Tile ไม่พอ" มีทางเลือกอะไรบ้าง</h2>
+
+      <h3 class="mt-4 font-bold text-accent">ทางเลือก 1 — แทนที่ tile อังกฤษที่ไม่ใช้</h3>
+      <p>เป็นทางที่ควรตรวจสอบก่อน และปลอดภัยที่สุด เช่น เกมไม่มี lowercase → เอา <code>a-z</code> มาแทนพยัญชนะไทยบางส่วน,
+        เกมไม่มีอักษร/สัญลักษณ์บางชุดใน dialogue → ยืม tile เหล่านั้นมา, ตัวเลขและเครื่องหมายคงไว้</p>
+      <p class="text-sm text-muted">ต้องค้นหาให้ครบว่า tile นั้นถูกใช้ใน: เมนู, battle UI, ชื่อไอเทม, เครดิต, sprite/ฉาก, หน้าต่าง save/load หรือไม่ — พลาดจุดใดจุดหนึ่งจะทำให้กราฟิกที่อื่นพัง</p>
+
+      <h3 class="mt-4 font-bold text-accent">ทางเลือก 2 — encoding แบบ "ตัวหลัก + ตัวประกอบ"</h3>
+      <p>อย่าสร้าง tile สำเร็จรูปทุกแบบ เช่น <code>ก่</code>, <code>ก้</code>, <code>ก๊</code>, <code>ก๋</code>, <code>กิ่</code> เพราะ tile จะหมดเร็วมาก
+        ให้เก็บข้อความเป็น <code>ก + สระอิ + ไม้เอก</code> แล้วให้ engine วาด ก ที่ตำแหน่งปกติ สระอิซ้อนด้านบน ไม้เอกซ้อนสูงขึ้นอีกระดับ</p>
+      <p class="text-sm text-muted">ข้อดีคือใช้ tile น้อยกว่ามาก แต่ต้องแก้ text renderer ให้ไม่เลื่อน cursor เมื่อเจอสระ/วรรณยุกต์ และจัดการกรณีสระบนชนวรรณยุกต์ ·
+        สำหรับ NES วิธีนี้ทำได้ แต่ต้องมีพื้นที่ในกล่องข้อความอย่างน้อย 2–3 แถว tile เพื่อวาง mark บน/ล่าง</p>
+
+      <h3 class="mt-4 font-bold text-accent">ทางเลือก 3 — ฟอนต์แบบ "ครึ่งความกว้าง"</h3>
+      <p>ถ้า engine รองรับการเขียน tilemap แบบกำหนดตำแหน่งเอง อาจออกแบบตัวไทย 8×8 ให้แคบ หรือใช้ 8×16 สำหรับพยัญชนะบางกลุ่ม
+        — ข้อควรระวัง: อ่านยากหากบีบมากเกินไป และเกมจำนวนมากเขียนข้อความทีละ tile จึงอาจต้องแก้ routine เยอะ</p>
+
+      <h3 class="mt-4 font-bold text-accent">ทางเลือก 4 — สลับ CHR bank เฉพาะตอนวาดข้อความ</h3>
+      <p>เหมาะเมื่อเกมใช้ mapper ที่สลับ CHR ได้ เช่น MMC1/MMC3:</p>
+      <pre class="mt-2 overflow-x-auto rounded border-2 border-edge bg-card p-3 text-[12px] leading-tight">ก่อนเปิดกล่องข้อความ  -> สลับ CHR bank ของ font อังกฤษเป็น font ไทย
+ระหว่างอยู่ในกล่องข้อความ -> ใช้ tile ไทย
+ปิดกล่องข้อความ       -> สลับกลับไป CHR bank ของฉาก/เมนูเดิม</pre>
+      <p class="text-sm text-muted">ต้องระวัง: ถ้า font กับ background/sprite อยู่ CHR bank เดียวกัน การสลับอาจทำให้ฉากหรือ sprite เพี้ยน ·
+        Mapper ที่สลับ CHR ทีละ 8 KB อย่าง CNROM จะจำกัดกว่า เพราะสลับครั้งเดียวอาจเปลี่ยน graphics ทุกส่วนบนจอพร้อมกัน</p>
+
+      <h3 class="mt-4 font-bold text-accent">ทางเลือก 5 — เปลี่ยนจาก CHR-ROM เป็น CHR-RAM</h3>
+      <p>ทางที่ทรงพลังที่สุด แต่เป็นงานระดับ "แก้ engine": ย้ายฟอนต์ไปเก็บใน PRG-ROM → ทำ routine คัดลอก tile จาก PRG-ROM เข้า CHR-RAM ผ่าน PPU →
+        โหลดเฉพาะ glyph ไทยที่จำเป็นก่อนเปิด dialogue หรือระหว่าง VBlank → จัด cache ว่า tile ช่องใดใน CHR-RAM ใช้กับ glyph ไหน</p>
+      <div class="note">ข้อจำกัดคือ PPU ยังเข้าถึงได้เพียง 8 KB ในคราวเดียวเหมือนเดิม เพียงแต่เปลี่ยนเนื้อหาใน 8 KB นั้นได้ระหว่างเกม ·
+        และถ้า ROM เดิมเป็น CHR-ROM จะ "แค่แก้ header" ให้กลายเป็น CHR-RAM ไม่ได้ทันที — emulator ต้องรองรับ mapping ที่ระบุ, โค้ดเกมต้อง upload tile เอง,
+        และถ้าเล่นกับตลับจริงต้องใช้ cartridge board/flash cart ที่รองรับ mapper และ CHR-RAM แบบนั้นด้วย</div>
+    </section>
+
+    <!-- 6 -->
+    <section id="mapper0">
+      <h2 class="text-xl font-bold text-navy">6. กรณี Mapper 0: มีข้อจำกัดจริง</h2>
+      <p>ถ้าเกมเป็น <b>Mapper 0 (NROM)</b> และมี CHR-ROM 8 KB:</p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>เพิ่ม PRG/CHR แล้วหวังให้เกมเข้าถึงเพิ่มไม่ได้โดยตรง</li>
+        <li>ไม่มีคำสั่ง bank switch ให้เรียกเลย</li>
+        <li>พื้นที่ tile ที่เห็นได้ตลอดเกมถูกล็อกไว้ที่ 8 KB</li>
+        <li>ทางเลือกจริงคือแทนที่ tile เดิม, ลดจำนวน glyph, หรือยกเครื่องเป็น CHR-RAM/mapper ใหม่ ซึ่งแทบเท่ากับ port engine</li>
+      </ul>
+      <p class="mt-2 text-sm text-muted">Mapper 0 ที่ไม่มีการสลับ CHR จะถูกจำกัดอยู่กับ CHR 8 KB ชุดเดียวตลอดโปรแกรม</p>
+    </section>
+
+    <!-- 7 -->
+    <section id="checklist">
+      <h2 class="text-xl font-bold text-navy">7. ลำดับการแก้ปัญหาที่แนะนำ</h2>
+      <ol class="ml-5 list-decimal space-y-1.5">
+        <li>ระบุ mapper และ PRG/CHR size จาก header ก่อน</li>
+        <li>เปิด <b>PPU Pattern Table Viewer</b> ดูว่า font อยู่ช่วง <code>$0000–$0FFF</code> หรือ <code>$1000–$1FFF</code></li>
+        <li>เปิด dialogue, menu, battle และฉากต่างๆ เพื่อดูว่า tile ชุดไหนเปลี่ยนตามหน้าจอ</li>
+        <li>สร้างรายการ tile อังกฤษ/สัญลักษณ์ที่ใช้จริงทั้งหมด</li>
+        <li>หา tile ที่แทนที่ได้โดยไม่ทำ graphics อื่นเสีย</li>
+        <li>ทำฟอนต์ไทยขั้นต่ำก่อน เช่น พยัญชนะที่ใช้บ่อย + สระ + วรรณยุกต์ + ตัวเลข</li>
+        <li>เปลี่ยนคำสั้นๆ 1 ประโยค และตรวจว่ามี tile เพี้ยนในทุกฉากหรือไม่</li>
+        <li>หาก tile ไม่พอจริง ให้ตรวจว่า mapper รองรับ CHR bank switching หรือไม่</li>
+        <li>ค่อยตัดสินใจว่าจะทำ <b>dynamic CHR bank</b>, <b>composite Thai renderer</b>, หรือ <b>CHR-RAM engine</b></li>
+      </ol>
+      <div class="good"><b>สรุปสั้นที่สุด:</b> เพิ่ม ROM และแก้ pointer แก้ปัญหา "พื้นที่เก็บข้อมูล" ได้ แต่ไม่เพิ่มจำนวน tile ที่ PPU มองเห็นได้ในขณะเดียวกัน
+        ต้องแก้ที่ mapper, การสลับ CHR bank หรือระบบโหลด tile ด้วย</div>
+      <p class="mt-3 text-sm text-muted">ยังไม่แน่ใจว่าเกม NES/FC ที่กำลังทำเหมาะกับการลงทุนแค่ไหน? ดูตาราง "เลือกเครื่อง/เลือกเกม" และแบบทดสอบ Feasibility ที่
+        <a class="text-accent underline" href="romhack-nes-vs-snes.html">หน้าเลือกเครื่อง/เลือกเกม</a></p>
+    </section>
+
+  </main>
+</div>
+
+<footer class="border-t-2 border-ink py-8 text-center text-xs text-muted">
+  <p><a class="underline hover:text-accent" href="../../index.html">← กลับหน้าหลัก เกเรแปลไทย</a></p>
+</footer>
+
+</body>
+</html>
