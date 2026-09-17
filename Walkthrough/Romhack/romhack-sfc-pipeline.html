@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>กรรมวิธี SFC เต็มรูปแบบ · คู่มือทำ ROM Hack · เกเรแปลไทย</title>
+<meta name="description" content="แผนงานแบบเป็นเฟสสำหรับแปลเกม SFC/SNES เป็นภาษาไทย ตั้งแต่สำรอง ROM หาเส้นทางข้อความ ออกแบบระบบภาษาไทย ไปจนถึงเขียนแพตช์ที่ทำซ้ำได้ พร้อมตารางเครื่องมือและ Milestone">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Sarabun"', "ui-sans-serif", "system-ui", "sans-serif"],
+          pixel: ['"Press Start 2P"', "ui-monospace", "monospace"],
+        },
+        colors: {
+          paper: "#dbdadd", card: "#ecebee", edge: "#adaab5",
+          ink: "#59575e", muted: "#726f79", accent: "#cf3a3a",
+          go: "#2f9e5c", navy: "#3a56c4",
+        },
+        boxShadow: { pop: "3px 3px 0 #59575e", "pop-sm": "2px 2px 0 #59575e" },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #dbdadd; }
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-track { background: #c9c7cd; }
+  ::-webkit-scrollbar-thumb { background: #93909c; border: 3px solid #c9c7cd; }
+  [hidden] { display: none !important; }
+  .pix { font-family: "Press Start 2P", ui-monospace, "Courier New", monospace; }
+  :target { scroll-margin-top: 5rem; }
+  .prose-th p { margin-top: .6rem; line-height: 1.85; }
+  .prose-th ul, .prose-th ol { margin-top: .5rem; }
+  .wt-table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  .wt-table th, .wt-table td { border: 1px solid #adaab5; padding: 5px 8px; text-align: left; vertical-align: top; }
+  .wt-table th { background: #d6d4da; font-weight: 700; }
+  .wt-table tbody tr:nth-child(even) { background: #e3e1e6; }
+  .note { border-left: 4px solid #cf3a3a; background: #f0dede; padding: 10px 12px; border-radius: 4px; margin-top: .7rem; }
+  .good { border-left: 4px solid #2f9e5c; background: #dfeee5; padding: 10px 12px; border-radius: 4px; margin-top: .7rem; }
+  .step { border: 2px solid #59575e; background: #ecebee; border-radius: 8px; padding: 12px 14px; box-shadow: 3px 3px 0 #59575e; }
+  .stepnum { font-family: "Press Start 2P", monospace; font-size: 11px; background: #cf3a3a; color: #fff; border: 2px solid #59575e; border-radius: 6px; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; }
+  .tab { display: inline-flex; align-items: center; border: 2px solid #59575e; border-radius: 8px; padding: .45rem .8rem; font-size: 13px; font-weight: 700; background: #ecebee; color: #59575e; white-space: nowrap; }
+  .tab:hover { background: #d6d4da; }
+  .tab.active { background: #59575e; color: #fff; }
+</style>
+</head>
+<body class="min-h-screen font-sans text-ink antialiased">
+
+<header id="top" class="sticky top-0 z-40 border-b-2 border-ink bg-paper/95 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:px-6">
+    <div class="min-w-0 flex-1">
+      <p class="text-sm font-bold tracking-wide text-accent">บทความ · ROM HACK</p>
+      <h1 class="text-lg font-bold leading-tight sm:text-xl">กรรมวิธี SFC เต็มรูปแบบ</h1>
+      <p class="mt-0.5 text-xs text-muted">ส่วนหนึ่งของ "คู่มือทำ ROM Hack" · เกี่ยวข้องกับ: SFC (SNES) · อัปเดตล่าสุด 11 ก.ย. 2569</p>
+    </div>
+    <div class="flex shrink-0 items-center gap-2">
+      <a href="../../index.html" class="inline-flex items-center gap-1.5 rounded border-2 border-ink bg-card px-3 py-2 text-sm font-bold shadow-pop-sm transition hover:bg-ink hover:text-white active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+        หน้าแรก
+      </a>
+      <a href="#toc" class="inline-flex items-center gap-1.5 rounded border-2 border-ink bg-card px-3 py-2 text-sm font-bold shadow-pop-sm transition hover:bg-ink hover:text-white active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        สารบัญ
+      </a>
+    </div>
+  </div>
+  <div class="mx-auto flex max-w-6xl flex-wrap gap-2 px-4 pb-3 sm:px-6">
+    <a href="romhack-guide.html" class="tab">1) บทนำ</a>
+    <a href="romhack-sfc-pipeline.html" class="tab active">2) กรรมวิธี SFC เต็มรูปแบบ</a>
+    <a href="romhack-nes-tiles.html" class="tab">3) ปัญหา Tile บน NES/FC</a>
+    <a href="romhack-nes-vs-snes.html" class="tab">4) เลือกเครื่อง/เลือกเกม</a>
+  </div>
+</header>
+
+<div class="mx-auto max-w-6xl gap-8 px-4 py-6 sm:px-6 lg:flex">
+
+  <aside id="toc" class="mb-6 shrink-0 lg:mb-0 lg:w-60 lg:sticky lg:top-20 lg:self-start">
+    <nav class="rounded-lg border-2 border-ink bg-card p-4 text-sm shadow-pop-sm">
+      <p class="mb-2 text-base font-bold text-ink">สารบัญ</p>
+      <ol class="space-y-1.5">
+        <li><a class="block hover:text-accent" href="#scope">1. 4 ส่วนที่ต้องแก้เสมอ</a></li>
+        <li><a class="block hover:text-accent" href="#phase1">2. เฟส 1: สำรอง &amp; สำรวจ ROM</a></li>
+        <li><a class="block hover:text-accent" href="#phase2">3. เฟส 2: หาเส้นทางข้อความ</a></li>
+        <li><a class="block hover:text-accent" href="#phase3">4. เฟส 3: วิเคราะห์ Script/Control Code</a></li>
+        <li><a class="block hover:text-accent" href="#phase4">5. เฟส 4: ออกแบบระบบภาษาไทย</a></li>
+        <li><a class="block hover:text-accent" href="#phase5">6. เฟส 5: ข้อความยาว &amp; ตัดบรรทัด</a></li>
+        <li><a class="block hover:text-accent" href="#phase6">7. เฟส 6: เขียน Patch ที่ทำซ้ำได้</a></li>
+        <li><a class="block hover:text-accent" href="#tools2">8. เครื่องมือที่ควรมี</a></li>
+        <li><a class="block hover:text-accent" href="#learn">9. ลำดับการเรียนรู้ที่คุ้มที่สุด</a></li>
+        <li><a class="block hover:text-accent" href="#milestones">10. Milestone M1–M8</a></li>
+      </ol>
+      <hr class="my-3 border-edge">
+      <a class="block text-[13px] hover:text-accent" href="romhack-guide.html">← กลับหน้าบทนำ</a>
+    </nav>
+  </aside>
+
+  <main class="prose-th min-w-0 flex-1 space-y-10">
+
+    <!-- 1 -->
+    <section id="scope">
+      <h2 class="text-xl font-bold text-navy">1. 4 ส่วนที่ต้องแก้เสมอ</h2>
+      <p>การ "เปลี่ยนอังกฤษเป็นไทย" บน SFC ไม่ได้มีแค่แก้ข้อความใน ROM แต่โดยทั่วไปต้องแก้ครบ 4 ส่วนนี้:</p>
+      <div class="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div class="step"><b>1. รูปแบบข้อมูลข้อความ</b><p class="mt-1 text-sm">Encoding, ตารางตัวอักษร (.tbl), script และตัวชี้ข้อความ (pointer)</p></div>
+        <div class="step"><b>2. ระบบวาดข้อความ</b><p class="mt-1 text-sm">ฟอนต์, tile, tilemap, VRAM และการจัดบรรทัด</p></div>
+        <div class="step"><b>3. ตรรกะภาษาไทย</b><p class="mt-1 text-sm">สระบน/ล่าง วรรณยุกต์ และอักขระประกอบที่ต้องวาดเหลื่อมตำแหน่ง</p></div>
+        <div class="step"><b>4. พื้นที่ ROM / โค้ด</b><p class="mt-1 text-sm">ย้ายข้อความที่ยาวขึ้น, ขยาย ROM, hook โค้ดเดิม, ทำ patch ที่แจกจ่ายได้</p></div>
+      </div>
+      <div class="note mt-4"><b>อย่าเริ่มจากแปลทั้งเกมทันที</b> — ให้พิสูจน์ก่อนว่าแก้ "1 กล่องข้อความ" จนแสดงไทยได้ถูกต้องครบทั้ง 4 ส่วนด้านบน แล้วค่อยขยายไปทั้งเกม</div>
+    </section>
+
+    <!-- 2 -->
+    <section id="phase1">
+      <h2 class="text-xl font-bold text-navy">2. เฟส 1 — สำรองและสำรวจ ROM</h2>
+      <ul class="ml-5 list-disc space-y-1.5">
+        <li>เก็บ ROM ต้นฉบับแบบอ่านอย่างเดียว และทำงานกับ "สำเนา" เท่านั้น</li>
+        <li>ตรวจชนิด mapping ของ ROM: <b>LoROM / HiROM / ExHiROM</b>, ขนาด ROM, มี header 512 ไบต์หรือไม่ และมีชิปพิเศษหรือเปล่า เช่น SA-1, Super FX</li>
+        <li>ทำ checksum/hash ของไฟล์ต้นฉบับ เพื่อให้ทุกคนในทีมใช้ ROM ฐานเดียวกัน</li>
+        <li>สร้าง Git repository เก็บโค้ด patch, ตารางอักษร, script, เอกสาร address และผลทดสอบ — <b>ไม่เก็บ ROM ต้นฉบับ</b> ในนั้น (ลิขสิทธิ์ + ขนาดไฟล์)</li>
+      </ul>
+    </section>
+
+    <!-- 3 -->
+    <section id="phase2">
+      <h2 class="text-xl font-bold text-navy">3. เฟส 2 — หา "เส้นทางข้อความ" ของเกม</h2>
+      <p>เริ่มจากหน้าจอที่มีประโยคอังกฤษสั้นๆ และจำตำแหน่งข้อความนั้นไว้ ทำตามลำดับนี้:</p>
+      <ol class="ml-5 list-decimal space-y-1.5">
+        <li>ค้นหา ASCII ใน ROM ก่อน เช่น <code>START</code>, <code>SAVE</code>, ชื่อเมนู หรือชื่อสถานที่</li>
+        <li>ถ้าไม่เจอ แปลว่าเกมมักใช้ encoding เฉพาะ ให้ค้นหารูปแบบข้อมูลและสร้างไฟล์ตาราง <code>.tbl</code></li>
+        <li>ใช้ debugger ตั้ง <b>read breakpoint</b> ที่ตำแหน่ง RAM/ROM ที่เกี่ยวกับข้อความ หรือใช้ VRAM/tile viewer ดูว่าฟอนต์และ tilemap ถูกส่งขึ้นจออย่างไร</li>
+        <li>เมื่อ breakpoint หยุด ให้ดู call stack และ trace ย้อนกลับเพื่อหา routine หลัก: อ่าน byte จาก script → แปลงรหัสเป็น glyph/tile → เขียน tilemap ลง buffer → DMA ข้อมูลเข้า VRAM</li>
+        <li>จด address และหน้าที่ของ routine ทุกตัวเป็น "แผนที่ระบบข้อความ"</li>
+      </ol>
+      <p class="mt-3">ผลลัพธ์ของเฟสนี้ควรเป็นแผนภาพเช่นนี้:</p>
+      <pre class="mt-2 overflow-x-auto rounded border-2 border-edge bg-card p-3 text-[12px] leading-tight">Script ใน ROM
+  -> pointer table
+  -> text decoder / control codes
+  -> text buffer ใน WRAM
+  -> glyph lookup
+  -> tilemap buffer
+  -> DMA ไป VRAM
+  -> กล่องข้อความบนจอ</pre>
+    </section>
+
+    <!-- 4 -->
+    <section id="phase3">
+      <h2 class="text-xl font-bold text-navy">4. เฟส 3 — วิเคราะห์รูปแบบ Script และ Control Code</h2>
+      <p>สิ่งที่ต้องหา:</p>
+      <table class="wt-table mt-2">
+        <thead><tr><th>รายการ</th><th>รายละเอียด</th></tr></thead>
+        <tbody>
+          <tr><td>Terminator</td><td>byte ที่จบข้อความ เช่น <code>00</code>, <code>FF</code></td></tr>
+          <tr><td>Control codes</td><td>ขึ้นบรรทัดใหม่, รอปุ่ม, เปลี่ยนชื่อคน, เปลี่ยนหน้า, แสดงตัวเลข</td></tr>
+          <tr><td>Pointer format</td><td>16-bit, 24-bit, bank-relative หรือมีการบีบอัด</td></tr>
+          <tr><td>Compression</td><td>ถ้าข้อความใน ROM ดูเป็นข้อมูลสุ่ม แต่รันไทม์เจอข้อความใน RAM อาจมีการคลายบีบอัดก่อนวาด</td></tr>
+          <tr><td>พื้นที่ว่าง (Freespace)</td><td>ต้องหาอย่างระมัดระวัง และยืนยันว่าเกมไม่ใช้พื้นที่นั้นจริง</td></tr>
+        </tbody>
+      </table>
+      <div class="good mt-3">เริ่มด้วยการแก้คำอังกฤษสั้นๆ ให้เป็นคำอื่นที่มี<b>จำนวนไบต์เท่ากัน</b> เพื่อยืนยัน encoding และ pointer ก่อน แล้วจึงไปทำข้อความยาวหรือย้ายตำแหน่ง</div>
+    </section>
+
+    <!-- 5 -->
+    <section id="phase4">
+      <h2 class="text-xl font-bold text-navy">5. เฟส 4 — ออกแบบระบบภาษาไทย</h2>
+      <p>ภาษาไทยจะไม่จบแค่ "เพิ่ม glyph 1 byte ต่อ 1 ตัวอักษร" เพราะมีอักขระประกอบ (สระบน/ล่าง + วรรณยุกต์)</p>
+      <p><b>แนวทางเริ่มต้นที่แนะนำ: fixed-width + composite glyph</b></p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>ใช้ glyph หลักเป็นตัวอักษรไทยมาตรฐาน</li>
+        <li>สร้าง glyph แยกสำหรับสระบน สระล่าง และวรรณยุกต์</li>
+        <li>แก้ routine วาดข้อความให้ glyph ประกอบถูกวาดที่ตำแหน่ง <code>x/y offset</code> เหนือตัวพยัญชนะก่อนหน้า</li>
+        <li>กำหนดกติกาสำหรับอักษรเช่น <code>กิ่</code>, <code>ปุ้</code>, <code>น้ำ</code> เพื่อเลี่ยงการชนกันของสระและวรรณยุกต์</li>
+      </ul>
+      <p class="mt-3"><b>ทำเป็น 2 ระยะจะปลอดภัยกว่า:</b></p>
+      <table class="wt-table mt-2">
+        <thead><tr><th>ระยะ</th><th>วิธีการ</th><th>ข้อดี / ข้อเสีย</th></tr></thead>
+        <tbody>
+          <tr><td>A — Prototype</td><td>ฟอนต์ไทยแบบ glyph สำเร็จรูปสำหรับชุดที่ใช้จริง เช่น "ก่", "ก้", "กิ", "กี"</td><td>เขียน engine น้อย แต่จำนวน tile สูง</td></tr>
+          <tr><td>B — Engine</td><td>จัดวาง combining marks จริงตาม offset</td><td>รองรับภาษาไทยครบและประหยัด glyph กว่า แต่ต้อง reverse-engineer routine การวาดมากขึ้น</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-2 text-sm text-muted">สำหรับเกมแรกหรือโครงการคนเดียว แนะนำเริ่ม <b>ระยะ A เพื่อทำ prototype</b> ก่อน แล้วค่อยตัดสินใจว่าจำเป็นต้องทำระยะ B หรือไม่</p>
+    </section>
+
+    <!-- 6 -->
+    <section id="phase5">
+      <h2 class="text-xl font-bold text-navy">6. เฟส 5 — แก้ปัญหาข้อความยาวและการตัดบรรทัด</h2>
+      <p>ภาษาไทยมักยาวกว่าข้อความอังกฤษ ต้องวางนโยบายตั้งแต่ต้น:</p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>ปรับข้อความแปลให้กระชับ</li>
+        <li>เพิ่มจำนวนบรรทัดในกล่องข้อความ ถ้า UI รองรับ</li>
+        <li>ย้าย script ไปพื้นที่ใหม่และแก้ pointer</li>
+        <li>ทำ word wrap ตาม "ความกว้าง pixel/tile" ไม่ใช่จำนวนตัวอักษร</li>
+        <li>หากเกมใช้ฟอนต์ความกว้างแปรผัน (VWF) ต้องหา table ความกว้างตัวอักษรและเพิ่มค่าความกว้างของอักษรไทย</li>
+        <li>ถ้าเป็น fixed-width ให้กำหนดความกว้างทุกตัวเท่ากันก่อน เพื่อลดความซับซ้อน</li>
+      </ul>
+    </section>
+
+    <!-- 7 -->
+    <section id="phase6">
+      <h2 class="text-xl font-bold text-navy">7. เฟส 6 — เขียน Patch แบบทำซ้ำได้</h2>
+      <p>อย่าแก้ ROM ด้วย hex editor อย่างเดียวในขั้นสุดท้าย เพราะตรวจสอบและแก้ย้อนยาก โครงสร้างโปรเจกต์ตัวอย่าง:</p>
+      <pre class="mt-2 overflow-x-auto rounded border-2 border-edge bg-card p-3 text-[12px] leading-tight">project/
+  asm/
+    main.asm
+    text_engine.asm
+    thai_renderer.asm
+    hooks.asm
+  data/
+    font_th.bin
+    text.tbl
+    script_th/
+  tools/
+    build.py
+  docs/
+    memory_map.md
+    text_format.md
+  build/
+    game_th.bps</pre>
+      <ul class="ml-5 mt-3 list-disc space-y-1">
+        <li>เขียน hook และ routine ใหม่ด้วย 65C816 assembly</li>
+        <li>ใช้ assembler สร้าง patch ซ้ำได้</li>
+        <li>ทำ build script สำหรับ inject ฟอนต์, compile script และ apply ASM patch</li>
+        <li>แจกเป็น <b>BPS/IPS patch</b> แทนการแจก ROM เต็ม</li>
+      </ul>
+      <p class="mt-2 text-sm text-muted">Asar เหมาะกับงานนี้ เพราะออกแบบมาสำหรับ apply patch กับ ROM และรองรับ 65C816, SPC700, Super FX —
+        <a class="text-accent underline" href="https://github.com/RPGHacker/asar" target="_blank" rel="noopener">github.com/RPGHacker/asar</a></p>
+    </section>
+
+    <!-- 8 -->
+    <section id="tools2">
+      <h2 class="text-xl font-bold text-navy">8. เครื่องมือที่ควรมี</h2>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>งาน</th><th>เครื่องมือแนะนำ</th><th>ใช้ทำอะไร</th></tr></thead>
+        <tbody>
+          <tr><td>Debugger หลัก</td><td><b>Mesen-S</b></td><td>ดู CPU register, memory, trace, breakpoint, assembler, Lua script และบันทึก ROM/IPS จากการแก้ไขได้ —
+            <a class="text-accent underline" href="https://www.mesen.ca/snes/docs/debugging.html" target="_blank" rel="noopener">mesen.ca</a></td></tr>
+          <tr><td>Debugger/ดูกราฟิกทางเลือก</td><td><b>bsnes-plus</b></td><td>มี debugger/disassembler และ viewer สำหรับ tile, tilemap, sprite, เสียง —
+            <a class="text-accent underline" href="https://bsnes.revenant1.net/" target="_blank" rel="noopener">bsnes.revenant1.net</a></td></tr>
+          <tr><td>Hex editor</td><td>HxD หรือ ImHex</td><td>ดูและแก้ byte, ค้นหา text/pointer, เปรียบเทียบไฟล์</td></tr>
+          <tr><td>Assembly patcher</td><td><b>Asar</b></td><td>เขียน hook, inject routine ใหม่, จัดการ freespace และ build patch —
+            <a class="text-accent underline" href="https://rpghacker.github.io/asar/asar_19/manual/" target="_blank" rel="noopener">คู่มือ Asar</a></td></tr>
+          <tr><td>Text/script tools</td><td>Atlas, Cartographer หรือ Python ที่เขียนเอง</td><td>dump script, insert ข้อความ, จัดการ table และ pointer</td></tr>
+          <tr><td>ฟอนต์/กราฟิก</td><td>YY-CHR หรือ tile editor ที่รองรับ SNES</td><td>วาด glyph ไทย, ตรวจ tile 2bpp/4bpp และ palette</td></tr>
+          <tr><td>Diff / ตรวจความเปลี่ยนแปลง</td><td>VBinDiff, Git</td><td>เปรียบเทียบ ROM และติดตามโค้ด</td></tr>
+          <tr><td>สร้าง patch แจกจ่าย</td><td>Floating IPS (FLIPS)</td><td>สร้าง BPS patch และตรวจ ROM ฐาน</td></tr>
+          <tr><td>เอกสาร/โน้ต address</td><td>Markdown + Git</td><td>บันทึก memory map, control code, pointer และข้อค้นพบ</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="mt-2 text-sm text-muted">Mesen-S มีทั้ง trace logger, memory tools, debugger และบันทึก ROM ที่แก้เป็น <code>.sfc</code> หรือ <code>.ips</code> ได้ จึงเหมาะเป็นเครื่องมือหลักช่วงค้นหา engine
+        ส่วน bsnes-plus มี viewer ด้าน tile/tilemap โดยตรง มีประโยชน์มากตอนตามว่าข้อความถูกส่งเข้า VRAM อย่างไร</p>
+    </section>
+
+    <!-- 9 -->
+    <section id="learn">
+      <h2 class="text-xl font-bold text-navy">9. ลำดับการเรียนรู้ที่คุ้มที่สุด</h2>
+      <ol class="ml-5 list-decimal space-y-1.5">
+        <li>พื้นฐานเลขฐานสิบหก, endian และ pointer</li>
+        <li>โครงสร้าง SNES: 65816, bank, WRAM, VRAM, DMA</li>
+        <li>LoROM/HiROM address conversion</li>
+        <li>65C816 assembly ขั้นพื้นฐาน: <code>LDA</code>, <code>STA</code>, <code>LDX</code>, <code>JSR/JSL</code>, <code>RTS/RTL</code>, branch</li>
+        <li>ระบบ tile, palette, tilemap ของ SNES</li>
+        <li>breakpoint, trace และการอ่าน call stack</li>
+        <li>text encoding, pointer table, compression</li>
+        <li>ระบบจัดวางอักษรไทยและการวาด combining marks</li>
+      </ol>
+    </section>
+
+    <!-- 10 -->
+    <section id="milestones">
+      <h2 class="text-xl font-bold text-navy">10. Milestone ที่ควรกำหนด</h2>
+      <table class="wt-table mt-2">
+        <thead><tr><th>Milestone</th><th>เป้าหมาย</th></tr></thead>
+        <tbody>
+          <tr><td>M1</td><td>เปลี่ยนคำอังกฤษ 1 คำโดยไม่ทำเกมค้าง</td></tr>
+          <tr><td>M2</td><td>dump และ insert ข้อความ 1 กล่องได้</td></tr>
+          <tr><td>M3</td><td>ฟอนต์ไทยขึ้นจอได้</td></tr>
+          <tr><td>M4</td><td>แสดงพยัญชนะไทยได้ครบ</td></tr>
+          <tr><td>M5</td><td>สระ/วรรณยุกต์ไม่ชนกันในประโยคทดสอบ</td></tr>
+          <tr><td>M6</td><td>ข้อความยาวถูกย้าย pointer และตัดบรรทัดได้</td></tr>
+          <tr><td>M7</td><td>เล่นตั้งแต่เริ่มจนจบเกมด้วย regression test</td></tr>
+          <tr><td>M8</td><td>build patch จาก source ได้อัตโนมัติ และปล่อยเป็น BPS</td></tr>
+        </tbody>
+      </table>
+      <div class="note mt-3"><b>ข้อสำคัญที่สุด:</b> อย่าเริ่มเขียน engine ใหม่ก่อนที่จะรู้แน่ชัดว่าเกมเดิมอ่าน text, แปลง glyph และวาดลง VRAM ผ่าน routine ไหน
+        การตาม data flow ของข้อความหนึ่งประโยคให้จบก่อน จะลดเวลาลองผิดลองถูกได้มากที่สุด</div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="border-t-2 border-ink py-8 text-center text-xs text-muted">
+  <p><a class="underline hover:text-accent" href="../../index.html">← กลับหน้าหลัก เกเรแปลไทย</a></p>
+</footer>
+
+</body>
+</html>

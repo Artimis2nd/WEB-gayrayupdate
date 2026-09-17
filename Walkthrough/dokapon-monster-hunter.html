@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>บทสรุป โดคาปอง มอนสเตอร์ ฮันเตอร์ (ไทย) · เกเรแปลไทย</title>
+<meta name="description" content="บทสรุป/วิธีเล่น Dokapon - Monster Hunter (GBA) ฉบับภาษาไทย — ระบบต่อสู้ เป่ายิ้งฉุบ เดินเรื่องทุกเควส บอส สูตรตีเหล็ก ตารางมอนสเตอร์/อาวุธ/โล่/ไอเทม/สกิล">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Sarabun"', "ui-sans-serif", "system-ui", "sans-serif"],
+          pixel: ['"Press Start 2P"', "ui-monospace", "monospace"],
+        },
+        colors: {
+          paper: "#dbdadd", card: "#ecebee", edge: "#adaab5",
+          ink: "#59575e", muted: "#726f79", accent: "#cf3a3a",
+          go: "#2f9e5c", navy: "#3a56c4",
+        },
+        boxShadow: { pop: "3px 3px 0 #59575e", "pop-sm": "2px 2px 0 #59575e" },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #dbdadd; }
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-track { background: #c9c7cd; }
+  ::-webkit-scrollbar-thumb { background: #93909c; border: 3px solid #c9c7cd; }
+  [hidden] { display: none !important; }
+  .pix { font-family: "Press Start 2P", ui-monospace, "Courier New", monospace; }
+  :target { scroll-margin-top: 5.5rem; }
+  .prose-th p { margin-top: .6rem; line-height: 1.85; }
+  .prose-th ul { margin-top: .5rem; }
+  .wt-table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  .wt-table th, .wt-table td { border: 1px solid #adaab5; padding: 5px 8px; text-align: left; vertical-align: top; }
+  .wt-table th { background: #d6d4da; font-weight: 700; }
+  .wt-table tbody tr:nth-child(even) { background: #e3e1e6; }
+  .tag { font-family: "Press Start 2P", monospace; font-size: 8px; border: 1px solid #59575e; border-radius: 4px; padding: 2px 5px; display: inline-block; }
+</style>
+</head>
+<body class="min-h-screen font-sans text-ink antialiased">
+
+<header id="top" class="sticky top-0 z-40 border-b-2 border-ink bg-paper/95 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:px-6">
+    <div class="min-w-0 flex-1">
+      <p class="text-sm font-bold tracking-wide text-accent">บทสรุป · TH</p>
+      <h1 class="text-lg font-bold leading-tight sm:text-xl">โดคาปอง มอนสเตอร์ ฮันเตอร์</h1>
+      <p class="mt-0.5 text-xs text-muted">เครื่อง: GBA</p>
+    </div>
+    <div class="flex shrink-0 items-center gap-2">
+      <a href="../index.html" class="inline-flex items-center gap-1.5 rounded border-2 border-ink bg-card px-3 py-2 text-sm font-bold shadow-pop-sm transition hover:bg-ink hover:text-white active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+        หน้าแรก
+      </a>
+      <a href="#toc" class="inline-flex items-center gap-1.5 rounded border-2 border-ink bg-card px-3 py-2 text-sm font-bold shadow-pop-sm transition hover:bg-ink hover:text-white active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        สารบัญ
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="mx-auto max-w-6xl gap-8 px-4 py-6 sm:px-6 lg:flex">
+
+  <!-- ===== TOC ===== -->
+  <aside id="toc" class="mb-6 shrink-0 lg:mb-0 lg:w-60 lg:sticky lg:top-20 lg:self-start">
+    <nav class="rounded-lg border-2 border-ink bg-card p-4 text-sm shadow-pop-sm">
+      <p class="mb-2 text-base font-bold text-ink">สารบัญ</p>
+      <ol class="space-y-1.5 [counter-reset:s]">
+        <li><a class="block hover:text-accent" href="#intro">1. เกริ่นนำ &amp; เรื่องย่อ</a></li>
+        <li><a class="block hover:text-accent" href="#chars">2. ตัวละคร</a></li>
+        <li><a class="block hover:text-accent" href="#controls">3. ปุ่มควบคุม</a></li>
+        <li><a class="block hover:text-accent" href="#town">4. ในเมือง Poponga</a></li>
+        <li><a class="block hover:text-accent" href="#combat">5. ระบบต่อสู้ &amp; เป่ายิ้งฉุบ</a></li>
+        <li><a class="block hover:text-accent" href="#menu">6. เมนู · เลเวลอัป · สถานะ</a></li>
+        <li><a class="block hover:text-accent" href="#dungeon">7. ดันเจียน · กับดัก · จับมอนสเตอร์</a></li>
+        <li><a class="block hover:text-accent" href="#walk">8. เดินเรื่องทุกเควส</a></li>
+        <li><a class="block hover:text-accent" href="#optboss">9. บอสทางเลือก (โหด)</a></li>
+        <li><a class="block hover:text-accent" href="#smith">10. ช่างตีเหล็ก · สูตรผสม</a></li>
+        <li><a class="block hover:text-accent" href="#ref">11. ตารางอ้างอิง</a></li>
+        <li><a class="block hover:text-accent" href="#faq">12. คำถามที่พบบ่อย</a></li>
+      </ol>
+    </nav>
+  </aside>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="prose-th min-w-0 flex-1 space-y-10">
+
+    <!-- 1 -->
+    <section id="intro">
+      <h2 class="text-xl font-bold text-navy">1. เกริ่นนำ &amp; เรื่องย่อ</h2>
+      <p>Dokapon เป็นเกม RPG ผจญภัยแบบเทิร์นเบส พัฒนาโดย Asmik Ace Entertainment
+        แนวเกมใกล้เคียง Chocobo Dungeon หรือ Torneko แต่การต่อสู้เป็นแบบ
+        “เลือกคำสั่งแล้วเข้าฉากสู้จริง” และมีระบบธาตุแบบเป่ายิ้งฉุบเป็นหัวใจสำคัญ
+        จุดเด่นคืออาวุธและโล่จำนวนมาก แต่ละชิ้นมีสเตตัส สกิล และหน้าตาเฉพาะตัว</p>
+      <p>เนื้อเรื่อง: เด็กชายวัย 11 ปีในเมือง <b>Poponga</b> บนเกาะ Dokkano ซึ่งขึ้นชื่อเรื่องซากปรักหักพัง
+        พ่อของเขา (Steven) เคยเป็นนักผจญภัยชื่อดังแต่เสียชีวิตไปแล้ว
+        ลูกชายสืบทอดเจตนารมณ์ ตั้งใจจะเป็นนักผจญภัยที่เก่งที่สุด
+        เด็กเมือง Poponga เมื่ออายุครบ 11 ปีจะมีสิทธิ์สอบใบอนุญาตนักผจญภัย
+        เพื่อออกตามหา &lt;Legendary Treasure&gt; และ &lt;Phantom Material&gt; ในดันเจียนทั่วโลก
+        มีเพียงคนที่ผ่านการทดสอบยากๆ เท่านั้นที่จะได้ใบอนุญาต</p>
+    </section>
+
+    <!-- 2 -->
+    <section id="chars">
+      <h2 class="text-xl font-bold text-navy">2. ตัวละคร</h2>
+      <table class="wt-table mt-3">
+        <thead><tr><th>ชื่อ</th><th>บทบาท</th></tr></thead>
+        <tbody>
+          <tr><td>Hero</td><td>เด็กชายวัย 11 ปี ตัวเอกที่เราบังคับ (ชื่อค่าเริ่มต้น)</td></tr>
+          <tr><td>Friend</td><td>เพื่อนบ้านและเพื่อนสมัยเด็กของ Hero เป็นลูกสาวของ Tobia ความอยากรู้อยากเห็นของเธอผลักเรื่องราวไปข้างหน้า</td></tr>
+          <tr><td>Tobia</td><td>ช่างตีเหล็กประจำเมือง มีลูกศิษย์ 2 คนคือ Gustave กับ Caleb — ใช้บริการตีเหล็กได้หลังจบเควส Circus</td></tr>
+          <tr><td>Louie</td><td>นายกเทศมนตรีเมือง เคยออกผจญภัยร่วมกับ Jacob และ Steven มาก่อน</td></tr>
+          <tr><td>Priest</td><td>นักบวชประจำโบสถ์ คนเดียวที่ชุบชีวิต Hero ได้เมื่อล้มในดันเจียน</td></tr>
+          <tr><td>Steven</td><td>พ่อผู้ล่วงลับของ Hero</td></tr>
+          <tr><td>Gustave / Caleb</td><td>ลูกศิษย์ช่างตีเหล็กของ Tobia (Gustave เป็นรุ่นพี่, Caleb เป็นรุ่นน้องที่กระตือรือร้น)</td></tr>
+          <tr><td>Jacob</td><td>คนมอบหมายงาน/ภารกิจให้ Hero และจ่ายค่าตอบแทนเมื่อทำสำเร็จ (อยู่ที่ 3A)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 3 -->
+    <section id="controls">
+      <h2 class="text-xl font-bold text-navy">3. ปุ่มควบคุม</h2>
+      <table class="wt-table mt-3">
+        <thead><tr><th>ปุ่ม</th><th>การทำงาน</th></tr></thead>
+        <tbody>
+          <tr><td>A</td><td>คุยกับชาวเมือง · ยืนยันคำสั่ง · ข้าม 1 เทิร์น (นอกการต่อสู้)</td></tr>
+          <tr><td>B</td><td>วิ่ง (กดค้างพร้อมปุ่มทิศทาง) · ยกเลิกคำสั่ง</td></tr>
+          <tr><td>R</td><td>เปิดหน้าต่างสถานะตัวละคร</td></tr>
+          <tr><td>L</td><td>เปิดหน้าต่างสถานะมอนสเตอร์พันธมิตร</td></tr>
+          <tr><td>Start</td><td>เปิดเมนูหลัก · ดูข้อมูลศัตรู (ระหว่างต่อสู้)</td></tr>
+          <tr><td>Select</td><td>ใช้ Magiceye เพื่อเปิดเผยหน้าการ์ด (Action Card)</td></tr>
+          <tr><td>ปุ่มทิศทาง</td><td>เดินได้ 8 ทิศ</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 4 -->
+    <section id="town">
+      <h2 class="text-xl font-bold text-navy">4. ในเมือง Poponga</h2>
+      <p>ก่อนออกเควสทุกครั้ง แนะนำให้เดินคุยกับชาวเมืองทุกคนและนายก Louie เพื่อรับไอเทม/คำใบ้ฟรี
+        แล้วแวะรับของตามจุดต่างๆ ด้านล่าง</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th>สถานที่</th><th>รายละเอียด</th></tr></thead>
+        <tbody>
+          <tr><td>Mayor's House</td><td>บ้านนายก Louie ขอคำแนะนำเกี่ยวกับเกมได้เรื่อยๆ ตามความคืบหน้า</td></tr>
+          <tr><td>Shops</td><td>ซื้อ/ขายไอเทมและอุปกรณ์ มีตัวเลือก <b>Attack</b> ให้ปล้นพ่อค้า (เสี่ยงสูง ดูมินิเกม)</td></tr>
+          <tr><td>Church</td><td>เมื่อล้มในดันเจียนหรือใช้ Homer จะถูกส่งกลับมาที่นี่ · คุยกับคุณยายเพื่อรับ Revival</td></tr>
+          <tr><td>Hero's House</td><td>มีตู้เสื้อผ้า (ชุด Hero / ชุด Pierrot ได้จาก Friend หลังเควส Circus), กระปุกกีวี (ฝากเงิน ขั้นต่ำครั้งละ $1000), หนังสือบนโต๊ะ (รวมสกิล/อุปกรณ์/ไอเทมทั้งหมด), และหีบเก็บของ (สูงสุด 150 ชิ้น) — เงินและของในกระปุก/หีบไม่หายแม้ Hero จะล้ม</td></tr>
+          <tr><td>Quick Smith</td><td>ของ Tobia — ที่เดียวที่ผสมอาวุธ/โล่ให้แรงขึ้นได้ (ดูหัวข้อ 10)</td></tr>
+          <tr><td>Bar</td><td>ชั้น 2 มีอดีตนักผจญภัย Rank E (ชุดน้ำเงิน-น้ำตาล) และ Rank D (ชายชราชุดเขียว) ที่มักแจกไอเทมสำคัญก่อนแต่ละเควส</td></tr>
+          <tr><td>3A</td><td>ศูนย์รับงาน รับภารกิจจาก Jacob และมารับค่าจ้างที่นี่ · ชั้น 2 มีที่ปรึกษาอาวุโสคอยให้คำแนะนำ</td></tr>
+          <tr><td>Arena</td><td>สู้กับเพื่อน ต้องใช้เครื่อง GBA จริง 2 เครื่อง + สายลิงก์ + ตลับ 2 ตลับ (อีมูเลเตอร์เข้าไม่ได้)</td></tr>
+          <tr><td>Ranch</td><td>ฝากมอนสเตอร์พันธมิตรไว้เป็นสัตว์เลี้ยง (มีค่าบริการ) — Put ฝาก / Take รับไปดันเจียน / Free ปล่อย / Check ดูสถานะ / Cancel ออก</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 5 -->
+    <section id="combat">
+      <h2 class="text-xl font-bold text-navy">5. ระบบต่อสู้ &amp; เป่ายิ้งฉุบ</h2>
+      <figure class="my-4">
+        <img src="img/dokapon-combat-menu.png" alt="เมนูสกิลอาวุธในเกม Dokapon แสดงจุดสีเขียว/ม่วง/แดง/เหลืองกำกับธาตุ Stone/Scissor/Paper ของแต่ละสกิล"
+          loading="lazy" class="mx-auto w-full max-w-xs rounded border-2 border-ink shadow-pop-sm">
+        <figcaption class="mt-2 text-center text-xs text-muted">เมนูสกิลอาวุธในเกมจริง — สังเกตจุดสีหน้าแต่ละสกิล (เขียว/ม่วง/แดง/เหลือง) นี่คือธาตุเป่ายิ้งฉุบที่อธิบายด้านล่าง</figcaption>
+      </figure>
+
+      <h3 class="mt-4 font-bold">เทิร์น (Turn)</h3>
+      <p>นอกการต่อสู้: เดิน 1 ก้าว = 1 เทิร์น, ใช้ไอเทม 1 ครั้ง = 1 เทิร์น
+        ในการต่อสู้: ใช้ไอเทม หรือลงมือทำคำสั่ง 1 ครั้ง = จบเทิร์นของเรา</p>
+
+      <h3 class="mt-4 font-bold">การ์ดเปิดฉาก (Action Card)</h3>
+      <p>ทุกครั้งที่เข้าสู้ มีโอกาส 50/50 ที่จะได้โจมตีก่อน จะเห็นการ์ด 2 ใบบนจอ
+        หมุนด้วยปุ่มทิศทาง เลือกด้วยปุ่ม A หน้าการ์ดมี “weapon” กับ “shield”
+        เลือกการ์ด Weapon = ได้ออกอาวุธก่อน, เลือก Shield = ตั้งรับก่อน
+        ใช้ไอเทม Magiceye เพื่อแอบดูหน้าการ์ดได้</p>
+
+      <h3 class="mt-4 font-bold">เมนูต่อสู้</h3>
+      <p>คำสั่งหลัก 3 อย่าง: <b>Attack/Defense</b>, <b>Item</b>, <b>Escape</b>
+        โดย Attack/Defense จะแตกเป็นชุดคำสั่งย่อย: โจมตี/ตั้งรับพื้นฐานด้วยอาวุธ/โล่ที่สวม
+        หรือใช้ “สกิล” ของอาวุธ/โล่ชิ้นนั้น</p>
+
+      <h3 class="mt-4 font-bold">ธาตุเป่ายิ้งฉุบ — หัวใจของเกม</h3>
+      <p>สกิลทุกตัว (ยกเว้นสกิลพื้นฐานที่มีจุดสีเขียว) มีธาตุอย่างใดอย่างหนึ่ง:</p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li><b class="text-purple-700">Stone</b> (ม่วง) &mdash; ชนะ Scissor</li>
+        <li><b class="text-accent">Scissor</b> (แดง) &mdash; ชนะ Paper</li>
+        <li><b class="text-yellow-600">Paper</b> (เหลือง) &mdash; ชนะ Stone</li>
+      </ul>
+      <p>ถ้าเลือกสกิลที่ธาตุ “แพ้” ธาตุสกิลของฝ่ายตรงข้ามในเทิร์นนั้น สกิลเราจะถูกลบล้าง
+        แถมยังโดนสกิลของอีกฝ่ายใส่ด้วย เข้าใจระบบนี้แล้วเกมจะง่ายขึ้นมาก
+        (จุดสีในเมนู: <span class="text-go font-bold">เขียว</span>=พื้นฐาน,
+        <span class="text-purple-700 font-bold">ม่วง</span>=Stone,
+        <span class="text-accent font-bold">แดง</span>=Scissor,
+        <span class="text-yellow-600 font-bold">เหลือง</span>=Paper)</p>
+      <p class="text-sm text-muted">มินิเกมตีพ่อค้าใช้ระบบเดียวกัน: กดซ้าย=Stone(ม่วง) · ขวา=Paper(เหลือง) · ขึ้น=Scissor(แดง)</p>
+
+      <h3 class="mt-4 font-bold">พันธมิตร (Ally)</h3>
+      <p>ในการต่อสู้บางครั้งจะมีมอนสเตอร์ 2 ตัว ตัวที่อยู่จอเดียวกับเราคือเป้าหมายที่ต้องล้ม
+        ตัวที่อยู่ข้างหลังเราคือพันธมิตรของเรา พันธมิตรโจมตีเองไม่ได้ แต่มี
+        <i>Attack Assist Skill</i> และ <i>Defense Assist Skill</i> ช่วยเราตอนถึงเทิร์นเรา
+        <b>เฉพาะเมื่อเราเลือกใช้สกิลอาวุธ/โล่</b> (ถ้าใช้แค่โจมตี/ตั้งรับพื้นฐาน พันธมิตรจะไม่ช่วย)
+        และถ้าอยากได้ Exp/เงินจากพันธมิตรของศัตรูด้วย ต้องใช้สกิลอาวุธ (เช่น Pierce) โจมตีไปที่พันธมิตรศัตรู</p>
+    </section>
+
+    <!-- 6 -->
+    <section id="menu">
+      <h2 class="text-xl font-bold text-navy">6. เมนู · เลเวลอัป · สถานะ</h2>
+      <p><b>เมนูหลัก</b> (ปุ่ม Start): Item (ของทั้งหมด, กด Start เพื่อจัดเรียงตามโล่/อาวุธ/ไอเทม — Special Item อยู่ท้ายเสมอ) ·
+        Arms (ดูสกิลอาวุธ/โล่) · Change (สลับมอนสเตอร์พันธมิตรที่พามาในดันเจียน) ·
+        System (Diary=เซฟ, Flash=เปิด/ปิดอนิเมชันสู้, Msg=ความเร็วข้อความ, Album=รีวิวมอนสเตอร์/อุปกรณ์ที่เคยมี, Skills=ดูสกิลทั้งหมด)</p>
+      <p><b>เลเวลอัป</b>: ทุกครั้งที่เลเวลขึ้นได้ 3 แต้ม ใช้เพิ่มสเตตัส —
+        1 แต้ม = ATK +1 หรือ SP +1 หรือ HP +5</p>
+      <p><b>หน้าสถานะ</b>: แสดงชื่อ, เลเวล, HP ปัจจุบัน/สูงสุด, จำนวนเงิน, แถบ HP สีเขียว</p>
+      <p><b>สัญลักษณ์ของบนพื้น</b>: ถุงของ = ไอเทมทั่วไป · รูปดาบ = อาวุธ · รูปโล่ = โล่ ·
+        <b>Dark Treasure Chest</b> = หีบเสี่ยงดวง อาจได้ของดี หรือโดนกับดัก/สถานะเสีย
+        (Land Mine, Fatigue, Poison, Cursed, Black Out, Morph) หรือเงิน ±
+        และหลังจบเควส Ruin Part 2 มีโอกาสได้ 1 ใน 12 Special Item (ตัวอักษร D-O-K-A-P-O-N แบบ Arm/Guard)
+        ซึ่งใช้เสริมพลังตอนผสมอาวุธ/โล่</p>
+    </section>
+
+    <!-- 7 -->
+    <section id="dungeon">
+      <h2 class="text-xl font-bold text-navy">7. ดันเจียน · กับดัก · จับมอนสเตอร์</h2>
+      <p>แผนที่ดันเจียนสุ่มทุกครั้ง มีทางเดินแคบ (corridor) และห้องกว้าง (Room) ในห้องจะมีทางออกไปชั้นถัดไป (E),
+        ไอเทม, มอนสเตอร์ และกับดัก</p>
+
+      <h3 class="mt-4 font-bold">กับดัก (Trap)</h3>
+      <p>มองไม่เห็นด้วยตาเปล่า จะเห็นก็ต่อเมื่อเราหรือมอนสเตอร์เผลอเหยียบ
+        ป้องกันได้ด้วยสกิล AntiTrp หรือไอเทม Anti-Trap (กันได้ไม่กี่ครั้งก่อนพัง)</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th>กับดัก</th><th>ผล</th></tr></thead>
+        <tbody>
+          <tr><td>Poison</td><td>ติดพิษ HP ลด 1 ทุกเทิร์น</td></tr>
+          <tr><td>Sleep</td><td>หลับ ตื่นอีกหลายเทิร์นถัดมา</td></tr>
+          <tr><td>Land Mine</td><td>เหยียบแล้ว -25 HP</td></tr>
+          <tr><td>Black Out</td><td>ตาบอด ทั้งดันเจียนมืด มองเห็นแค่รัศมี 1 ก้าว</td></tr>
+          <tr><td>Cursed</td><td>คำสั่งเพี้ยน กดสกิล/เดินแล้วเกมอาจทำคนละอย่าง</td></tr>
+          <tr><td>Morph</td><td>กลายร่างเป็นมอนสเตอร์แบบสุ่ม ลงชั้นถัดไปจะกลับเป็นคน</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="mt-4 font-bold">ประเภทมอนสเตอร์ (จากหน้าตา)</h3>
+      <p class="text-sm">ในแต่ละเควส หน้าตากราฟิกเดียวกันจะเป็นมอนสเตอร์ตัวเดิมเสมอ เช่นงูเขียวใน Ruin Part 1 = Snaky, ลิงเหลืองใน Forest Part 2 = Monkey4</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th>หน้าตา</th><th>เป็นได้</th></tr></thead>
+        <tbody>
+          <tr><td>งูเขียว</td><td>Strider, Viper, Imago</td></tr>
+          <tr><td>ค้างคาวน้ำเงิน</td><td>ToothBat, SwordBat, Skully</td></tr>
+          <tr><td>หีบมิมิค</td><td>OldFish, FireKeg, TableDog</td></tr>
+          <tr><td>ลิงเหลือง</td><td>Monkey4</td></tr>
+          <tr><td>นกฮูก</td><td>Owl, G-Bird, Flamingo, Peacock, Ostrich</td></tr>
+          <tr><td>คางคกเขียว</td><td>Fickler</td></tr>
+          <tr><td>สัตว์ขนแดง-เหลือง</td><td>RedTiger, C-Dog, W-Tail</td></tr>
+          <tr><td>ตัวคลุมสีน้ำตาล</td><td>Lancer, Beard, OldMask, FatMask, Witch</td></tr>
+          <tr><td>โกเลมเทา</td><td>Croco</td></tr>
+          <tr><td>โจรสลัด</td><td>B-Patchy, Squashy</td></tr>
+          <tr><td>ร่างมนุษย์</td><td>Kane</td></tr>
+          <tr><td>ผี</td><td>B-Spirit, GhostArm, Candler</td></tr>
+          <tr><td>โครงกระดูกหัวแดง</td><td>Bone-Rat</td></tr>
+          <tr><td>ปูแดง</td><td>Mantis</td></tr>
+          <tr><td>ผึ้ง 3 ตัว</td><td>Bee Moth</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="mt-4 font-bold">จับมอนสเตอร์เป็นพันธมิตร</h3>
+      <ol class="ml-5 list-decimal space-y-1">
+        <li>เตรียม Food (เหยื่อล่อ), Trapper (กับดัก) และควรมี Homer ติดตัว</li>
+        <li>หามอนสเตอร์ที่ต้องการ วาง Trapper พร้อมเหยื่อ Food (วางในทางเดินก็ได้ อาจต้องลองหลายรอบ)</li>
+        <li>เมื่อมอนสเตอร์ติดกับ (จะหมุนติ้วอยู่ในกับดัก) เข้าสู้</li>
+        <li>เอาชนะมัน แล้วเลือกให้มันเข้าร่วม (บอสเข้าร่วมไม่ได้)</li>
+      </ol>
+      <p class="text-sm text-muted">เทคนิค: หนีจากการต่อสู้ก่อน แล้วระหว่าง Hero กระพริบตัว ให้เดินห่างมอนสเตอร์แต่อยู่ในห้องเดิม วางกับดัก แล้วกด A รัวๆ เพื่อล่อ ·
+        มอนสเตอร์พันธมิตรอัปเลเวลได้จากการสู้เคียงข้างเรา แต่ถ้าตายในสนามคือหายถาวร · สกิลของมันสุ่ม ถ้าได้ No Blow / Halo ถือว่าโชคดีมาก</p>
+    </section>
+
+    <!-- 8 -->
+    <section id="walk">
+      <h2 class="text-xl font-bold text-navy">8. เดินเรื่องทุกเควส</h2>
+      <p class="text-sm text-muted">ตอนนี้มีรายละเอียดชั้น/มอนสเตอร์ครบถึงเควส Ruin Part 1 และ SE-Point (Lighthouse) · ส่วน Circus / Forest Part 2 / Ruin Part 2 ยังไม่มีรายละเอียดชั้น จะทยอยเพิ่มภายหลัง</p>
+      <figure class="my-4">
+        <img src="img/dokapon-boss-damien-vira.png" alt="ฉากประกาศสู้บอส Damien และ Vira ในเควส Ruin Part 1"
+          loading="lazy" class="mx-auto w-full max-w-xs rounded border-2 border-ink shadow-pop-sm">
+        <figcaption class="mt-2 text-center text-xs text-muted">ฉากเปิดฉากสู้บอส Damien + Vira ใน Ruin Part 1 (ตัวอย่างจริงจากในเกม)</figcaption>
+      </figure>
+
+      <h3 class="mt-5 font-bold text-accent">Prologue + มินิเกม “ตีพ่อค้า”</h3>
+      <p>เรื่องเริ่มที่เมือง Poponga เด็กชายอายุครบ 11 ปี เดินไปที่ <b>3A</b> เพื่อสอบเป็นนักผจญภัย</p>
+      <p><b>Attack Shopkeeper</b>: ที่ร้านค้าเลือก Attack ได้ พ่อค้าจะถามยืนยัน ถ้าเอาจริงจะเข้าเกมเป่ายิ้งฉุบ
+        ชนะ = ได้ไอเทม/อาวุธ/โล่แบบสุ่ม 1 ชิ้น · แพ้ = พ่อค้าเรียกยาม (มี 6 คน เติมใหม่เรื่อยๆ เมื่อออก-เข้าจอ)
+        เราจะถูกไล่ วิ่งรอบเมืองได้แต่สุดท้ายจะโดน Guardman จับเข้าสู้ (ไม่มีคำสั่งหนี)
+        ถ้าเจอ 2 คน (BigBoss + Guardman) แทบเอาตัวไม่รอด เลเวลต่ำโดนตีทีละ 1 HP
+        <br>ถ้ารอดมาได้ ให้รีบออกจากเมืองไป <b>Mine</b> ลงไป B4F แล้วใช้เครื่องเทเลพอร์ตออก จะวาร์ปกลับโบสถ์และเมืองกลับเป็นปกติ</p>
+
+      <h3 class="mt-5 font-bold text-accent">เควส 1 — The Mine</h3>
+      <p><b>เตรียมตัว:</b> คุยชาวเมือง + นายก Louie / ชั้น 2 Bar คุย Rank D รับ Recover1 / โบสถ์คุยคุณยายรับ Revival / แวะร้านค้า
+        แล้วไป 3A รับงานจาก Jacob: เอา &lt;Diramond&gt; จากเหมือง · ระวังบอส <b>Boss Mole</b> · ทางออกอยู่ทางใต้ของเมือง</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th>ชั้น</th><th>มอนสเตอร์</th></tr></thead>
+        <tbody>
+          <tr><td>B1F</td><td>Spore, Weasel</td></tr>
+          <tr><td>B2F</td><td>Spore, Weasel, Miner1, Miner2</td></tr>
+          <tr><td>B3F</td><td>Miner1, Miner2, Strider</td></tr>
+          <tr><td>B4F</td><td><b>Boss Mole</b> (บอส)</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-2"><b>เลเวลแนะนำ:</b> Lv1–7 · เซฟและฮีลให้เต็มก่อนลง B4F เพราะพอถึงชั้นจะเข้าสู้บอสทันทีไม่มีจังหวะฮีล
+        ชนะแล้วได้ &lt;Diramond&gt; และออกจากดันเจียนอัตโนมัติ</p>
+      <p class="text-sm text-muted">หลังจบเควสนี้กลับมาฟาร์มเลเวลได้ · สู้ Boss Mole ซ้ำได้ (รอบนี้มีพันธมิตร Phon-Du) จบแล้วมันจะพูดว่า “Bring Keiko and come back anytime”</p>
+
+      <h3 class="mt-5 font-bold text-accent">เควส 2 — Forest Part 1</h3>
+      <p><b>เตรียมตัว:</b> คุยชาวเมือง · โบสถ์รับ Revival · ชั้น 2 Bar รับ Trapper จาก Rank D · ร้านค้าซื้อ Food →
+        เริ่มลองจับมอนสเตอร์เป็นพันธมิตรได้แล้ว</p>
+      <p><b>เป้าหมาย:</b> พาลูกสาวของ Tobia กลับบ้าน · <b>เลเวลแนะนำ:</b> Lv7–11</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th>โซน</th><th>มอนสเตอร์</th></tr></thead>
+        <tbody>
+          <tr><td>Area 1</td><td>Viper, WoodStag, Owl</td></tr>
+          <tr><td>Area 2</td><td>Viper, WoodStag, Owl, G-Bird</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-2">ผ่าน 2 โซนป่าไปจะเจอฉาก Friend แอบดูใครบางคนอยู่หลังเสา คนนั้นเดินเข้าซากปรักหักพัง Friend อยากรู้เลยตามเข้าไป
+        เราจำเป็นต้องตามเข้าไปในซาก (ต่อเนื่องเป็นเควส 3)</p>
+
+      <h3 class="mt-5 font-bold text-accent">เควส 3 — Ruin Part 1</h3>
+      <p><b>เป้าหมาย:</b> พาลูกสาวของ Tobia กลับบ้าน · <b>เลเวลแนะนำ:</b> Lv11–14</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th>ชั้น</th><th>มอนสเตอร์</th></tr></thead>
+        <tbody>
+          <tr><td>B1F</td><td>Owl, Ostrich, ToothBat</td></tr>
+          <tr><td>B2F</td><td>Owl, Ostrich, ToothBat, Lancer, Leafman</td></tr>
+          <tr><td>B3F</td><td>Ostrich, ToothBat, Lancer, Leafman, LeafGang</td></tr>
+          <tr><td>B4F–B6F</td><td>ToothBat, Lancer, Leafman, LeafGang, Beard</td></tr>
+          <tr><td>B7F</td><td><b>Patchy</b>, <b>Damien</b>, <b>Vira</b> (บอส)</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-2">ลึก 7 ชั้น ฟาร์มเลเวลให้ดีเพราะเจอบอส 2 ยกติด: ยกแรกโจรสลัด 2 ตัว (<b>Patchy</b>)
+        ตามด้วยบอสใหญ่ (<b>Damien</b> + <b>Vira</b>) แต่ละยกมีพันธมิตรช่วย
+        จบแล้วถูกพากลับเมืองรับค่าจ้างจาก Jacob</p>
+
+      <h3 class="mt-5 font-bold text-accent">เควส 4–6 — Circus / Forest Part 2 / Ruin Part 2</h3>
+      <p class="text-sm text-muted">ยังไม่มีรายละเอียดชั้น/มอนสเตอร์ของ 3 เควสนี้ (จะทยอยเพิ่มภายหลัง)
+        เท่าที่รู้ตอนนี้: หลังจบ <b>Circus</b> ถึงจะใช้บริการช่างตีเหล็กได้ และได้ชุด Pierrot จาก Friend ·
+        มอนสเตอร์ประจำ Forest Part 2 เช่น Monkey4 (ลิงเหลือง) · Special Item เริ่มดรอปหลังจบ <b>Ruin Part 2</b> ·
+        บอสที่เกี่ยวข้องช่วงนี้: <b>Golem / BigCroco</b> (Forest Part 2), <b>A-Damien</b> (Circus), <b>MaskBird / Laboss</b></p>
+
+      <h3 class="mt-5 font-bold text-accent">เควส 7 — SE-Point (ประภาคาร / Lighthouse)</h3>
+      <p><b>เตรียมตัว:</b> คุย Friend รับ CurseOff · Rank D ชั้น 2 Bar รับ Invisi · ควรพก Store-It, Homer, Food, Trapper</p>
+      <p><b>เป้าหมาย:</b> จุดไฟประภาคาร · <b>เลเวลแนะนำ:</b> Lv24–26</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th>ชั้น</th><th>มอนสเตอร์</th></tr></thead>
+        <tbody>
+          <tr><td>1F–2F</td><td>FireKeg, TableDog, B-Spirit, Bone-Rat, Skully, Squashy</td></tr>
+          <tr><td>3F</td><td>+ C-Dog, Imago</td></tr>
+          <tr><td>4F</td><td>+ C-Dog, Imago, Witch</td></tr>
+          <tr><td>5F</td><td>ไม่มีมอนสเตอร์ — มีเครื่องเทเลพอร์ตกลับเมือง (เติมของ/ตีเหล็กได้ที่นี่)</td></tr>
+          <tr><td>6F</td><td>B-Spirit, Bone-Rat, C-Dog, Imago, Witch</td></tr>
+          <tr><td>7F</td><td>+ Mantis</td></tr>
+          <tr><td>8F</td><td>+ Mantis, Bee Moth, W-Tail, GhostArm</td></tr>
+          <tr><td>9F</td><td>B-Spirit, Bee Moth, GhostArm, Candler</td></tr>
+          <tr><td>10F</td><td>B-Spirit, <b>Marshy</b>, <b>L-Marshy</b> (บอส)</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-2">ที่ทางเข้าประภาคาร <b>Marshy</b> โผล่มาขวาง→ สู้ ชนะแล้วมันหายไปเปิดทางให้
+        ประภาคารมี 10 ชั้น มอนสเตอร์บางตัวมีสกิลอาวุธฆ่าเราได้ในตีเดียว
+        ชั้น 6 ขึ้นไปของมีค่ามากขึ้น พก Store-It ไว้จะได้เปรียบ ·
+        GhostArm ดรอป Dark-S · Mantis สเตตัสดี น่าจับ</p>
+      <p><b>ชั้น 9:</b> ฮีลให้เต็ม เจอบอส 2 ยกติด — <b>Marshy</b> + พันธมิตร B-Spirit แล้ว <b>L-Marshy</b> + น้อง Marshy
+        ชนะ L-Marshy แล้วจุดไฟได้ กลับเมืองรับ 8000 เงินจาก Jacob ซึ่งจะแนะนำให้ไปขออนุญาตนายก Louie
+        เพื่อขึ้นเขาไปท้า <b>Tower</b> สอบใบอนุญาต Rank D</p>
+
+      <h3 class="mt-5 font-bold text-accent">เควส 8 — Tower</h3>
+      <p>ทำธุระในเมืองตามปกติ ไปชั้น 2 Bar คุย Rank D รับ <b>Homer</b> · (รายละเอียดชั้นของ Tower จะเพิ่มภายหลัง)</p>
+    </section>
+
+    <!-- 9 -->
+    <section id="optboss">
+      <h2 class="text-xl font-bold text-navy">9. บอสทางเลือก (โหดมาก)</h2>
+      <p><b>BigBoss</b> และ <b>Guardman</b> เป็นบอสทางเลือก ไม่ต้องล้มก็จบเกมได้
+        เจอตอนปล้นพ่อค้าแล้วแพ้ · <b>ถ้าแพ้จะเสียไอเทมทั้งหมดในกระเป๋า</b>
+        ที่ Lv50 ก็แทบเป็นไปไม่ได้ ต้องอาศัยดวงล้วนๆ ว่ามันจะไม่ใช้โจมตีพื้นฐาน (ซึ่งมักฆ่าเราตีเดียว)</p>
+      <div class="relative my-4 flex overflow-hidden rounded-lg border-2 border-ink shadow-pop-sm">
+        <div class="flex-1 bg-card p-4 text-center">
+          <p class="pix text-[8px] text-muted">บอสทางเลือก</p>
+          <p class="mt-1 text-base font-bold text-ink">BigBoss</p>
+          <p class="mt-1 text-xs text-muted">HP 325–375</p>
+        </div>
+        <div class="flex w-10 shrink-0 items-center justify-center bg-accent">
+          <span class="pix text-[9px] text-white">VS</span>
+        </div>
+        <div class="flex-1 bg-card p-4 text-center">
+          <p class="pix text-[8px] text-muted">บอสทางเลือก</p>
+          <p class="mt-1 text-base font-bold text-ink">Guardman</p>
+          <p class="mt-1 text-xs text-muted">HP 225–260</p>
+        </div>
+      </div>
+      <p class="text-center text-xs text-muted">การ์ดเทียบสถิติคร่าวๆ (จัดทำขึ้นประกอบบทสรุป ไม่ใช่ภาพจากเกม)</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th></th><th>BigBoss</th><th>Guardman</th></tr></thead>
+        <tbody>
+          <tr><td>HP</td><td>~325–375 (แปรตามเลเวลเรา)</td><td>~225–260</td></tr>
+          <tr><td>สกิลอาวุธ</td><td>Smasher, 2X Smash(ม่วง), DF-Lock2(แดง), Big Bomb(เหลือง)</td><td>Knuckler, A-Smash(ม่วง), AT-Lock(แดง), LimitHit</td></tr>
+          <tr><td>สกิลโล่</td><td>Yell, HardWall(ม่วง), 2X Back(แดง), Restore(เหลือง)</td><td>Duck, BombWall(ม่วง), FallBack(แดง), FullCure(เหลือง)</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-3"><b>กลยุทธ์ (ใช้ได้กับทั้งคู่):</b></p>
+      <ol class="ml-5 list-decimal space-y-1">
+        <li>ก่อนสู้ ใช้ Harder ใส่ตัวเอง · ควรมี Magiceye, Recover2, Harder อย่างละ 2</li>
+        <li>ต้องได้โจมตีก่อน 3 เทิร์นแรกยิงตามลำดับ: <b>1/5 Hit → Defender → 1/5 Hit</b></li>
+        <li>อย่าใช้โจมตีพื้นฐานเด็ดขาด (เข้าแค่ 1–2 HP)</li>
+        <li>หลังจากนั้นเหลือ ~10–13 HP → ปิดท้ายด้วย <b>1/2 Back</b></li>
+      </ol>
+      <p class="text-sm text-muted">ทางเลือก (Guardman): 1/5 Hit → Defender → Risk Hit — ใช้เมื่อมั่นใจว่าเหลืออีก 1 เทิร์นชนะ และได้ผลเฉพาะตอนมันเลือกตั้งรับพื้นฐาน (Risk Hit เข้า ~64 HP)</p>
+      <p class="mt-2 text-sm">สกิลแนะนำสำหรับสู้บอสกลุ่มนี้: อาวุธ = Risk Hit(ม่วง), 1/5 Hit(แดง) · โล่ = 1/2 Back(ม่วง), Defender(แดง), FullCure(เหลือง)</p>
+      <p class="mt-3 text-sm"><b>Marshy</b> (บอสประภาคาร) — สกิลแนะนำ: อาวุธ Triple(ม่วง)/HealGet(แดง) · โล่ Mega-Up(ม่วง)/Defender(แดง)/FullCure(เหลือง)</p>
+    </section>
+
+    <!-- 10 -->
+    <section id="smith">
+      <h2 class="text-xl font-bold text-navy">10. ช่างตีเหล็ก · สูตรผสม</h2>
+      <div class="my-4 flex flex-wrap items-center justify-center gap-2 rounded-lg border-2 border-edge bg-card p-4 text-center text-sm shadow-pop-sm">
+        <div class="rounded border-2 border-ink bg-paper px-3 py-2 font-bold">X-Sword</div>
+        <span class="pix text-accent">+</span>
+        <div class="rounded border-2 border-ink bg-paper px-3 py-2 font-bold">RedSword</div>
+        <span class="pix text-accent">=</span>
+        <div class="rounded border-2 border-go bg-paper px-3 py-2 font-bold text-go">XX-Sword</div>
+      </div>
+      <p class="text-center text-xs text-muted">ตัวอย่างสูตรผสม 1 สูตรจากตารางด้านล่าง (จัดทำขึ้นประกอบบทสรุป ไม่ใช่ภาพจากเกม)</p>
+      <p><b>เงื่อนไข:</b> ต้องมีอาวุธ/โล่อย่างน้อย 2 ชิ้นในกระเป๋า และมีเงินพอ · คุยกับ Tobia ที่ Quick Smith (ปลดล็อกหลังเควส Circus)</p>
+      <p>เลือกอาวุธ/โล่ 2 ชิ้น ผลลัพธ์โชว์ทางขวา ถ้าพอใจกด OK แล้วหักเงิน
+        วางชิ้นที่อยากเก็บสกิลไว้เป็น “ชิ้นที่ 1” (ชิ้นฐาน) ตอนได้สกิลจะเลือกสลับสกิลของผลลัพธ์กับสกิลของชิ้นฐานได้
+        ถ้าชิ้นที่ 2 ขึ้นไฮไลต์สีน้ำเงิน = คู่ที่ดีที่สุด (ได้เวอร์ชันอัปเกรดหรือฟอร์มแรงกว่า เช่น X-Sword + RedSword = XX-Sword)
+        · การสร้างจะบันทึกผลลัพธ์ลงเซฟทันที (รีเซ็ตก็ไม่หาย)</p>
+
+      <h3 class="mt-4 font-bold">สูตรผสมอาวุธ (เรียงตามผลลัพธ์)</h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>อาวุธ 1</th><th>อาวุธ 2</th><th>ผลลัพธ์</th></tr></thead>
+        <tbody>
+          <tr><td>RedSword</td><td>G-Bow / S-Sword</td><td>X-Sword</td></tr>
+          <tr><td>Magic Rod</td><td>Red Ax</td><td>X-Sword</td></tr>
+          <tr><td>X-Sword</td><td>RedSword</td><td>XX-Sword</td></tr>
+          <tr><td>Heavy Ax</td><td>G-Bow</td><td>S-Sword</td></tr>
+          <tr><td>Shelly</td><td>Tomahawk</td><td>Trident</td></tr>
+          <tr><td>Magic Rod</td><td>WaterGun</td><td>Trident</td></tr>
+          <tr><td>XX-Sword</td><td>Eggy / Rock-It</td><td>Trident</td></tr>
+          <tr><td>XX-Sword</td><td>Tomahawk</td><td>RedSword</td></tr>
+          <tr><td>BatSpear</td><td>X-Sword</td><td>RedSword</td></tr>
+          <tr><td>XX-Sword</td><td>X-Sword</td><td>L-Spear</td></tr>
+          <tr><td>XX-Sword</td><td>RedSword</td><td>G-Bow</td></tr>
+          <tr><td>Magic Rod</td><td>IronCraw</td><td>G-Bow</td></tr>
+          <tr><td>XX-Sword</td><td>S-Sword</td><td>Gear Ax</td></tr>
+          <tr><td>Shelly</td><td>Red Ax / S-Sword</td><td>Gear Ax</td></tr>
+          <tr><td>D-Hand</td><td>X-Sword / Barrel / IronClaw</td><td>Gear Ax</td></tr>
+          <tr><td>Eggy</td><td>Rock-It</td><td>Gear Ax</td></tr>
+          <tr><td>Gear Ax</td><td>BatSpear</td><td>Heavy Ax (057)</td></tr>
+          <tr><td>Eggy</td><td>Tomahawk</td><td>Barrel</td></tr>
+          <tr><td>Heavy Ax</td><td>S-Sword</td><td>Barrel</td></tr>
+          <tr><td>Shelly / W-Sword / Moon Bow</td><td>X-Sword / D-Hand</td><td>BatSpear</td></tr>
+          <tr><td>W-Sword</td><td>Tomahawk</td><td>HalBerd (043)</td></tr>
+          <tr><td>W-Sword / Revolver / BatSpear</td><td>Gear Ax / RedSword</td><td>Moon Bow (090)</td></tr>
+          <tr><td>Magic Rod</td><td>G-Bow</td><td>Moon Bow</td></tr>
+          <tr><td>Heavy Ax</td><td>X-Sword / Shelly</td><td>G-Chain (076)</td></tr>
+          <tr><td>Moon Bow</td><td>Barrel</td><td>G-Chain</td></tr>
+          <tr><td>Moon Bow</td><td>RedSword</td><td>Star Rod (069)</td></tr>
+          <tr><td>Magic Bow</td><td>Shelly</td><td>Star Rod</td></tr>
+          <tr><td>Revolver</td><td>TriSword</td><td>S-Spear (044)</td></tr>
+          <tr><td>Moon Bow</td><td>X-Sword</td><td>S-Spear</td></tr>
+          <tr><td>Moon Bow</td><td>WaterGun / Red Ax</td><td>Fang (006)</td></tr>
+          <tr><td>Moon Bow</td><td>Red Ax</td><td>Cross (008)</td></tr>
+          <tr><td>Moon Bow</td><td>Tomahawk</td><td>Arabic</td></tr>
+          <tr><td>Hatchet</td><td>S-Sword / Magic Rod</td><td>Tomahawk</td></tr>
+          <tr><td>BatSpear</td><td>D-Hand</td><td>Tomahawk</td></tr>
+          <tr><td>Heavy Ax / Gear Ax</td><td>Tomahawk / Shelly</td><td>Ring Ax</td></tr>
+          <tr><td>Gear Ax</td><td>X-Sword</td><td>Spike</td></tr>
+          <tr><td>Magic Rod / Revolver / D-Hand</td><td>Saw / Trident / RedSword</td><td>Shelly</td></tr>
+          <tr><td>D-Hand / BatSpear / Heavy Ax</td><td>G-Bow / Shelly / RedSword</td><td>PenKnife</td></tr>
+          <tr><td>BatSpear / D-Hand</td><td>G-Bow / Heavy Ax / Star Rod</td><td>Dagger</td></tr>
+          <tr><td>D-Hand</td><td>Tomahawk</td><td>TriSword</td></tr>
+          <tr><td>TriSword / BatSpear / Heavy Ax</td><td>Gear Ax / S-Sword / Red Ax</td><td>D-Hand</td></tr>
+          <tr><td>BatSpear / Moon Bow</td><td>Tomahawk / Gear Ax</td><td>Eggy</td></tr>
+          <tr><td>BatSpear / Revolver</td><td>Red Ax / Tomahawk</td><td>W-Sword (024)</td></tr>
+          <tr><td>W-Sword</td><td>Buring</td><td>Revolver (083)</td></tr>
+          <tr><td>Revolver</td><td>D-Hand</td><td>Red Ax</td></tr>
+          <tr><td>Star Rod</td><td>Ocarina</td><td>IronBall</td></tr>
+          <tr><td>Star Rod</td><td>Gear Ax</td><td>Bowie</td></tr>
+          <tr><td>Star Rod</td><td>Tomahawk</td><td>Magic Rod (068)</td></tr>
+          <tr><td>Buring / Magic Rod</td><td>XX-Sword / S-Sword</td><td>Sceptor2 (067)</td></tr>
+          <tr><td>Magic Rod</td><td>Barrel</td><td>Paw (093)</td></tr>
+          <tr><td>Magic Rod</td><td>Bowie</td><td>Lance</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3 class="mt-5 font-bold">สูตรผสมโล่ (เรียงตามผลลัพธ์)</h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>โล่ 1</th><th>โล่ 2</th><th>ผลลัพธ์</th></tr></thead>
+        <tbody>
+          <tr><td>Mirror-S</td><td>Face-S</td><td>Shield</td></tr>
+          <tr><td>Mirror-S</td><td>Plume-S</td><td>Metal-S (030)</td></tr>
+          <tr><td>Mirror-S / Guard-S</td><td>Buckler3 / Oak-S</td><td>Buckler</td></tr>
+          <tr><td>Mirror-S</td><td>Pirate-S</td><td>Buckler2</td></tr>
+          <tr><td>Guard-S</td><td>Steel-S</td><td>Peacock</td></tr>
+          <tr><td>Peacock</td><td>Iron-S</td><td>Plume-S</td></tr>
+          <tr><td>Peacock / Mirror-S / Guard-S</td><td>Kiwi-S / Oak-S / Guard</td><td>Bird-S</td></tr>
+          <tr><td>Guard-S</td><td>Face-S / Plume-S</td><td>Scale-S</td></tr>
+          <tr><td>Peacock</td><td>Slate-S</td><td>Shell-S</td></tr>
+          <tr><td>Peacock</td><td>Oak-S / Buckler1</td><td>Wood-S</td></tr>
+          <tr><td>Peacock</td><td>Buckler2</td><td>Oak-S</td></tr>
+          <tr><td>Peacock / Guard-S</td><td>Mask-S / Slate-S</td><td>Pirate-S</td></tr>
+          <tr><td>Peacock / Guard-S</td><td>Steel-S / Face-S / Iron-S / Pirate-S</td><td>Buckler3</td></tr>
+          <tr><td>Mirror-S / Horse-S / Crystal</td><td>Slate-S / Kiwi-S / Crystal / Face-S</td><td>Dark-S</td></tr>
+          <tr><td>Horse-S</td><td>Kiwi-S</td><td>Bull-S</td></tr>
+          <tr><td>Horse-S / Bolt-S</td><td>Pirate-S / Buckler3</td><td>Steel-S</td></tr>
+          <tr><td>Pirate-S</td><td>Buckler3</td><td>Face-S</td></tr>
+          <tr><td>Bolt-S / Mirror-S</td><td>Pirate-S / Horse-S / Steel-S</td><td>Iron-S</td></tr>
+          <tr><td>Buckler3 / Guard-S</td><td>Kiwi-S / Crystal / Buckler3</td><td>Guard</td></tr>
+          <tr><td>Crystal</td><td>Guard</td><td>Guard-S</td></tr>
+          <tr><td>Guard / Guard-S / Dark-S / Mirror-S</td><td>Kiwi-S / Horse-S / Pirate-S / Guard / Iron-S</td><td>Bolt-S</td></tr>
+          <tr><td>Dark-S</td><td>Crystal</td><td>Slate-S</td></tr>
+          <tr><td>Guard-S / Mirror-S</td><td>Kiwi-S / Guard</td><td>Crystal</td></tr>
+          <tr><td>Guard-S / Crystal</td><td>Dark-S / Horse-S</td><td>Mirror-S</td></tr>
+          <tr><td>Face-S</td><td>Buckler2</td><td>Mask-S</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3 class="mt-5 font-bold">สูตร Special Item (Guard)</h3>
+      <table class="wt-table mt-2">
+        <thead><tr><th>ชิ้น 1</th><th>ชิ้น 2</th><th>ผลลัพธ์</th></tr></thead>
+        <tbody>
+          <tr><td>P-Guard</td><td>P-Guard</td><td>N-Guard</td></tr>
+          <tr><td>P-Guard</td><td>A-Guard</td><td>O-Guard</td></tr>
+          <tr><td>O-Guard</td><td>K-Guard</td><td>A-Guard</td></tr>
+          <tr><td>K-Guard</td><td>A-Guard</td><td>P-Guard</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 11 -->
+    <section id="ref">
+      <h2 class="text-xl font-bold text-navy">11. ตารางอ้างอิง</h2>
+
+      <h3 class="mt-4 font-bold">Monster Album <span class="text-sm font-normal text-muted">(เฉพาะที่มีข้อมูล · ชื่อในวงเล็บ [ ] = บอส)</span></h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>No.</th><th>Name</th><th>Lv</th><th>HP</th><th>Exp</th><th>Money</th><th>AT</th><th>DF</th><th>SP</th><th>ดรอป</th></tr></thead>
+        <tbody>
+          <tr><td>001</td><td>Spore</td><td>1</td><td>3</td><td>1</td><td>5</td><td>3</td><td>2</td><td>1</td><td></td></tr>
+          <tr><td>002</td><td>Weasel</td><td>1</td><td>5</td><td>2</td><td>8</td><td>4</td><td>3</td><td>4</td><td></td></tr>
+          <tr><td>003</td><td>Miner1</td><td>2</td><td>5</td><td>3</td><td>16</td><td>7</td><td>6</td><td>5</td><td></td></tr>
+          <tr><td>004</td><td>Miner2</td><td>2</td><td>8</td><td>3</td><td>13</td><td>9</td><td>4</td><td>5</td><td></td></tr>
+          <tr><td>005</td><td>P-Bear</td><td>3</td><td>15</td><td>4</td><td>10</td><td>10</td><td>7</td><td>3</td><td></td></tr>
+          <tr><td>006</td><td>Slime</td><td>3</td><td>12</td><td>4</td><td>11</td><td>8</td><td>5</td><td>9</td><td></td></tr>
+          <tr><td>007</td><td>Mushy</td><td>4</td><td>16</td><td>5</td><td>12</td><td>9</td><td>10</td><td>6</td><td></td></tr>
+          <tr><td>008</td><td>Mole</td><td>5</td><td>17</td><td>6</td><td>15</td><td>12</td><td>13</td><td>6</td><td></td></tr>
+          <tr><td>009</td><td>Phon-Du</td><td>5</td><td>20</td><td>8</td><td>22</td><td>15</td><td>15</td><td>8</td><td></td></tr>
+          <tr><td>010</td><td>Strider</td><td>6</td><td>14</td><td>10</td><td>3</td><td>17</td><td>5</td><td>15</td><td></td></tr>
+          <tr><td>011</td><td>[Boss Mole]</td><td>9</td><td>25</td><td>28</td><td>60</td><td>22</td><td>17</td><td>14</td><td></td></tr>
+          <tr><td>012</td><td>Viper</td><td>6</td><td>19</td><td>7</td><td>15</td><td>17</td><td>12</td><td>10</td><td></td></tr>
+          <tr><td>013</td><td>WoodStag</td><td>7</td><td>26</td><td>8</td><td>13</td><td>15</td><td>20</td><td>5</td><td></td></tr>
+          <tr><td>014</td><td>Owl</td><td>7</td><td>18</td><td>10</td><td>20</td><td>19</td><td>16</td><td>15</td><td></td></tr>
+          <tr><td>015</td><td>Leafman</td><td>8</td><td>25</td><td>11</td><td>16</td><td>20</td><td>19</td><td>4</td><td></td></tr>
+          <tr><td>016</td><td>Snaky</td><td>9</td><td>33</td><td>10</td><td>22</td><td>23</td><td>8</td><td>11</td><td></td></tr>
+          <tr><td>017</td><td>Ostrich</td><td>10</td><td>22</td><td>13</td><td>25</td><td>21</td><td>16</td><td>26</td><td></td></tr>
+          <tr><td>018</td><td>Toothbat</td><td>10</td><td>35</td><td>14</td><td>30</td><td>25</td><td>18</td><td>20</td><td></td></tr>
+          <tr><td>019</td><td>Lancer</td><td>11</td><td>38</td><td>17</td><td>28</td><td>24</td><td>25</td><td>18</td><td>Spear</td></tr>
+          <tr><td>020</td><td>G-Bird</td><td>11</td><td>40</td><td>16</td><td>33</td><td>27</td><td>26</td><td>19</td><td></td></tr>
+          <tr><td>021</td><td>Beard</td><td>12</td><td>37</td><td>20</td><td>37</td><td>22</td><td>32</td><td>15</td><td></td></tr>
+          <tr><td>022</td><td>Leafer</td><td>13</td><td>42</td><td>24</td><td>46</td><td>29</td><td>33</td><td>23</td><td></td></tr>
+          <tr><td>023</td><td>LeafGang</td><td>14</td><td>48</td><td>28</td><td>51</td><td>32</td><td>37</td><td>26</td><td></td></tr>
+          <tr><td>024</td><td>[Patchy]</td><td>15</td><td>55</td><td>30</td><td>36</td><td>36</td><td>40</td><td>22</td><td></td></tr>
+          <tr><td>025</td><td>[Damien]</td><td>18</td><td>70</td><td>42</td><td>115</td><td>45</td><td>31</td><td>20</td><td></td></tr>
+          <tr><td>026</td><td>[Vira]</td><td>18</td><td>60</td><td>50</td><td>0</td><td>40</td><td>33</td><td>27</td><td></td></tr>
+          <tr><td>027</td><td>Twirier</td><td>13</td><td>45</td><td>22</td><td>56</td><td>26</td><td>29</td><td>20</td><td></td></tr>
+          <tr><td>028</td><td>Moo Shu</td><td>14</td><td>32</td><td>25</td><td>70</td><td>30</td><td>40</td><td>11</td><td></td></tr>
+          <tr><td>029</td><td>Assassin</td><td>15</td><td>42</td><td>26</td><td>68</td><td>35</td><td>25</td><td>29</td><td>IronClaw</td></tr>
+          <tr><td>030</td><td>IronLion</td><td>15</td><td>53</td><td>28</td><td>72</td><td>33</td><td>39</td><td>22</td><td></td></tr>
+          <tr><td>031</td><td>Juggler</td><td>16</td><td>47</td><td>31</td><td>77</td><td>32</td><td>33</td><td>24</td><td></td></tr>
+          <tr><td>032</td><td>Jacky</td><td>16</td><td>51</td><td>30</td><td>82</td><td>35</td><td>32</td><td>28</td><td></td></tr>
+          <tr><td>033</td><td>Minie</td><td>17</td><td>18</td><td>33</td><td>90</td><td>44</td><td>28</td><td>33</td><td></td></tr>
+          <tr><td>034</td><td>Unicorn</td><td>18</td><td>64</td><td>38</td><td>60</td><td>38</td><td>35</td><td>21</td><td></td></tr>
+          <tr><td>035</td><td>Godfire</td><td>18</td><td>58</td><td>38</td><td>81</td><td>46</td><td>38</td><td>20</td><td></td></tr>
+          <tr><td>036</td><td>Bomber</td><td>19</td><td>56</td><td>36</td><td>85</td><td>42</td><td>40</td><td>23</td><td></td></tr>
+          <tr><td>037</td><td>B-Patchy</td><td>20</td><td>60</td><td>40</td><td>36</td><td>41</td><td>39</td><td>30</td><td></td></tr>
+          <tr><td>038</td><td>[W-Patchy]</td><td>20</td><td>66</td><td>44</td><td>36</td><td>43</td><td>32</td><td>27</td><td></td></tr>
+          <tr><td>040</td><td>[A-Damien]</td><td>25</td><td>108</td><td>68</td><td>580</td><td>60</td><td>62</td><td>8</td><td></td></tr>
+          <tr><td>041</td><td>[Vira]</td><td>29</td><td>77</td><td>73</td><td>0</td><td>68</td><td>60</td><td>44</td><td></td></tr>
+          <tr><td>042</td><td>Flamingo</td><td>20</td><td>50</td><td>42</td><td>84</td><td>39</td><td>45</td><td>29</td><td></td></tr>
+          <tr><td>043</td><td>Peacock</td><td>22</td><td>61</td><td>43</td><td>108</td><td>43</td><td>45</td><td>32</td><td>Peacock-S</td></tr>
+          <tr><td>044</td><td>Monkey4</td><td>23</td><td>64</td><td>45</td><td>91</td><td>46</td><td>41</td><td>26</td><td></td></tr>
+          <tr><td>045</td><td>Swordbat</td><td>24</td><td>57</td><td>45</td><td>99</td><td>50</td><td>33</td><td>35</td><td></td></tr>
+          <tr><td>046</td><td>Kane (Human)</td><td>25</td><td>70</td><td>48</td><td>111</td><td>55</td><td>50</td><td>28</td><td></td></tr>
+          <tr><td>047</td><td>Fickler</td><td>26</td><td>55</td><td>51</td><td>101</td><td>58</td><td>47</td><td>13</td><td></td></tr>
+          <tr><td>048</td><td>RedTiger</td><td>26</td><td>75</td><td>57</td><td>115</td><td>64</td><td>42</td><td>30</td><td></td></tr>
+          <tr><td>056</td><td>[MaskBird]</td><td>35</td><td>90</td><td>80</td><td>111</td><td>70</td><td>55</td><td>39</td><td></td></tr>
+          <tr><td>057</td><td>[BigCroco]</td><td>37</td><td>116</td><td>88</td><td>137</td><td>76</td><td>115</td><td>1</td><td></td></tr>
+          <tr><td>058</td><td>[Laboss]</td><td>42</td><td>158</td><td>95</td><td>200</td><td>81</td><td>67</td><td>33</td><td></td></tr>
+          <tr><td>059</td><td>Bone-Rat</td><td>32</td><td>71</td><td>75</td><td>122</td><td>57</td><td>44</td><td>44</td><td>Food</td></tr>
+          <tr><td>060</td><td>FireKeg</td><td>33</td><td>90</td><td>77</td><td>134</td><td>61</td><td>40</td><td>19</td><td>Barrel</td></tr>
+          <tr><td>061</td><td>TableDog</td><td>34</td><td>108</td><td>79</td><td>131</td><td>65</td><td>70</td><td>28</td><td>Speeder</td></tr>
+          <tr><td>062</td><td>Squashy</td><td>35</td><td>83</td><td>80</td><td>36</td><td>63</td><td>50</td><td>36</td><td>Food</td></tr>
+          <tr><td>063</td><td>Skully</td><td>36</td><td>69</td><td>80</td><td>137</td><td>72</td><td>56</td><td>39</td><td>Compass</td></tr>
+          <tr><td>064</td><td>Imago</td><td>37</td><td>125</td><td>84</td><td>142</td><td>68</td><td>53</td><td>21</td><td>Harder</td></tr>
+          <tr><td>065</td><td>C-Dog</td><td>38</td><td>103</td><td>85</td><td>150</td><td>77</td><td>48</td><td>42</td><td>Antidote</td></tr>
+          <tr><td>066</td><td>Witch</td><td>39</td><td>111</td><td>87</td><td>166</td><td>67</td><td>57</td><td>38</td><td>Trapper</td></tr>
+          <tr><td>067</td><td>W-Tail</td><td>39</td><td>104</td><td>87</td><td>157</td><td>65</td><td>55</td><td>49</td><td>Fizzade</td></tr>
+          <tr><td>068</td><td>Bee Moth</td><td>40</td><td>116</td><td>90</td><td>163</td><td>76</td><td>60</td><td>53</td><td>Antidote</td></tr>
+          <tr><td>070</td><td>GhostArm</td><td>41</td><td>142</td><td>95</td><td>180</td><td>86</td><td>67</td><td>35</td><td>Dark-S</td></tr>
+          <tr><td>071</td><td>Candler</td><td>41</td><td>130</td><td>95</td><td>193</td><td>83</td><td>65</td><td>46</td><td>Store-It</td></tr>
+          <tr><td>072</td><td>B-Spirit</td><td>42</td><td>100</td><td>63</td><td>10</td><td>80</td><td>35</td><td>28</td><td></td></tr>
+          <tr><td>073</td><td>[Marshy]</td><td>43</td><td>88</td><td>78</td><td>10</td><td>65</td><td>43</td><td>46</td><td>Magiceye</td></tr>
+          <tr><td>074</td><td>[L-Marshy]</td><td>48</td><td>158</td><td>111</td><td>358</td><td>97</td><td>70</td><td>31</td><td>Revival</td></tr>
+          <tr><td>133</td><td>[Guardman]</td><td>91</td><td>260</td><td>378</td><td>5</td><td>126</td><td>120</td><td>61</td><td>Food</td></tr>
+          <tr><td>134</td><td>[BigBoss]</td><td>99</td><td>325</td><td>393</td><td>15</td><td>207</td><td>195</td><td>102</td><td>Trapper</td></tr>
+          <tr><td>151</td><td>Kiwi</td><td>1</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>Kiwi-S</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="text-sm text-muted mt-1">No.133/134 เจอได้เฉพาะตอนปล้นพ่อค้า · No.046 (Forest Part 1) และ No.150 (Forest Part 2) เป็นมอนสเตอร์พิเศษที่เลี่ยงการต่อสู้ (No.150 มักยอมแพ้ตลอด)</p>
+
+      <h3 class="mt-6 font-bold">Weapon Album <span class="text-sm font-normal text-muted">(เฉพาะที่มีข้อมูล · ATK / SP / ราคา)</span></h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>No.</th><th>Name</th><th>ATK</th><th>SP</th><th>Cost</th><th>Status</th><th>สกิล</th></tr></thead>
+        <tbody>
+          <tr><td>001</td><td>Knife</td><td>5</td><td>3</td><td>40</td><td></td><td></td></tr>
+          <tr><td>002</td><td>Bowie</td><td>13</td><td>5</td><td>157</td><td></td><td></td></tr>
+          <tr><td>003</td><td>Dagger</td><td>25</td><td>6</td><td>200</td><td></td><td></td></tr>
+          <tr><td>004</td><td>PenKnife</td><td>42</td><td>7</td><td>490</td><td></td><td></td></tr>
+          <tr><td>005</td><td>D-Hand</td><td>61</td><td>8</td><td>780</td><td></td><td></td></tr>
+          <tr><td>006</td><td>Fang</td><td>89</td><td>13</td><td>1665</td><td>ActUp</td><td></td></tr>
+          <tr><td>008</td><td>Cross</td><td>112</td><td>12</td><td>2150</td><td></td><td></td></tr>
+          <tr><td>009</td><td>Thrower</td><td>122</td><td>17</td><td>2500</td><td></td><td>Slash / Pirate / Swallow1 / Stun Hit</td></tr>
+          <tr><td>012</td><td>Sword</td><td>3</td><td>0</td><td>5</td><td></td><td></td></tr>
+          <tr><td>013</td><td>CuSword</td><td>8</td><td>2</td><td>60</td><td></td><td></td></tr>
+          <tr><td>015</td><td>Saw</td><td>24</td><td>-4</td><td>200</td><td></td><td></td></tr>
+          <tr><td>016</td><td>R-Blade</td><td>30</td><td>8</td><td>280</td><td></td><td>Slash / SP-Up / Jump Hit / Double</td></tr>
+          <tr><td>017</td><td>S-Sword</td><td>40</td><td>-5</td><td>300</td><td></td><td></td></tr>
+          <tr><td>018</td><td>RedSword</td><td>45</td><td>13</td><td>450</td><td>AntiTrp</td><td></td></tr>
+          <tr><td>019</td><td>X-Sword</td><td>57</td><td>-5</td><td>625</td><td></td><td></td></tr>
+          <tr><td>020</td><td>XX-Sword</td><td>60</td><td>5</td><td>1000</td><td></td><td></td></tr>
+          <tr><td>021</td><td>TriSword</td><td>80</td><td>3</td><td>1200</td><td></td><td>Slash / AT-Up / Double / 1/3 Hit</td></tr>
+          <tr><td>022</td><td>OldSword</td><td>90</td><td>-3</td><td>1340</td><td></td><td>Slash / DF-Up / BlackOut / Curse</td></tr>
+          <tr><td>023</td><td>B-Dagger</td><td>97</td><td>2</td><td>1600</td><td></td><td>Slash / Pierce / 1/5 Hit / Risk Hit</td></tr>
+          <tr><td>024</td><td>W-Sword</td><td>100</td><td>18</td><td>1875</td><td>ActUp</td><td>Slash / SP-Up / Tripple / Swallow2</td></tr>
+          <tr><td>027</td><td>Katana</td><td>135</td><td>-6</td><td>3060</td><td></td><td>Slash / Oni / Tiger / Last One</td></tr>
+          <tr><td>028</td><td>GodFang</td><td>140</td><td>10</td><td>3800</td><td>Revive</td><td>Slash / Last One / Hellkiss / Red Bull</td></tr>
+          <tr><td>037</td><td>Bamboo</td><td>10</td><td>-3</td><td>80</td><td></td><td></td></tr>
+          <tr><td>038</td><td>Spear</td><td>20</td><td>-2</td><td>175</td><td></td><td></td></tr>
+          <tr><td>039</td><td>Spike</td><td>26</td><td>-1</td><td>215</td><td></td><td></td></tr>
+          <tr><td>041</td><td>Trident</td><td>73</td><td>-1</td><td>850</td><td></td><td>Thrust / Sting / Quicker / W-Stab</td></tr>
+          <tr><td>042</td><td>BatSpear</td><td>78</td><td>5</td><td>1100</td><td>X-Ray</td><td></td></tr>
+          <tr><td>043</td><td>HalBerd</td><td>87</td><td>-4</td><td>1100</td><td></td><td></td></tr>
+          <tr><td>044</td><td>S-Spear</td><td>108</td><td>9</td><td>1850</td><td></td><td></td></tr>
+          <tr><td>046</td><td>Partisan</td><td>129</td><td>7</td><td>2600</td><td></td><td>Swing / Curse / HealGet / Pounder2</td></tr>
+          <tr><td>047</td><td>Thunder</td><td>137</td><td>12</td><td>3500</td><td>ActUp</td><td>Thrust / Flash / DF-Down / Laser</td></tr>
+          <tr><td>048</td><td>UniSpear</td><td>168</td><td>5</td><td>4000</td><td>HPRecov</td><td>Thrust / Forget3 / Gamble / W-Stab</td></tr>
+          <tr><td>051</td><td>Hatchet</td><td>21</td><td>-1</td><td>180</td><td></td><td></td></tr>
+          <tr><td>053</td><td>Tomahawk</td><td>44</td><td>-5</td><td>330</td><td></td><td></td></tr>
+          <tr><td>054</td><td>Ring Ax</td><td>50</td><td>-7</td><td>375</td><td></td><td></td></tr>
+          <tr><td>055</td><td>Red Ax</td><td>60</td><td>-6</td><td>550</td><td></td><td></td></tr>
+          <tr><td>056</td><td>Gear Ax</td><td>68</td><td>-8</td><td>750</td><td></td><td></td></tr>
+          <tr><td>057</td><td>Heavy Ax</td><td>90</td><td>-12</td><td>1375</td><td>ActDown</td><td>Smasher / Plunder1 / RiskHit2 / DF-Seal2</td></tr>
+          <tr><td>058</td><td>Large Ax</td><td>112</td><td>11</td><td>2000</td><td></td><td>Smasher / CoolDown / Plunder2 / Twice</td></tr>
+          <tr><td>059</td><td>Butcher</td><td>118</td><td>-5</td><td>2200</td><td>Darkness</td><td>Smasher / BackFire / Burgler2 / Pounder1</td></tr>
+          <tr><td>064</td><td>Scepter</td><td>5</td><td>8</td><td>15</td><td></td><td></td></tr>
+          <tr><td>065</td><td>Ocarina</td><td>30</td><td>5</td><td>350</td><td>ActUp</td><td></td></tr>
+          <tr><td>066</td><td>Shelly</td><td>65</td><td>6</td><td>725</td><td>AntiTrp</td><td></td></tr>
+          <tr><td>067</td><td>Sceptor2</td><td>83</td><td>4</td><td>1250</td><td>AntiBom</td><td></td></tr>
+          <tr><td>068</td><td>Magic Rod</td><td>96</td><td>6</td><td>1575</td><td>HPRecov</td><td>Shaker / Kilo-Up / KiloDown / Homer?</td></tr>
+          <tr><td>069</td><td>Star Rod</td><td>107</td><td>8</td><td>1990</td><td>PsnOff</td><td>Shaker / Mega-Up / MegaDown / Sleeper</td></tr>
+          <tr><td>070</td><td>Wiz-Cane</td><td>119</td><td>0</td><td>3000</td><td>Revive</td><td>Shaker / Giga-Up / GigaDown / Bye-Bye2</td></tr>
+          <tr><td>072</td><td>Gavel</td><td>15</td><td>-2</td><td>105</td><td></td><td></td></tr>
+          <tr><td>073</td><td>Club</td><td>28</td><td>-1</td><td>300</td><td></td><td>Smasher / Earth1 / Knocker / Homer?</td></tr>
+          <tr><td>074</td><td>Barrel</td><td>53</td><td>-7</td><td>375</td><td></td><td></td></tr>
+          <tr><td>075</td><td>Eggy</td><td>59</td><td>2</td><td>670</td><td></td><td></td></tr>
+          <tr><td>076</td><td>G-Chain</td><td>88</td><td>-6</td><td>1250</td><td></td><td></td></tr>
+          <tr><td>079</td><td>B-Hammer</td><td>145</td><td>-10</td><td>3000</td><td></td><td>Smasher / Earth2 / Quake / MaxSmash</td></tr>
+          <tr><td>082</td><td>WaterGun</td><td>39</td><td>6</td><td>250</td><td>AntiBom</td><td></td></tr>
+          <tr><td>083</td><td>Revolver</td><td>111</td><td>2</td><td>1800</td><td></td><td>Shoot / Magma / Hold Up / Roulette</td></tr>
+          <tr><td>084</td><td>Cannon</td><td>135</td><td>-3</td><td>2500</td><td></td><td>Shoot / Napalm / No Aid / RedCard</td></tr>
+          <tr><td>087</td><td>Catapult</td><td>7</td><td>7</td><td>30</td><td></td><td></td></tr>
+          <tr><td>088</td><td>Bow</td><td>14</td><td>12</td><td>140</td><td>X-Ray</td><td></td></tr>
+          <tr><td>089</td><td>G-Bow</td><td>47</td><td>13</td><td>400</td><td>AntiTrp</td><td></td></tr>
+          <tr><td>090</td><td>Moon Bow</td><td>85</td><td>12</td><td>1450</td><td>PsnOff</td><td>Shoot / Pick-It / Tear Gas / Hold Up</td></tr>
+          <tr><td>092</td><td>IronClaw</td><td>17</td><td>8</td><td>167</td><td></td><td></td></tr>
+          <tr><td>093</td><td>Paw</td><td>14</td><td>12</td><td>299</td><td></td><td>Scratch / SP-Seed / HP-Seed / Sleeper</td></tr>
+          <tr><td>094</td><td>Rock-It</td><td>38</td><td>9</td><td>300</td><td></td><td></td></tr>
+          <tr><td>095</td><td>Buring</td><td>77</td><td>10</td><td>990</td><td>AntiBom</td><td>Knuckler / B-Nackle / Rampage / Drainer</td></tr>
+          <tr><td>096</td><td>D-Claw</td><td>130</td><td>11</td><td>2375</td><td></td><td>Rip / AT-Seed2 / Double / No Go</td></tr>
+          <tr><td>097</td><td>CatGlave</td><td>128</td><td>15</td><td>50</td><td></td><td>Scratch / MonkShot / Splash / Sleeper</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3 class="mt-6 font-bold">Shield Album <span class="text-sm font-normal text-muted">(DF / SP / ราคา)</span></h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>No.</th><th>Name</th><th>DF</th><th>SP</th><th>Cost</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>001</td><td>Shield</td><td>3</td><td>3</td><td>5</td><td></td></tr>
+          <tr><td>002</td><td>Wood-S</td><td>5</td><td>4</td><td>25</td><td></td></tr>
+          <tr><td>003</td><td>Flower-S</td><td>8</td><td>3</td><td>50</td><td></td></tr>
+          <tr><td>004</td><td>Oak-S</td><td>9</td><td>3</td><td>57</td><td></td></tr>
+          <tr><td>005</td><td>Bird-S</td><td>7</td><td>6</td><td>50</td><td></td></tr>
+          <tr><td>006</td><td>Shell-S</td><td>11</td><td>2</td><td>80</td><td></td></tr>
+          <tr><td>007</td><td>Scale-S</td><td>14</td><td>6</td><td>92</td><td></td></tr>
+          <tr><td>009</td><td>Bolt-S</td><td>25</td><td>-2</td><td>116</td><td>ActDown</td></tr>
+          <tr><td>010</td><td>Buckler1</td><td>16</td><td>12</td><td>108</td><td></td></tr>
+          <tr><td>012</td><td>Iron-S</td><td>33</td><td>-4</td><td>172</td><td></td></tr>
+          <tr><td>013</td><td>Plume-S</td><td>24</td><td>13</td><td>170</td><td></td></tr>
+          <tr><td>014</td><td>Slate-S</td><td>38</td><td>-5</td><td>255</td><td></td></tr>
+          <tr><td>015</td><td>Buckler2</td><td>30</td><td>10</td><td>257</td><td></td></tr>
+          <tr><td>016</td><td>Steel-S</td><td>43</td><td>-8</td><td>315</td><td></td></tr>
+          <tr><td>017</td><td>Peacock</td><td>35</td><td>8</td><td>480</td><td>PsnOff</td></tr>
+          <tr><td>019</td><td>Buckler3</td><td>36</td><td>12</td><td>580</td><td></td></tr>
+          <tr><td>020</td><td>Mask-S</td><td>48</td><td>0</td><td>800</td><td>Cursed</td></tr>
+          <tr><td>022</td><td>Crystal</td><td>48</td><td>8</td><td>650</td><td>X-Ray</td></tr>
+          <tr><td>023</td><td>Bull-S</td><td>53</td><td>16</td><td>750</td><td></td></tr>
+          <tr><td>025</td><td>Dark-S</td><td>65</td><td>8</td><td>805</td><td>Darkness</td></tr>
+          <tr><td>026</td><td>Horse-S</td><td>60</td><td>13</td><td>875</td><td>ActUp</td></tr>
+          <tr><td>027</td><td>Guard-S</td><td>74</td><td>10</td><td>1000</td><td></td></tr>
+          <tr><td>028</td><td>Mirror-S</td><td>77</td><td>8</td><td>1100</td><td></td></tr>
+          <tr><td>030</td><td>Metal-S</td><td>80</td><td>0</td><td>1250</td><td></td></tr>
+          <tr><td>043</td><td>Kiwi-S</td><td>4</td><td>4</td><td>30</td><td>ActUp</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3 class="mt-6 font-bold">Item Album</h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>ชื่อ</th><th>ผล</th><th>ราคา</th></tr></thead>
+        <tbody>
+          <tr><td>Recover1</td><td>ฟื้น 100 HP</td><td>50</td></tr>
+          <tr><td>Recover2</td><td>ฟื้น 200 HP</td><td>100</td></tr>
+          <tr><td>Energy1</td><td>ฟื้น HP เต็ม</td><td>300</td></tr>
+          <tr><td>Energy2</td><td>ฟื้น HP เต็ม + ล้างสถานะเสียทั้งหมด</td><td>1200</td></tr>
+          <tr><td>Revival</td><td>ชุบชีวิตตัวละครที่ล้มระหว่างต่อสู้</td><td>10,000</td></tr>
+          <tr><td>Invisi</td><td>ตัวละครล่องหนจากศัตรูไม่กี่เทิร์น</td><td>50</td></tr>
+          <tr><td>Compass</td><td>ชี้ทางไปบันได</td><td>80</td></tr>
+          <tr><td>Homer</td><td>ออกจากดันเจียน</td><td>500</td></tr>
+          <tr><td>Magiceye</td><td>ใช้ดู Action Card</td><td>1500</td></tr>
+          <tr><td>Anti-Trap</td><td>เลี่ยงกับดัก (จำกัดครั้ง)</td><td>500</td></tr>
+          <tr><td>Store-It</td><td>เปิดหีบเก็บของจากในดันเจียน</td><td>250</td></tr>
+          <tr><td>Light Up</td><td>ล้าง Black Out</td><td>50</td></tr>
+          <tr><td>CurseOff</td><td>ล้าง Cursed</td><td>50</td></tr>
+          <tr><td>Antidote</td><td>ล้าง Poison</td><td>50</td></tr>
+          <tr><td>CureAll</td><td>ล้าง 3 สถานะข้างบน</td><td>120</td></tr>
+          <tr><td>Food</td><td>ใช้เป็นเหยื่อล่อ</td><td>600</td></tr>
+          <tr><td>Trapper</td><td>ใช้จับมอนสเตอร์</td><td>980</td></tr>
+          <tr><td>Stronger</td><td>AT เพิ่มชั่วคราว</td><td>50</td></tr>
+          <tr><td>Speeder</td><td>SP เพิ่มชั่วคราว</td><td>50</td></tr>
+          <tr><td>Harder</td><td>DF เพิ่มชั่วคราว</td><td>50</td></tr>
+          <tr><td>Fizzade</td><td>เพิ่มความคล่องตัว (เดิน 2 ก้าว/เทิร์น) + ล้าง Fatigue</td><td>50</td></tr>
+          <tr><td>?-Arm</td><td>เสริมอาวุธตอนผสม</td><td>2000</td></tr>
+          <tr><td>?-Guard</td><td>เสริมโล่ตอนผสม</td><td>2000</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3 class="mt-6 font-bold">Skill Album</h3>
+      <p class="mt-2 text-sm font-bold">สกิลอาวุธ (จัดตามประเภท)</p>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-1">
+        <thead><tr><th>สกิล</th><th>ผล</th><th>ประเภท</th></tr></thead>
+        <tbody>
+          <tr><td>Unarmed / Slash / Thrust / Swing / Shaker / Smasher / Shoot / Knucker</td><td>ดาเมจตาม AT ของอาวุธ</td><td>พื้นฐาน</td></tr>
+          <tr><td>DF-Up / Harder</td><td>DF เพิ่มไม่กี่เทิร์น</td><td>เพิ่มสเตตัสตัวเอง</td></tr>
+          <tr><td>SP-Up / Quicker</td><td>SP เพิ่มไม่กี่เทิร์น</td><td>เพิ่มสเตตัสตัวเอง</td></tr>
+          <tr><td>AT-Up / Heat Up</td><td>AT เพิ่มไม่กี่เทิร์น</td><td>เพิ่มสเตตัสตัวเอง</td></tr>
+          <tr><td>Flash / BlackOut</td><td>ทำศัตรูตาบอด</td><td>ติดสถานะ</td></tr>
+          <tr><td>MoonBeat</td><td>ศัตรูหลับไม่กี่เทิร์น</td><td>ติดสถานะ</td></tr>
+          <tr><td>Sting / Snake</td><td>วางยาพิษ HP ศัตรู -1/เทิร์น</td><td>ติดสถานะ</td></tr>
+          <tr><td>Cursed</td><td>สาปศัตรู</td><td>ติดสถานะ</td></tr>
+          <tr><td>Half-Hit</td><td>-1/2 ของ HP ที่เหลือของศัตรู</td><td>ตัดสัดส่วน HP</td></tr>
+          <tr><td>1/3 Hit</td><td>-2/3 ของ HP ที่เหลือ</td><td>ตัดสัดส่วน HP</td></tr>
+          <tr><td>1/5 Hit</td><td>-4/5 ของ HP ที่เหลือ</td><td>ตัดสัดส่วน HP</td></tr>
+          <tr><td>Swallow1</td><td>50% โอกาสตีเพิ่มหลังตีครั้งแรก</td><td>ดาเมจเสริม</td></tr>
+          <tr><td>Swallow2</td><td>ตีเพิ่มหลังตีครั้งแรก (แน่นอน)</td><td>ดาเมจเสริม</td></tr>
+          <tr><td>Swallow3 / Stardust</td><td>25% โอกาสตีเพิ่มหลังตีครั้งแรก</td><td>ดาเมจเสริม</td></tr>
+          <tr><td>Double / W-Stab</td><td>ตี 2 ครั้ง</td><td>หลายครั้ง</td></tr>
+          <tr><td>Triple</td><td>ตี 3 ครั้ง</td><td>หลายครั้ง</td></tr>
+          <tr><td>X-Stab</td><td>ตี 4 ครั้ง อาจถึงตาย</td><td>หลายครั้ง</td></tr>
+          <tr><td>ShineCut</td><td>ตี 5 ครั้ง อาจถึงตาย</td><td>หลายครั้ง</td></tr>
+          <tr><td>Poker</td><td>ตี 1–8 ครั้ง อาจถึงตาย</td><td>หลายครั้ง</td></tr>
+          <tr><td>Crusher</td><td>1/4 โอกาสทำลายโล่ศัตรู</td><td>—</td></tr>
+          <tr><td>Gambler</td><td>1/6 โอกาสแทงทะลุศัตรู</td><td>—</td></tr>
+          <tr><td>Stun-Hit</td><td>ทำให้ศัตรู/เราชาไม่กี่เทิร์น</td><td>ดาเมจ+สถานะ</td></tr>
+          <tr><td>Pirate / Burglar1 / Burglar2</td><td>ขโมยไอเทมศัตรู</td><td>ขโมยของ</td></tr>
+          <tr><td>Jump-Hit</td><td>เลือกเองไม่ได้ พุ่งข้ามศัตรู โดนพันธมิตร</td><td>โดนพันธมิตร</td></tr>
+          <tr><td>Pierce</td><td>แทงศัตรู โดนพันธมิตรด้วย</td><td>โดนพันธมิตร</td></tr>
+          <tr><td>Laser / RollOver</td><td>แทงศัตรู โดนพันธมิตรเล็กน้อย</td><td>โดนพันธมิตร</td></tr>
+          <tr><td>Absorb1 / Vamp-Hit</td><td>ดาเมจที่ทำ = HP ที่ฟื้นให้ตัวเอง</td><td>ดูดเลือด</td></tr>
+          <tr><td>Absorb2</td><td>ฟื้น HP มากกว่า Absorb1</td><td>ดูดเลือด</td></tr>
+          <tr><td>HealGet</td><td>Absorb1 + Pirate</td><td>ดูดเลือด</td></tr>
+          <tr><td>Oni</td><td>ทำดาเมจศัตรูมากขึ้น</td><td>เพิ่มดาเมจ</td></tr>
+          <tr><td>AT-Seal1 / Forget1</td><td>ผนึกสกิลโจมตีศัตรู 1 อัน</td><td>ผนึกสกิล</td></tr>
+          <tr><td>Forget2</td><td>ผนึกสกิลโจมตีศัตรู 2 อัน</td><td>ผนึกสกิล</td></tr>
+          <tr><td>Forget3</td><td>ผนึกสกิลโจมตี 1 อัน + DF-Down</td><td>ผนึกสกิล</td></tr>
+          <tr><td>AT-Seal2</td><td>ผนึกสกิลโจมตีศัตรูทั้งหมด</td><td>ผนึกสกิล</td></tr>
+          <tr><td>DF-Seal1 / DF-Seal2</td><td>ผนึกสกิลตั้งรับศัตรู 1 อัน / ทั้งหมด</td><td>ผนึกสกิล</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p class="mt-3 text-sm font-bold">Attack Assist Skill (พันธมิตรช่วยโจมตี)</p>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-1">
+        <thead><tr><th>สกิล</th><th>ผล</th></tr></thead>
+        <tbody>
+          <tr><td>SlowDown</td><td>SP ศัตรูลดไม่กี่เทิร์น</td></tr>
+          <tr><td>DF-Up / Shell</td><td>DF ของ Hero เพิ่มไม่กี่เทิร์น (Shell ทำงานเมื่อศัตรูเคลื่อนไหวสำเร็จ)</td></tr>
+          <tr><td>HP-Help</td><td>ฟื้น HP เท่าที่โดนหักหลังศัตรูโจมตี</td></tr>
+          <tr><td>Convert</td><td>โจมตีศัตรูแล้วเปลี่ยนดาเมจเป็น HP ฟื้นให้ Hero (คล้าย Vamp-Hit)</td></tr>
+          <tr><td>Crusher</td><td>1/16 โอกาสทำลายโล่ศัตรู</td></tr>
+          <tr><td>Equalise</td><td>ทำให้ท่าป้องกันของศัตรูไร้ผล</td></tr>
+          <tr><td>Reissue</td><td>หยุดสกิล บังคับใช้งาน</td></tr>
+          <tr><td>Kamikaze</td><td>หัก 50% HP ตัวเองเพื่ออัดดาเมจศัตรู</td></tr>
+          <tr><td>Shooter</td><td>โจมตีพันธมิตรศัตรู</td></tr>
+          <tr><td>KnockOut</td><td>ตีศัตรูอีกครั้งหลังการตีของเรา</td></tr>
+          <tr><td>AT-Again</td><td>เลียนแบบท่าของ Hero</td></tr>
+          <tr><td>Bing</td><td>ทุบด้วยท่านี้ได้ Exp และเงิน</td></tr>
+          <tr><td>Copy</td><td>เลียนแบบท่าศัตรู</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p class="mt-3 text-sm font-bold">Defense Assist Skill (พันธมิตรช่วยป้องกัน)</p>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-1">
+        <thead><tr><th>สกิล</th><th>ผล</th></tr></thead>
+        <tbody>
+          <tr><td>AT-Lock2 / DF-Lock2</td><td>ผนึกสกิลโจมตี / ตั้งรับศัตรู 2 อัน</td></tr>
+          <tr><td>Shocker</td><td>ทำศัตรูช็อก ออกคำสั่งไม่ได้</td></tr>
+          <tr><td>No-Blow</td><td>ลบล้างสกิลศัตรูตอนมันพยายามร่ายใส่ Hero</td></tr>
+          <tr><td>Invalid</td><td>สกิลศัตรูและพันธมิตรทั้งหมดไร้ผล</td></tr>
+          <tr><td>DF-Again</td><td>เลียนแบบสกิลตั้งรับของ Hero ที่เพิ่งใช้</td></tr>
+          <tr><td>StokPile / Cheer1</td><td>AT ของ Hero เพิ่มไม่กี่เทิร์น (Cheer1 ทำงานเมื่อศัตรูเคลื่อนไหวสำเร็จ)</td></tr>
+          <tr><td>Cheer2</td><td>ดีกว่า Cheer1</td></tr>
+          <tr><td>CureAll</td><td>ล้าง Black Out / Poison / Cursed</td></tr>
+          <tr><td>Remedy</td><td>ล้างสถานะผิดปกติ 1 อย่าง</td></tr>
+          <tr><td>Regain1 / Regain2 / Halo</td><td>ฟื้น 1/4 · 1/2 · เต็ม ของ Max HP</td></tr>
+          <tr><td>Counter</td><td>สะท้อนดาเมจกลับไปที่ผู้โจมตีมากขึ้น</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 12 -->
+    <section id="faq">
+      <h2 class="text-xl font-bold text-navy">12. คำถามที่พบบ่อย</h2>
+      <p><b>Q: Hero ล้มในการต่อสู้ ทำยังไงไม่ให้ของ/สัตว์เลี้ยงหาย?</b><br>
+        A: ทำไม่ได้ ต่อให้กดรีเซ็ตแล้วโหลดเซฟ Hero ก็ยังนับว่าล้ม ของและสัตว์เลี้ยง (ทั้งที่สวมและในกระเป๋า) หายหมด
+        เหลือแค่ของในหีบเก็บของ/กระปุกเท่านั้นที่ไม่หาย</p>
+      <p><b>Q: มอนสเตอร์เลี่ยงกับดักตลอด จับยังไง?</b><br>
+        A: เดิน Hero ไปยืนบนกับดัก แล้วกด A ค้าง มอนสเตอร์จะเดินเข้ามาสู้กับเรา มันจะติดกับก่อนเริ่มสู้ อาจต้องล่อหลายรอบ</p>
+      <p><b>Q: กลับจากดันเจียนได้กี่วิธี?</b><br>
+        A: 4 วิธี — ทำภารกิจสำเร็จ / ใช้ Homer / ใช้เครื่องเทเลพอร์ต (มีเมื่อกลับไปเล่นเควสที่จบแล้ว) / Hero ล้ม</p>
+      <p><b>Q: ระบุชนิดมอนสเตอร์ก่อนสู้ได้ไหม?</b><br>
+        A: ไม่ได้ แต่ในเควสเดียวกัน หน้าตากราฟิกเดิม = มอนสเตอร์ตัวเดิมเสมอ (ดูตารางในหัวข้อ 7)</p>
+      <p><b>Q: มอนสเตอร์บางตัวเลี่ยงสู้/ยอมแพ้ตลอด ล้มยังไง?</b><br>
+        A: ต้องอาศัย 1) ดวง ให้มันยอมแพ้ไม่สำเร็จ เราจะได้ 1 เทิร์นจัดการ 2) การ์ด Weapon + พลังโจมตีพอที่จะฆ่าในตีเดียว</p>
+      <p><b>Q: ใช้อีมูเลเตอร์เข้า Arena ได้ไหม?</b><br>
+        A: ไม่ได้ ต้องมี GBA จริง 2 เครื่อง สายลิงก์ และตลับ 2 ตลับ</p>
+    </section>
+  </main>
+</div>
+
+<footer class="border-t-2 border-ink py-8 text-center text-xs text-muted">
+  <p><a class="underline hover:text-accent" href="../index.html">← กลับหน้าหลัก เกเรแปลไทย</a></p>
+</footer>
+
+</body>
+</html>

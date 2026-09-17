@@ -1,0 +1,143 @@
+{
+  "site": {
+    "title": "เกเรแปลไทย",
+    "tagline": "แพตช์แปลไทย ออนไลน์ในเว็บ · เลือกไฟล์ ROM ของคุณ · กด แพตช์เกม · บันทึกไฟล์เกม จบ (ไม่ต้องอัพโหลด ROM)",
+    "facebook": "https://www.facebook.com/profile.php?id=61593793907817",
+    "reportBug": "https://m.me/GAYRAYTHAI",
+    "promptpay": {
+      "image": "images/promptpay.png",
+      "name": "เกเรแปลไทย",
+      "note": "หากชื่นชอบผลงาน สามารถ กดถูกใจเพจที่รูปโปรไฟล์ได้\nหรือ สนับสนุนซื้อให้ขนมลูกชายผมได้ครับ ขอขอบคุณทุกกำลังใจ ให้ทำผลงานต่อไปครับ"
+    }
+  },
+  "platforms": ["All", "FC", "SFC", "GBA", "GB", "PS1", "PSP", "NDS", "บทสรุป"],
+  "platformArt": {
+    "All": "images/All.png",
+    "FC": "images/FC.png",
+    "SFC": "images/SFC.png",
+    "GBA": "images/GBA.png",
+    "GB": "images/GB.png",
+    "PS1": "images/PS1.png",
+    "PSP": "images/PSP.png",
+    "NDS": "images/NDS.png",
+    "บทสรุป": "images/WR.png"
+  },
+  "platformLogo": {
+    "FC": "images/label/family-computer.png",
+    "SFC": "images/label/super-famicom.png",
+    "GBA": "images/label/game-boy-advance.png",
+    "GB": "images/label/game-boy.png",
+    "PS1": "images/label/playstation.png",
+    "PSP": "images/label/psp.png",
+    "NDS": "images/label/nintendo-ds.png"
+  },
+  "games": [
+    {
+      "id": "dokapon-monster-hunter-usa",
+      "titleTh": "โดคาปอง มอนสเตอร์ ฮันเตอร์",
+      "titleEn": "Dokapon - Monster Hunter (USA)",
+      "platform": "GBA",
+      "cover": "covers/dokapon-usa-th.jpg",
+      "blurb": "เกมกระดานผจญภัยผสมต่อสู้แบบ RPG เดินทอยลูกเต๋า เก็บเงิน อัปเลเวล ชิงเป็นเจ้าเมือง",
+      "version": "v1.0",
+      "versionStatus": "v1.0 · แปลครบทั้งเกม",
+      "updated": "7 ก.ย. 2569",
+      "details": [
+        "แปลคำ เนื้อเรื่อง คัทซีน ครบแล้ว",
+        "แปลคำอธิบาย สกิล ไอเทม ครบแล้ว",
+        "แปลป้ายคำสั่งแล้ว",
+        "ไม่แปลชื่อไอเทม ชื่อมอนสเตอร์ ชื่อสกิล เพื่อคงความเดิม"
+      ],
+      "patch": "patches/dokapon-usa-th.bps",
+      "patchLabel": "dokapon-usa-th.bps",
+      "source": {
+        "label": "Dokapon - Monster Hunter (USA)",
+        "ext": ".gba",
+        "size": 8388608,
+        "crc32": "5617e407",
+        "md5": "936a8172335ffc3391d182e909942d76",
+        "sha1": "280f9e01a3caee74bc9fde55e6326005ddba5196"
+      }
+    },
+    {
+      "id": "knight-gundam-monogatari-fc",
+      "titleTh": "อัศวินกันดั้ม",
+      "titleEn": "SD Gundam Gaiden: Knight Gundam Monogatari (Japan)",
+      "platform": "FC",
+      "cover": "covers/knight-gundam-th.jpg",
+      "blurb": "SD RPG กันดั้ม เดินสำรวจ ต่อสู้ สะสมการ์ด Carddass ผจญภัยกอบกู้ Lacroix",
+      "version": "v1.0",
+      "versionStatus": "v1.0 · แปลบทพูด/เนื้อเรื่อง/คำบรรยายการ์ดครบ",
+      "updated": "11 ก.ย. 2569",
+      "warning": "แพตช์นี้เปลี่ยน Mapper ของ ROM จาก 16 เป็น 159 เพื่อเปิดพื้นที่ใส่ฟอนต์ไทย โปรแกรม Mesen เวอร์ชัน standalone บนพีซียังไม่รองรับ Mapper 159 ดีพอ ภาพจะขึ้นเป็นสีเขียวทั้งจอ\nแนะนำให้ใช้ FCEUX แทน หรือถ้าจะใช้ Mesen ให้เล่นผ่าน core ของ RetroArch (ทดสอบแล้วเล่นได้ปกติทั้งสองแบบ)",
+      "details": [
+        "แปลบทสนทนา คัตซีนเปิดเกม ครบแล้ว",
+        "แปลคำบรรยายการ์ด Carddass (ตัวละคร/มอนสเตอร์/ไอเทม) ครบแล้ว",
+        "แปลข้อความรบ/ร้านค้าครบแล้ว",
+        "ไม่แปลชื่อตัวละคร/หน่วย/เวทมนตร์ เพื่อคงความเดิม"
+      ],
+      "patch": "patches/knight-gundam-th.bps",
+      "patchLabel": "knight-gundam-th.bps",
+      "source": {
+        "label": "SD Gundam Gaiden - Knight Gundam Monogatari (Japan)",
+        "ext": ".nes",
+        "size": 393232,
+        "crc32": "38bd5932",
+        "md5": "de1b17031ae81503969f4db2b53251b6",
+        "sha1": "5f500b11f4b57f6a7ad76d941cd65a47eba900a4"
+      }
+    }
+  ],
+  "guides": [
+    {
+      "id": "dokapon-monster-hunter-usa",
+      "titleTh": "โดคาปอง มอนสเตอร์ ฮันเตอร์",
+      "titleEn": "Dokapon - Monster Hunter (USA)",
+      "cover": "Walkthrough/dokapon-monster-hunter.jpg",
+      "link": "Walkthrough/dokapon-monster-hunter.html",
+      "platform": "GBA",
+      "updated": "10 ก.ย. 2569",
+      "note": "เพิ่มบทสรุปไทย"
+    },
+    {
+      "id": "knight-gundam-monogatari-fc",
+      "titleTh": "อัศวินกันดั้ม",
+      "titleEn": "SD Gundam Gaiden: Knight Gundam Monogatari (FC)",
+      "cover": "Walkthrough/knight-gundam-monogatari-fc.jpg",
+      "link": "Walkthrough/knight-gundam-monogatari-fc.html",
+      "platform": "FC",
+      "updated": "10 ก.ย. 2569",
+      "note": "เพิ่มบทสรุปไทย"
+    },
+    {
+      "id": "ogre-battle-march-black-queen",
+      "titleTh": "ออกร์ แบทเทิล: ราชินีดำ",
+      "titleEn": "Ogre Battle: The March of the Black Queen (SNES)",
+      "cover": "Walkthrough/ogre-battle-march-black-queen.jpg",
+      "link": "Walkthrough/ogre-battle-march-black-queen.html",
+      "platform": "SFC · PS1 · SS",
+      "updated": "10 ก.ย. 2569",
+      "note": "เพิ่มบทสรุปไทย"
+    },
+    {
+      "id": "jojo-no-kimyou-na-bouken-sfc",
+      "titleTh": "โจโจ้ ล่าข้ามศตวรรษ",
+      "titleEn": "JoJo's Bizarre Adventure - JoJo no Kimyou na Bouken (SFC)",
+      "cover": "Walkthrough/JoJo's Bizarre Adventure - JoJo no Kimyou na Bouken.png",
+      "link": "Walkthrough/JoJo's Bizarre Adventure - JoJo no Kimyou na Bouken.html",
+      "platform": "SFC",
+      "updated": "12 ก.ย. 2569",
+      "note": "เพิ่มบทสรุปไทย"
+    },
+    {
+      "id": "romhack-guide",
+      "titleTh": "คู่มือทำ ROM Hack มือใหม่",
+      "titleEn": "ROM Hacking Guide (บทความ)",
+      "cover": "Walkthrough/Romhack/romhack-guide.png",
+      "link": "Walkthrough/Romhack/romhack-guide.html",
+      "platform": "FC · SFC",
+      "updated": "11 ก.ย. 2569",
+      "note": "อัปเดต — เพิ่ม 3 หน้าเจาะลึก (กรรมวิธี SFC, ปัญหา NES/FC, เลือกเครื่อง/เลือกเกม)"
+    }
+  ]
+}
