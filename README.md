@@ -1,4 +1,4 @@
-# Rom-gayray-web-update
+# WEB-gayrayupdate
 
 ข้อมูล **สาธารณะ** ของเว็บ [เกเรแปลไทย](https://gayray.netlify.app/) แยกออกมาจากโค้ดเทมเพลต — repo นี้
 (public) เก็บแค่สิ่งที่ยอมให้คนอื่นเห็น/ดาวน์โหลดได้:
@@ -13,7 +13,7 @@
 
 - `games.json`/`covers/`/`images/promptpay.png` → ผ่าน **jsDelivr CDN**
 - `Walkthrough/*.html` (+ รูปประกอบ) → ผ่าน **GitHub Pages** ของ repo นี้เอง:
-  https://artimis2nd.github.io/Rom-gayray-web-update/
+  https://artimis2nd.github.io/WEB-gayrayupdate/
 
 repo นี้ต้องเป็น **public** ไม่งั้นทั้ง jsDelivr และ GitHub Pages ใช้ไม่ได้
 
@@ -30,7 +30,7 @@ repo นี้ต้องเป็น **public** ไม่งั้นทั้
 2. `git add -A && git commit -m "..." && git push`
 3. เสร็จ:
    - `games.json`/`covers/` — jsDelivr cache ไฟล์ไว้ที่ edge ปกติไม่กี่ชั่วโมงถึง ~7 วัน อยากให้เห็นผล
-     ทันทีให้เปิด `https://purge.jsdelivr.net/gh/Artimis2nd/Rom-gayray-web-update@main/games.json`
+     ทันทีให้เปิด `https://purge.jsdelivr.net/gh/Artimis2nd/WEB-gayrayupdate@main/games.json`
      ในเบราว์เซอร์ครั้งนึง (purge ทีละไฟล์ที่แก้)
    - `Walkthrough/` — GitHub Pages rebuild เองอัตโนมัติหลัง push ปกติไม่ถึงนาที เช็คสถานะได้ที่แท็บ
      Actions ของ repo นี้
@@ -46,7 +46,7 @@ repo นี้ต้องเป็น **public** ไม่งั้นทั้
 media type override ให้ตั้ง)
 
 แก้โดยเปิด **GitHub Pages** ของ repo นี้ (static host จริง ตั้ง Content-Type ตามนามสกุลไฟล์ถูกต้อง
-เสมอ) แล้วให้ `WEB/index.html` ลิงก์บทสรุปไปที่ `https://artimis2nd.github.io/Rom-gayray-web-update/...`
+เสมอ) แล้วให้ `WEB/index.html` ลิงก์บทสรุปไปที่ `https://artimis2nd.github.io/WEB-gayrayupdate/...`
 แทน — รูปภาพ/`games.json`/`.bps` ไม่มีปัญหานี้ (เบราว์เซอร์ไม่สนใจ Content-Type ของรูป และ
 `fetch().json()`/`.arrayBuffer()` ก็ไม่สนใจ header เหมือนกัน) เลยยังใช้ jsDelivr ได้ปกติ
 
