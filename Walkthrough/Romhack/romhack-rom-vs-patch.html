@@ -148,11 +148,6 @@
       <div class="note">
         <b>เช่น:</b> ถ้าพบข้อมูลชุดหนึ่งมีลักษณะเป็นไบต์ซ้ำ ๆ แบบบล็อกใหญ่ อาจเป็นฟอนต์หรือ tile graphics แต่ถ้าเป็นข้อมูลต่อเนื่องที่อ่านแล้วมีรูปแบบประโยคภาษาอังกฤษหรือข้อความที่มี control code อาจคือ text pool หรือ script table การอ่านอย่างเดียวไม่ได้กำหนดความหมายได้ จึงต้องเชื่อมกับโค้ดและหน้าจอที่เรียกใช้ข้อมูลนั้นด้วย
       </div>
-      <figure>
-        <img src="rom-vs-patch-inspect-rom.png" alt="แผนภาพขั้นตอนการตรวจ ROM ก่อนเริ่มงาน 5 ขั้น: รับ ROM เข้างาน, ตรวจขนาดและ Header, ตรวจ ROM Mapping, ระบุพื้นที่ว่าง และผลสรุปที่ต้องได้ พร้อมสิ่งที่ต้องจดบันทึก เช่น File Size, Header Status, Mapping Type, Checksum และชื่อเวอร์ชัน ROM"
-          loading="lazy" class="mx-auto w-full max-w-3xl rounded border-2 border-ink shadow-pop-sm">
-        <figcaption class="mt-2 text-center text-xs text-muted">ก่อนเทียบอะไรก็ได้ ต้องตรวจ ROM ต้นฉบับให้ชัดก่อน: ขนาด, Header, Mapping และพื้นที่ว่าง — ทุกคำตอบต่อจากนี้ต่อยอดจากตรงนี้</figcaption>
-      </figure>
     </section>
 
     <section id="compare">
@@ -173,11 +168,6 @@
       <div class="note">
         <b>กฎสำคัญ:</b> การดูแค่ “ข้อมูลเปลี่ยนตรงไหน” ยังไม่พอ ต้องถามต่อว่า “ข้อมูลนี้ถูกใช้เพื่ออะไร” และ “ข้อความนี้ถูกเรียกผ่านระบบไหน” เพราะข้อมูลหลายชนิดใน ROM อาจมีรูปแบบคล้ายกัน แต่ข้างหน้าหรือลึกลงไปมีบทบาทต่างกันรุนแรง
       </div>
-      <figure>
-        <img src="rom-vs-patch-binary-diff.png" alt="แผนภาพการเปรียบเทียบ ROM ต้นฉบับกับ ROM ที่ลงแพตช์ด้วย Binary Diff เทียบ byte ต่อ byte แล้วจัดลักษณะข้อมูลที่เปลี่ยนเป็น 4 กลุ่ม: ฟอนต์/กราฟิก, Text Pool, Pointer Table และ Hook/Routine ใหม่ ก่อนทำตารางรวมและสรุปเป็นระบบ"
-          loading="lazy" class="mx-auto w-full max-w-3xl rounded border-2 border-ink shadow-pop-sm">
-        <figcaption class="mt-2 text-center text-xs text-muted">Binary Diff คือหัวใจของหน้านี้: เทียบ 2 ไฟล์ระดับ byte แล้วจัดกลุ่มความต่างเป็นฟอนต์ / Text Pool / Pointer / Hook เพื่อสร้าง Memory Map ของแพตช์</figcaption>
-      </figure>
     </section>
 
     <section id="flow">
@@ -216,11 +206,6 @@
         <li>ถ้าข้อความยาวขึ้น: ต้องดูว่าต้องมี word wrap, line wrap, หรือ buffer ใหม่</li>
         <li>ถ้ารoutine ถูก Hook: ต้องดูว่ามี fallback หรือ save/restore register หรือไม่</li>
       </ul>
-      <figure>
-        <img src="rom-vs-patch-text-path.png" alt="แผนภาพเส้นทางข้อความ 6 ชั้น: Text ID → Pointer Table → Text Data/Text Pool → Decoder → Font Tile + VRAM → Text Window บนหน้าจอ พร้อมคำถามที่ต้องตรวจในแต่ละชั้น และเคล็ดลับการย้อนจากหน้าจอกลับไปหา Text ID"
-          loading="lazy" class="mx-auto w-full max-w-3xl rounded border-2 border-ink shadow-pop-sm">
-        <figcaption class="mt-2 text-center text-xs text-muted">เส้นทางข้อความจริงในเกม: ตามจากหน้าจอย้อนกลับ → Decoder → Text Data → Pointer → Text ID จะเจอรากฐานจริงของระบบเร็วกว่าการไล่จากหัวไฟล์</figcaption>
-      </figure>
     </section>
 
     <section id="hook">
@@ -237,16 +222,6 @@
       <div class="good">
         <b>สรุปสั้น:</b> ROM กับ ROM แพตช์จะถูกวิเคราะห์ด้วยวิธีเดียวกัน เพราะแม้ข้อมูลจะต่างกันตรง “ต้นฉบับ vs เวอร์ชันที่ถูกแก้ไข” แต่ทั้งสองรูปแบบยังกำหนดความสัมพันธ์ของข้อมูลและโค้ดแบบเดียวกัน — ความสัมพันธ์ระหว่าง address, bank, decoder, font, routine และหน้าจอ
       </div>
-      <figure>
-        <img src="rom-vs-patch-font-text-pointer.png" alt="แผนภาพการเพิ่มฟอนต์ภาษาไทยในเกม: ออกแบบชุดอักขระไทย, สร้าง Font Tile, เตรียมข้อความแปล, สร้าง Text Pool ใหม่ใน Free Space และแก้หรือแทนที่ Pointer Table ให้ชี้ข้อมูลใหม่ได้ถูกต้อง พร้อมสิ่งที่ต้องจัดการพิเศษ เช่น custom encoding และการจัดวางสระวรรณยุกต์"
-          loading="lazy" class="mx-auto w-full max-w-3xl rounded border-2 border-ink shadow-pop-sm">
-        <figcaption class="mt-2 text-center text-xs text-muted">ชุดงานเพิ่มฟอนต์ภาษาไทยทำงานเป็นสายพานเดียวกัน: Font → Text Pool → Pointer — จบที่ Text ID ชี้ข้อมูลใหม่อย่างถูกต้อง ไม่สะดุด</figcaption>
-      </figure>
-      <figure>
-        <img src="rom-vs-patch-hook.jpg" alt="แผนภาพการ Hook ระบบเพื่อรับจ่ายข้อความไทย: หาจุดที่ routine เดิมเรียกข้อมูลข้อความ ตัดสินจุด Hook แล้วแยกทางเป็น Thai Text Routine หรือ Original Routine พร้อมข้อควรระวังเรื่อง Jump, Register, Stack และ Control Code"
-          loading="lazy" class="mx-auto w-full max-w-md rounded border-2 border-ink shadow-pop-sm">
-        <figcaption class="mt-2 text-center text-xs text-muted">Hook คือจุดสาขาใน routine เดิม: ข้อความไทยเดินเส้นใหม่ ข้อความเดิมเดินเส้นเดิม — ต้องมี fallback และ save/restore register ที่ถูกต้อง</figcaption>
-      </figure>
     </section>
 
     <section>
@@ -260,6 +235,48 @@
         <div class="step"><span class="stepnum">5</span> <b class="ml-2">เชื่อมกลับสู่ระบบเดิม</b><p class="mt-1 text-sm">สร้าง Hook หรือ trampoline ให้งานเดิมยังทำงาน</p></div>
         <div class="step"><span class="stepnum">6</span> <b class="ml-2">ทดสอบจริง</b><p class="mt-1 text-sm">เช็กทุกหน้าจอจนกว่าภาพและข้อความจะถูกต้อง</p></div>
       </div>
+
+      <h3 class="mt-6 font-bold text-accent">ขั้นที่ 1 · ตรวจแบบต้นฉบับ — ตรวจ ROM ก่อนเริ่มงาน</h3>
+      <figure>
+        <img src="rom-vs-patch-inspect-rom.png" alt="แผนภาพขั้นตอนการตรวจ ROM ก่อนเริ่มงาน 5 ขั้น: รับ ROM เข้างาน, ตรวจขนาดและ Header, ตรวจ ROM Mapping, ระบุพื้นที่ว่าง และผลสรุปที่ต้องได้ พร้อมสิ่งที่ต้องจดบันทึก เช่น File Size, Header Status, Mapping Type, Checksum และชื่อเวอร์ชัน ROM"
+          loading="lazy" class="mx-auto w-full max-w-3xl rounded border-2 border-ink shadow-pop-sm">
+        <figcaption class="mt-2 text-center text-xs text-muted">ก่อนเทียบอะไรก็ได้ ต้องตรวจ ROM ต้นฉบับให้ชัดก่อน: ขนาด, Header, Mapping และพื้นที่ว่าง — ทุกคำตอบต่อจากนี้ต่อยอดจากตรงนี้</figcaption>
+      </figure>
+
+      <h3 class="mt-6 font-bold text-accent">ขั้นที่ 2 · เทียบกับแพตช์ — เปรียบเทียบด้วย Binary Diff</h3>
+      <figure>
+        <img src="rom-vs-patch-binary-diff.png" alt="แผนภาพการเปรียบเทียบ ROM ต้นฉบับกับ ROM ที่ลงแพตช์ด้วย Binary Diff เทียบ byte ต่อ byte แล้วจัดลักษณะข้อมูลที่เปลี่ยนเป็น 4 กลุ่ม: ฟอนต์/กราฟิก, Text Pool, Pointer Table และ Hook/Routine ใหม่ ก่อนทำตารางรวมและสรุปเป็นระบบ"
+          loading="lazy" class="mx-auto w-full max-w-3xl rounded border-2 border-ink shadow-pop-sm">
+        <figcaption class="mt-2 text-center text-xs text-muted">Binary Diff คือหัวใจของขั้นนี้: เทียบ 2 ไฟล์ระดับ byte แล้วจัดกลุ่มความต่างเป็นฟอนต์ / Text Pool / Pointer / Hook เพื่อสร้าง Memory Map ของแพตช์</figcaption>
+      </figure>
+
+      <h3 class="mt-6 font-bold text-accent">ขั้นที่ 3 · ระบุชั้นข้อมูล — เส้นทางข้อความ</h3>
+      <figure>
+        <img src="rom-vs-patch-text-path.png" alt="แผนภาพเส้นทางข้อความ 6 ชั้น: Text ID → Pointer Table → Text Data/Text Pool → Decoder → Font Tile + VRAM → Text Window บนหน้าจอ พร้อมคำถามที่ต้องตรวจในแต่ละชั้น และเคล็ดลับการย้อนจากหน้าจอกลับไปหา Text ID"
+          loading="lazy" class="mx-auto w-full max-w-3xl rounded border-2 border-ink shadow-pop-sm">
+        <figcaption class="mt-2 text-center text-xs text-muted">เส้นทางข้อความจริงในเกม: ตามจากหน้าจอย้อนกลับ → Decoder → Text Data → Pointer → Text ID จะเจอรากฐานจริงของระบบเร็วกว่าการไล่จากหัวไฟล์</figcaption>
+      </figure>
+
+      <h3 class="mt-6 font-bold text-accent">ขั้นที่ 4 · ย้ายหรือแทนข้อมูลใหม่ — เพิ่มฟอนต์ภาษาไทย</h3>
+      <figure>
+        <img src="rom-vs-patch-font-text-pointer.png" alt="แผนภาพการเพิ่มฟอนต์ภาษาไทยในเกม: ออกแบบชุดอักขระไทย, สร้าง Font Tile, เตรียมข้อความแปล, สร้าง Text Pool ใหม่ใน Free Space และแก้หรือแทนที่ Pointer Table ให้ชี้ข้อมูลใหม่ได้ถูกต้อง พร้อมสิ่งที่ต้องจัดการพิเศษ เช่น custom encoding และการจัดวางสระวรรณยุกต์"
+          loading="lazy" class="mx-auto w-full max-w-3xl rounded border-2 border-ink shadow-pop-sm">
+        <figcaption class="mt-2 text-center text-xs text-muted">ชุดงานเพิ่มฟอนต์ภาษาไทยทำงานเป็นสายพานเดียวกัน: Font → Text Pool → Pointer — จบที่ Text ID ชี้ข้อมูลใหม่อย่างถูกต้อง ไม่สะดุด</figcaption>
+      </figure>
+
+      <h3 class="mt-6 font-bold text-accent">ขั้นที่ 5 · เชื่อมกลับสู่ระบบเดิม — Hook ระบบ</h3>
+      <figure>
+        <img src="rom-vs-patch-hook.jpg" alt="แผนภาพการ Hook ระบบเพื่อรับจ่ายข้อความไทย: หาจุดที่ routine เดิมเรียกข้อมูลข้อความ ตัดสินจุด Hook แล้วแยกทางเป็น Thai Text Routine หรือ Original Routine พร้อมข้อควรระวังเรื่อง Jump, Register, Stack และ Control Code"
+          loading="lazy" class="mx-auto w-full max-w-md rounded border-2 border-ink shadow-pop-sm">
+        <figcaption class="mt-2 text-center text-xs text-muted">Hook คือจุดสาขาใน routine เดิม: ข้อความไทยเดินเส้นใหม่ ข้อความเดิมเดินเส้นเดิม — ต้องมี fallback และ save/restore register ที่ถูกต้อง</figcaption>
+      </figure>
+
+      <h3 class="mt-6 font-bold text-accent">ขั้นที่ 6 · ทดสอบจริง</h3>
+      <figure>
+        <img src="rom-vs-patch-test.jpg" alt="แผนภาพการทดสอบและปล่อยแพตช์: สร้าง ROM ทดสอบ, ตรวจคุณภาพการแสดงผลและความถูกต้องของระบบ แล้วแยกทางเป็นปัญหาที่ยังค้าง (จด Text ID, หน้าจอ, พฤติกรรมผิดปกติ) หรือปล่อยแพตช์พร้อมลิสต์ปัญหาและ Change Log"
+          loading="lazy" class="mx-auto w-full max-w-md rounded border-2 border-ink shadow-pop-sm">
+        <figcaption class="mt-2 text-center text-xs text-muted">ปลายทางของทุกอย่าง: ทดสอบจนครบ → ยังไม่ผ่านจดเป็นปัญหาที่ยังค้าง / ผ่านครบ → ปล่อยแพตช์พร้อมลิสต์ปัญหาและ Change Log</figcaption>
+      </figure>
     </section>
 
     <section>
@@ -283,11 +300,6 @@
         <li>Hook ไม่ทำให้เกมค้างหรือข้ามคำสั่ง</li>
         <li>ทั้งเกมที่มีข้อความยาวและข้อความสั้นยังแสดงได้เป็นปกติ</li>
       </ul>
-      <figure>
-        <img src="rom-vs-patch-test.jpg" alt="แผนภาพการทดสอบและปล่อยแพตช์: สร้าง ROM ทดสอบ, ตรวจคุณภาพการแสดงผลและความถูกต้องของระบบ แล้วแยกทางเป็นปัญหาที่ยังค้าง (จด Text ID, หน้าจอ, พฤติกรรมผิดปกติ) หรือปล่อยแพตช์พร้อมลิสต์ปัญหาและ Change Log"
-          loading="lazy" class="mx-auto w-full max-w-md rounded border-2 border-ink shadow-pop-sm">
-        <figcaption class="mt-2 text-center text-xs text-muted">ปลายทางของทุกอย่าง: ทดสอบจนครบ → ยังไม่ผ่านจดเป็นปัญหาที่ยังค้าง / ผ่านครบ → ปล่อยแพตช์พร้อมลิสต์ปัญหาและ Change Log</figcaption>
-      </figure>
       <div class="note">
         <b>ถ้าตรงจุดนี้ผ่าน:</b> เราไม่เพียงแค่ “ได้ ROM แพตช์ที่แปลภาษาไทยแล้ว” แต่เพิ่งพิสูจน์ว่าเราได้เข้าใจเกมและสาเหตุที่ทำให้ข้อมูลนั้นวิ่งได้จริงแล้ว
       </div>
