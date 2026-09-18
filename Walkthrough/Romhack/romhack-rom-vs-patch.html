@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ROM กับ ROM แพตช์ · คู่มือทำ ROM Hack · เกเรแปลไทย</title>
+<meta name="description" content="อธิบายว่าทำไม ROM กับ ROM แพตช์ต้องวิเคราะห์ร่วมกัน และทำงานแบบเดียวกันได้ยังไงในกระบวนการแปลเกมภาษาไทย">
+<link rel="icon" href="https://gayray.netlify.app/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Sarabun"', "ui-sans-serif", "system-ui", "sans-serif"],
+          pixel: ['"Press Start 2P"', "ui-monospace", "monospace"],
+        },
+        colors: {
+          paper: "#dbdadd", card: "#ecebee", edge: "#adaab5",
+          ink: "#59575e", muted: "#726f79", accent: "#cf3a3a",
+          go: "#2f9e5c", navy: "#3a56c4",
+        },
+        boxShadow: { pop: "3px 3px 0 #59575e", "pop-sm": "2px 2px 0 #59575e" },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #dbdadd; }
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-track { background: #c9c7cd; }
+  ::-webkit-scrollbar-thumb { background: #93909c; border: 3px solid #c9c7cd; }
+  [hidden] { display: none !important; }
+  .pix { font-family: "Press Start 2P", ui-monospace, "Courier New", monospace; }
+  :target { scroll-margin-top: 5rem; }
+  .prose-th p { margin-top: .6rem; line-height: 1.85; }
+  .prose-th ul, .prose-th ol { margin-top: .5rem; }
+  .wt-table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  .wt-table th, .wt-table td { border: 1px solid #adaab5; padding: 5px 8px; text-align: left; vertical-align: top; }
+  .wt-table th { background: #d6d4da; font-weight: 700; }
+  .wt-table tbody tr:nth-child(even) { background: #e3e1e6; }
+  .note { border-left: 4px solid #cf3a3a; background: #f0dede; padding: 10px 12px; border-radius: 4px; margin-top: .7rem; }
+  .good { border-left: 4px solid #2f9e5c; background: #dfeee5; padding: 10px 12px; border-radius: 4px; margin-top: .7rem; }
+  .step { border: 2px solid #59575e; background: #ecebee; border-radius: 8px; padding: 12px 14px; box-shadow: 3px 3px 0 #59575e; }
+  .stepnum { font-family: "Press Start 2P", monospace; font-size: 11px; background: #cf3a3a; color: #fff; border: 2px solid #59575e; border-radius: 6px; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; }
+  .tab { display: inline-flex; align-items: center; border: 2px solid #59575e; border-radius: 8px; padding: .45rem .8rem; font-size: 13px; font-weight: 700; background: #ecebee; color: #59575e; white-space: nowrap; }
+  .tab:hover { background: #d6d4da; }
+  .tab.active { background: #59575e; color: #fff; }
+</style>
+</head>
+<body class="min-h-screen font-sans text-ink antialiased">
+
+<header id="top" class="sticky top-0 z-40 border-b-2 border-ink bg-paper/95 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:px-6">
+    <div class="min-w-0 flex-1">
+      <p class="text-sm font-bold tracking-wide text-accent">บทความ · ROM HACK</p>
+      <h1 class="text-lg font-bold leading-tight sm:text-xl">ROM กับ ROM แพตช์</h1>
+      <p class="mt-0.5 text-xs text-muted">ส่วนหนึ่งของ "คู่มือทำ ROM Hack" · เกี่ยวข้องกับ: FC (NES) · SFC (SNES) · อัปเดตล่าสุด 11 ก.ย. 2569</p>
+    </div>
+    <div class="flex shrink-0 items-center gap-2">
+      <a href="https://gayray.netlify.app/" class="inline-flex items-center gap-1.5 rounded border-2 border-ink bg-card px-3 py-2 text-sm font-bold shadow-pop-sm transition hover:bg-ink hover:text-white active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
+        หน้าแรก
+      </a>
+      <a href="#toc" class="inline-flex items-center gap-1.5 rounded border-2 border-ink bg-card px-3 py-2 text-sm font-bold shadow-pop-sm transition hover:bg-ink hover:text-white active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
+        สารบัญ
+      </a>
+    </div>
+  </div>
+  <div class="mx-auto flex max-w-6xl flex-wrap gap-2 px-4 pb-3 sm:px-6">
+    <a href="romhack-guide.html" class="tab">1) บทนำ</a>
+    <a href="romhack-sfc-pipeline.html" class="tab">2) กรรมวิธี SFC เต็มรูปแบบ</a>
+    <a href="romhack-nes-tiles.html" class="tab">3) ปัญหา Tile บน NES/FC</a>
+    <a href="romhack-nes-vs-snes.html" class="tab">4) เลือกเครื่อง/เลือกเกม</a>
+    <a href="romhack-rom-vs-patch.html" class="tab active">5) ROM กับ ROM แพตช์</a>
+  </div>
+</header>
+
+<div class="mx-auto max-w-6xl gap-8 px-4 py-6 sm:px-6 lg:flex">
+
+  <aside id="toc" class="mb-6 shrink-0 lg:mb-0 lg:w-60 lg:sticky lg:top-20 lg:self-start">
+    <nav class="rounded-lg border-2 border-ink bg-card p-4 text-sm shadow-pop-sm">
+      <p class="mb-2 text-base font-bold text-ink">สารบัญ</p>
+      <ol class="space-y-1.5">
+        <li><a class="block hover:text-accent" href="#intro">1. ทำไมต้องดู ROM กับ ROM แพตช์</a></li>
+        <li><a class="block hover:text-accent" href="#difference">2. ROM ต้นฉบับ vs ROM แพตช์</a></li>
+        <li><a class="block hover:text-accent" href="#compare">3. เปรียบเทียบข้อมูลที่เปลี่ยน</a></li>
+        <li><a class="block hover:text-accent" href="#flow">4. เส้นทางข้อความแบบจริง</a></li>
+        <li><a class="block hover:text-accent" href="#hook">5. เพิ่มฟอนต์/Pointer/Hook</a></li>
+        <li><a class="block hover:text-accent" href="#check">6. ทดสอบและปล่อยแพตช์</a></li>
+        <li><a class="block hover:text-accent" href="#summary">7. สรุป</a></li>
+      </ol>
+      <hr class="my-3 border-edge">
+      <ul class="space-y-1.5 text-[13px]">
+        <li><a class="block hover:text-accent" href="romhack-guide.html">← กลับหน้าบทนำ</a></li>
+        <li><a class="block hover:text-accent" href="romhack-nes-vs-snes.html">← หน้าเลือกเครื่อง/เลือกเกม</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="prose-th min-w-0 flex-1 space-y-10">
+
+    <section id="intro">
+      <h2 class="text-xl font-bold text-navy">1. ทำไมต้องดู ROM กับ ROM แพตช์ ร่วมกัน</h2>
+      <p>งานแปลเกมภาษาไทยบนคอนโซลยุคเก่าไม่ได้เป็นแค่ “เปิดไฟล์ ROM แล้วเปลี่ยนข้อความตรง ๆ” แต่คือการทำความเข้าใจว่า <b>เกมเก็บข้อมูลแบบไหน</b> และ <b>คำสั่งในเกมเรียกข้อมูลนั้นมาวาดบนหน้าจออย่างไร</b></p>
+      <p>ROM ต้นฉบับคือ “ต้นแบบดั้งเดิม” ของเกม ส่วน ROM แพตช์คือ “เวอร์ชันที่ถูกปรับเปลี่ยนหรือเพิ่มข้อมูลใหม่” เช่น มีฟอนต์ภาษาไทย, มี pointer ใหม่, มี routine ใหม่, หรือมีพื้นที่ว่างใหม่ถูกใช้เพื่อเก็บข้อความทดแทนหรือข้อความเพิ่มเติม</p>
+      <p>หากเราเปิดดูแต่ ROM ตัวเดียวหรือ ROM แพตช์ตัวเดียวอย่างลำพัง จะเห็นเพียง “ข้อมูลเงียบ ๆ” ที่ไม่บอกว่าข้อมูลที่เปลี่ยนไปนั้นเกี่ยวข้องกับอะไรบนหน้าจอหรือโค้ดของเกมอย่างไร</p>
+      <div class="good">
+        <b>สำคัญที่สุด:</b> การทำงานกับ ROM และ ROM แพตช์จึงต้องดูพร้อมกัน เพราะทั้งสองแบบมีส่วนที่ “ซ่อนความจริง” ของเกมอยู่ตรงกัน — ความจริงที่บอกว่าเกมอ่านข้อมูลจากไหน, จัดเก็บข้อมูลแบบไหน, และวาดข้อความออกมาแบบไหน
+      </div>
+    </section>
+
+    <section id="difference">
+      <h2 class="text-xl font-bold text-navy">2. ROM ต้นฉบับ vs ROM แพตช์: ความต่างที่สำคัญ</h2>
+      <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div class="step">
+          <div class="stepnum">A</div>
+          <b class="ml-2">ROM ต้นฉบับ</b>
+          <p class="mt-1 text-sm">เป็นโครงสร้างดั้งเดิมของเกมก่อนมีการดัดแปลง มีข้อมูลสำคัญ เช่น Pointer Table, Text Pool, Control Code, Font Tile, Bank, Routine ที่ใช้ในการวาดข้อความ</p>
+        </div>
+        <div class="step">
+          <div class="stepnum">B</div>
+          <b class="ml-2">ROM แพตช์</b>
+          <p class="mt-1 text-sm">เป็นเวอร์ชันที่มีการเปลี่ยนข้อมูลหรือโค้ด เช่น เพิ่มชุดอักขระไทย, ย้ายข้อความไปเก็บใน free space, เปลี่ยน pointer, Hook routine, หรือใช้ bank ใหม่</p>
+        </div>
+      </div>
+
+      <p class="mt-4">เมื่อเทียบกัน เราจะสรุปได้ 3 เรื่องหลักทันที:</p>
+      <ol class="ml-5 list-decimal space-y-2">
+        <li><b>ตำแหน่งที่ข้อมูลเปลี่ยนไป</b> อยู่ที่ตรงไหนใน ROM</li>
+        <li><b>ข้อมูลที่เปลี่ยนไป</b> นั้นเป็นฟอนต์, Text Pool, Pointer, หรือโค้ดวาดข้อความ</li>
+        <li><b>สิ่งที่เปลี่ยน</b> นั้นเกี่ยวข้องกับหน้าจอหรือ mechanic ใดในเกม</li>
+      </ol>
+
+      <div class="note">
+        <b>เช่น:</b> ถ้าพบข้อมูลชุดหนึ่งมีลักษณะเป็นไบต์ซ้ำ ๆ แบบบล็อกใหญ่ อาจเป็นฟอนต์หรือ tile graphics แต่ถ้าเป็นข้อมูลต่อเนื่องที่อ่านแล้วมีรูปแบบประโยคภาษาอังกฤษหรือข้อความที่มี control code อาจคือ text pool หรือ script table การอ่านอย่างเดียวไม่ได้กำหนดความหมายได้ จึงต้องเชื่อมกับโค้ดและหน้าจอที่เรียกใช้ข้อมูลนั้นด้วย
+      </div>
+    </section>
+
+    <section id="compare">
+      <h2 class="text-xl font-bold text-navy">3. เปรียบเทียบข้อมูลที่เปลี่ยน: ใช้สัญญาณให้ตรง</h2>
+      <table class="wt-table mt-3">
+        <thead>
+          <tr><th>ลักษณะข้อมูล</th><th>สันนิษฐานเบื้องต้น</th><th>สิ่งที่ต้องตรวจต่อ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ไบต์ซ้ำเป็นบล็อกใหญ่</td><td>ฟอนต์หรือ tile graphics</td><td>ขนาด tile, bank, VRAM, palette, การโหลดลงหน้าจอ</td></tr>
+          <tr><td>ข้อมูลต่อเนื่องเป็นประโยค/ข้อความ</td><td>Text Pool หรือ script data</td><td>encoding, pointer reference, control code, word wrap</td></tr>
+          <tr><td>ชุด 2–3 ไบต์เรียงกัน</td><td>Pointer Table</td><td>Address, bank, endian, ลำดับเรียกข้อมูล</td></tr>
+          <tr><td>คำสั่งหรือ jump ถูกแทนที่</td><td>Hook หรือ routine ใหม่</td><td>register, stack, jump-back, fallback, security-check</td></tr>
+          <tr><td>ROM เล็กลง/ขยายขึ้น</td><td>free space หรือ bank ใหม่</td><td>ข้อมูลถูกย้ายไปไหน, มีการระบุ Bank/Address ใหม่หรือไม่</td></tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <b>กฎสำคัญ:</b> การดูแค่ “ข้อมูลเปลี่ยนตรงไหน” ยังไม่พอ ต้องถามต่อว่า “ข้อมูลนี้ถูกใช้เพื่ออะไร” และ “ข้อความนี้ถูกเรียกผ่านระบบไหน” เพราะข้อมูลหลายชนิดใน ROM อาจมีรูปแบบคล้ายกัน แต่ข้างหน้าหรือลึกลงไปมีบทบาทต่างกันรุนแรง
+      </div>
+    </section>
+
+    <section id="flow">
+      <h2 class="text-xl font-bold text-navy">4. เส้นทางข้อมูลแบบจริง: การอ่าน ROM เป็นระบบ ไม่ใช่แค่ไบต์</h2>
+      <p>สิ่งที่นักแปลเกมต้องเห็นคือ “ข้อความไม่ได้วิ่งโดยตรงจาก ROM ไปแสดงบนหน้าจอ” แต่ผ่านหลายชั้นข้อมูลก่อน:</p>
+      <div class="mt-4 rounded border-2 border-ink bg-card p-4 shadow-pop-sm">
+        <div class="grid grid-cols-1 gap-3 md:grid-cols-7 md:items-center">
+          <div class="rounded border-2 border-ink bg-paper p-3 text-center text-sm font-bold">Text ID</div>
+          <div class="hidden md:block text-center text-lg font-bold text-muted">→</div>
+          <div class="rounded border-2 border-ink bg-paper p-3 text-center text-sm font-bold">Pointer</div>
+          <div class="hidden md:block text-center text-lg font-bold text-muted">→</div>
+          <div class="rounded border-2 border-ink bg-paper p-3 text-center text-sm font-bold">Text Pool</div>
+          <div class="hidden md:block text-center text-lg font-bold text-muted">→</div>
+          <div class="rounded border-2 border-ink bg-paper p-3 text-center text-sm font-bold">Decoder</div>
+        </div>
+        <div class="mt-3 grid grid-cols-1 gap-3 md:grid-cols-5 md:items-center">
+          <div class="hidden md:block text-center text-lg font-bold text-muted">↓</div>
+          <div class="hidden md:block text-center text-lg font-bold text-muted">↓</div>
+          <div class="hidden md:block text-center text-lg font-bold text-muted">↓</div>
+          <div class="hidden md:block text-center text-lg font-bold text-muted">↓</div>
+          <div class="hidden md:block text-center text-lg font-bold text-muted">↓</div>
+        </div>
+        <div class="mt-3 grid grid-cols-1 gap-3 md:grid-cols-5 md:items-center">
+          <div class="rounded border-2 border-ink bg-paper p-3 text-center text-sm font-bold">Control Code</div>
+          <div class="hidden md:block text-center text-lg font-bold text-muted">→</div>
+          <div class="rounded border-2 border-ink bg-paper p-3 text-center text-sm font-bold">Font / VRAM</div>
+          <div class="hidden md:block text-center text-lg font-bold text-muted">→</div>
+          <div class="rounded border-2 border-ink bg-paper p-3 text-center text-sm font-bold">Screen</div>
+        </div>
+      </div>
+
+      <p class="mt-3">ถ้าเรารู้ว่า ROM ต้นฉบับทำงานแบบนี้ เราก็จะรู้ว่า ROM แพตช์ที่มีข้อมูลใหม่ถูกแทรกเข้ามา “ต้องเชื่อมต่อกับชั้นไหน”</p>
+      <ul class="ml-5 list-disc space-y-1.5">
+        <li>ถ้า pointer เปลี่ยน: ต้องดูว่าชี้ไปยัง address ใหม่จริงหรือไม่</li>
+        <li>ถ้าฟอนต์ขยาย: ต้องดูว่าถูกโหลดเข้าระบบ VRAM/CHR อย่างไร</li>
+        <li>ถ้าข้อความยาวขึ้น: ต้องดูว่าต้องมี word wrap, line wrap, หรือ buffer ใหม่</li>
+        <li>ถ้ารoutine ถูก Hook: ต้องดูว่ามี fallback หรือ save/restore register หรือไม่</li>
+      </ul>
+    </section>
+
+    <section id="hook">
+      <h2 class="text-xl font-bold text-navy">5. ทำไม “เพิ่มฟอนต์/Pointer/Hook” จึงต้องใช้วิธีเดียวกัน</h2>
+      <p>งานแปลไทยไม่ได้จบแค่ “แปลงข้อความให้เป็นไทยแล้วติดลง ROM” แต่ต้องรักษาว่า:</p>
+      <ol class="ml-5 list-decimal space-y-2">
+        <li><b>Text ID</b> ยังชี้ข้อมูลที่ถูกต้องหรือยัง</li>
+        <li><b>Pointer</b> ยังอ้างถึง address และ bank ที่ถูกต้องหรือไม่</li>
+        <li><b>Text Pool</b> มีพื้นที่เพียงพอ หรือจำเป็นต้องย้าย/ขยายใหม่</li>
+        <li><b>Font Tile</b> อยู่ในตำแหน่งที่เกมสามารถโหลดและวาดได้จริงไหม</li>
+        <li><b>Hook</b> ถูกฝังลงใน routine เดิมอย่างปลอดภัยหรือไม่</li>
+      </ol>
+
+      <div class="good">
+        <b>สรุปสั้น:</b> ROM กับ ROM แพตช์จะถูกวิเคราะห์ด้วยวิธีเดียวกัน เพราะแม้ข้อมูลจะต่างกันตรง “ต้นฉบับ vs เวอร์ชันที่ถูกแก้ไข” แต่ทั้งสองรูปแบบยังกำหนดความสัมพันธ์ของข้อมูลและโค้ดแบบเดียวกัน — ความสัมพันธ์ระหว่าง address, bank, decoder, font, routine และหน้าจอ
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold text-navy">6. วิธีใช้ ROM แพตช์เพื่อทำงานแปลไทยแบบมีระบบ</h2>
+      <p>ถ้าเรามี ROM แพตช์หรือ ROM ที่มีการแก้ไขแล้ว วิธีที่เหมาะที่สุดไม่ใช่ “เอาข้อมูลไปแปลแล้วคาดว่าเกมจะแสดงออกมา” แต่ควรทำตามลำดับต่อไปนี้:</p>
+      <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="step"><span class="stepnum">1</span> <b class="ml-2">ตรวจแบบต้นฉบับ</b><p class="mt-1 text-sm">ออกแบบระบบและดูว่าข้อมูลใน ROM ถูกเก็บไว้ตรงไหน</p></div>
+        <div class="step"><span class="stepnum">2</span> <b class="ml-2">เทียบกับแพตช์</b><p class="mt-1 text-sm">หา “ช่วงที่เปลี่ยน” และสิ่งที่ปลาเปลี่ยนจริง</p></div>
+        <div class="step"><span class="stepnum">3</span> <b class="ml-2">ระบุชั้นข้อมูล</b><p class="mt-1 text-sm">Text / Pointer / Font / Control code / Hook</p></div>
+        <div class="step"><span class="stepnum">4</span> <b class="ml-2">ย้ายหรือแทนข้อมูลใหม่</b><p class="mt-1 text-sm">ปรับ pointer, font, text pool ให้สอดคล้องกัน</p></div>
+        <div class="step"><span class="stepnum">5</span> <b class="ml-2">เชื่อมกลับสู่ระบบเดิม</b><p class="mt-1 text-sm">สร้าง Hook หรือ trampoline ให้งานเดิมยังทำงาน</p></div>
+        <div class="step"><span class="stepnum">6</span> <b class="ml-2">ทดสอบจริง</b><p class="mt-1 text-sm">เช็กทุกหน้าจอจนกว่าภาพและข้อความจะถูกต้อง</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold text-navy">7. กฎ 5 ข้อที่ควรจำเมื่อเจอ ROM แพตช์</h2>
+      <ol class="ml-5 list-decimal space-y-2">
+        <li><b>อย่าอ่าน ROM แบบคนดูสรุปทางเดียว:</b> แม้ข้อมูลดูเป็นฟอนต์หรือข้อความก็ยังต้องดูชนิดของ routine ที่เรียกมัน</li>
+        <li><b>อย่าเชื่อ “ค่าที่เปลี่ยน” แบบไม่ตรวจ:</b> ควรดูว่าช่วงข้อมูลนั้นมีอิทธิพลต่อระบบอะไรบ้าง</li>
+        <li><b>อย่าคิดว่า pointer = ข้อความเสมอ:</b> pointer เป็นตัวชี้อ้างอิง ไม่ใช่ข้อมูลภาษา</li>
+        <li><b>อย่าละเลย Hook:</b> ถ้าเกมดัดแปลง routine เดิมเพื่อวาดข้อความหรือรองรับกราฟิกใหม่ ต้องจัดการ save/restore register และ jump back ให้ถูกต้อง</li>
+        <li><b>อย่าเริ่มจาก “แปลทั้งเกม”:</b> ใช้ 1–2 ประโยค และ 1 หน้าจอแสดงผลที่ชัดเจนก่อน แล้วค่อยขยายออก</li>
+      </ol>
+    </section>
+
+    <section id="check">
+      <h2 class="text-xl font-bold text-navy">8. สถานะความถูกต้องในการทดสอบ</h2>
+      <p>การปล่อยแพตช์ที่ดีต้องมีจุดสิ้นสุดที่ชัดเจน: เกมยังทำงานตามลำดับเดิม, ข้อความเปลี่ยนเป็นภาษาไทยที่อ่านง่าย, หน้าใดหน้าหนึ่งไม่เสีย, ระบบไม่พังเมื่อสลับประโยคยาว หรือเรียกกลับหน้าจอ</p>
+      <ul class="ml-5 list-disc space-y-1.5">
+        <li>ข้อความไม่ล้นกล่อง</li>
+        <li>สระและวรรณยุกต์ไม่ชนกัน</li>
+        <li>Pointer ไม่เสีย</li>
+        <li>Hook ไม่ทำให้เกมค้างหรือข้ามคำสั่ง</li>
+        <li>ทั้งเกมที่มีข้อความยาวและข้อความสั้นยังแสดงได้เป็นปกติ</li>
+      </ul>
+      <div class="note">
+        <b>ถ้าตรงจุดนี้ผ่าน:</b> เราไม่เพียงแค่ “ได้ ROM แพตช์ที่แปลภาษาไทยแล้ว” แต่เพิ่งพิสูจน์ว่าเราได้เข้าใจเกมและสาเหตุที่ทำให้ข้อมูลนั้นวิ่งได้จริงแล้ว
+      </div>
+    </section>
+
+    <section id="summary">
+      <h2 class="text-xl font-bold text-navy">9. สรุป</h2>
+      <p>ROM กับ ROM แพตช์เป็นสองสิ่งที่เหมือนกันในแง่การวิเคราะห์ข้อมูล: ทั้งคู่เป็นเกมเดียวกันที่ถูกดูในมุมต่างกันเท่านั้น</p>
+      <p>เมื่อนักแปลเกมเห็น “ความต่าง” ระหว่าง ROM เดิมและ ROM แพตช์แล้ว การทำงานที่ถูกต้องคือไม่หยุดที่ “พบว่าเปลี่ยนตรงไหน” แต่ต้องต่อไปว่า “เปลี่ยนตรงนั้นไปทำให้เกิดอะไรขึ้นกับระบบเกม” และ “ต้องปรับอะไรบ้างให้ระบบยังทำงานตามเดิม”</p>
+      <div class="good mt-4">
+        <b>ถ้อยคำสุดท้าย:</b> เราทำงานกับ ROM และ ROM แพตช์แบบเดียวกันได้เพราะทั้งสองแบบมีโครงสร้างข้อมูล, พฤติกรรมการเรียกใช้งาน, และการเชื่อมต่อของกราฟิกกับโค้ดเหมือนกัน — ต่างกันแค่จุดเริ่มต้นและจุดที่ข้อมูลถูกปรับ/ต่อเติมเท่านั้น
+      </div>
+      <div class="note mt-4">
+        <b>ต่อจากตรงนี้:</b> ถ้ารู้สึกว่า “ศูนย์กลางของงานไม่ได้อยู่ที่ข้อความชุดเดียว แต่ที่ data flow ของทั้งเกม” ให้เปิดอ่านต่อที่ <a class="text-accent underline" href="romhack-guide.html">บทนำ ROM Hack</a> หรือ <a class="text-accent underline" href="romhack-sfc-pipeline.html">กรรมวิธี SFC เต็มรูปแบบ</a> แล้วเริ่มมองเรื่องการวางฟอนต์/ใช้ free space/Hook เป็นชุดลำดับเดียวกัน
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="border-t-2 border-ink py-8 text-center text-xs text-muted">
+  <p><a class="underline hover:text-accent" href="https://gayray.netlify.app/">← กลับหน้าหลัก เกเรแปลไทย</a></p>
+</footer>
+
+</body>
+</html>
