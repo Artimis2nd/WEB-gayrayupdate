@@ -1,0 +1,53 @@
+# ล้างสำเนาเก่าใน jsDelivr ทุกครั้งที่ push เข้า main
+# เว็บ gayray.netlify.app ดึง games.json/รูปผ่าน cdn.jsdelivr.net/gh/Artimis2nd/WEB-gayrayupdate@main
+# ซึ่ง jsDelivr จำไว้ได้นานสุด 12 ชม. — สคริปต์นี้สั่งล้างให้ ของใหม่ขึ้นเว็บภายในไม่กี่นาที
+name: Purge jsDelivr cache
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # กดรันเองได้จากแท็บ Actions
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Purge games.json + changed files
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          python3 - <<'EOF'
+          import os, subprocess, urllib.parse, urllib.request, json, time
+
+          before, after = os.environ.get("BEFORE", ""), os.environ["AFTER"]
+          files = {"games.json"}  # ล้างเสมอ — ป้ายเกมบนหน้าแรกมาจากไฟล์นี้
+          if before and set(before) != {"0"}:
+              out = subprocess.run(["git", "diff", "--name-only", before, after],
+                                   capture_output=True, text=True).stdout
+              files |= {f for f in out.splitlines() if f and not f.startswith(".github/")}
+
+          base = "https://purge.jsdelivr.net/gh/Artimis2nd/WEB-gayrayupdate@main/"
+          failed = 0
+          for f in sorted(files):
+              url = base + urllib.parse.quote(f)
+              for attempt in range(3):
+                  try:
+                      with urllib.request.urlopen(url, timeout=30) as r:
+                          body = json.loads(r.read())
+                      ok = body.get("status") == "finished" or all(
+                          not v.get("throttled") for v in body.get("paths", {}).values())
+                      print(("OK   " if ok else "WARN ") + f)
+                      break
+                  except Exception as e:
+                      print(f"retry {attempt + 1}: {f} ({e})")
+                      time.sleep(5)
+              else:
+                  failed += 1
+                  print("FAIL " + f)
+          raise SystemExit(1 if failed else 0)
+          EOF
