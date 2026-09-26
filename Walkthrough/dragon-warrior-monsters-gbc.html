@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>บทสรุป Dragon Warrior Monsters ไทย · เกเรแปลไทย</title>
+<meta name="description" content="บทสรุป/วิธีเล่น Dragon Warrior Monsters (Game Boy Color) ฉบับภาษาไทย — เดินเรื่องครบทุก Travelers' Gate ทุก Class ใน Arena จนถึง Starry Night Tournament เนื้อหาหลังจบเกม และตารางผสมมอนสเตอร์ทั้งหมด">
+<link rel="icon" href="https://gayray.netlify.app/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Sarabun"', "ui-sans-serif", "system-ui", "sans-serif"],
+          pixel: ['"Press Start 2P"', "ui-monospace", "monospace"],
+        },
+        colors: {
+          paper: "#dbdadd", card: "#ecebee", edge: "#adaab5",
+          ink: "#59575e", muted: "#726f79", accent: "#cf3a3a",
+          go: "#2f9e5c", navy: "#3a56c4",
+        },
+        boxShadow: { pop: "3px 3px 0 #59575e", "pop-sm": "2px 2px 0 #59575e" },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #dbdadd; }
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-track { background: #c9c7cd; }
+  ::-webkit-scrollbar-thumb { background: #93909c; border: 3px solid #c9c7cd; }
+  [hidden] { display: none !important; }
+  .pix { font-family: "Press Start 2P", ui-monospace, "Courier New", monospace; }
+  :target { scroll-margin-top: 5rem; }
+  .prose-th p { margin-top: .6rem; line-height: 1.85; }
+  .prose-th ul, .prose-th ol { margin-top: .5rem; }
+  .wt-table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  .wt-table th, .wt-table td { border: 1px solid #adaab5; padding: 5px 8px; text-align: left; vertical-align: top; }
+  .wt-table th { background: #d6d4da; font-weight: 700; }
+  .wt-table tbody tr:nth-child(even) { background: #e3e1e6; }
+  .boss { border-left: 4px solid #cf3a3a; background: #f0dede; padding: 10px 12px; border-radius: 4px; margin-top: .7rem; }
+  .gate { border: 2px solid #3a56c4; background: #e4e7f3; padding: 10px 12px; border-radius: 6px; margin-top: .8rem; font-size: 14px; }
+  .prose-th .gate > p:first-child { margin-top: 0; }
+  .gate dt { font-weight: 700; color: #3a56c4; }
+  .gate dd { margin: 0 0 .35rem 0; }
+  .note { border-left: 4px solid #2f9e5c; background: #dfeee5; padding: 8px 12px; border-radius: 4px; margin-top: .7rem; font-size: 14px; }
+  .party { border: 1px dashed #adaab5; background: #f3f2f5; padding: 8px 12px; border-radius: 4px; margin-top: .7rem; font-size: 14px; }
+  .chap { margin-top: 2.2rem; border-bottom: 2px solid rgba(58,86,196,.3); padding-bottom: .25rem; font-size: 1.125rem; font-weight: 700; color: #3a56c4; }
+  .chap small { display: block; font-size: .75rem; font-weight: 600; color: #726f79; }
+</style>
+</head>
+<body class="min-h-screen font-sans text-ink antialiased">
+
+<header id="top" class="sticky top-0 z-40 border-b-2 border-ink bg-paper/95 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:px-6">
+    <div class="min-w-0 flex-1">
+      <p class="text-sm font-bold tracking-wide text-accent">บทสรุป · TH</p>
+      <h1 class="text-lg font-bold leading-tight sm:text-xl">Dragon Warrior Monsters</h1>
+      <p class="mt-0.5 text-xs text-muted">เครื่อง: Game Boy Color (GBC)</p>
+    </div>
+    <div class="flex shrink-0 items-center gap-2">
+      <a href="https://gayray.netlify.app/" class="inline-flex items-center gap-1.5 rounded border-2 border-ink bg-card px-3 py-2 text-sm font-bold shadow-pop-sm transition hover:bg-ink hover:text-white active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+        หน้าแรก
+      </a>
+      <a href="#toc" class="inline-flex items-center gap-1.5 rounded border-2 border-ink bg-card px-3 py-2 text-sm font-bold shadow-pop-sm transition hover:bg-ink hover:text-white active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        สารบัญ
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="mx-auto max-w-6xl gap-8 px-4 py-6 sm:px-6 lg:flex">
+
+  <!-- ===== TOC ===== -->
+  <aside id="toc" class="mb-6 shrink-0 lg:mb-0 lg:w-64 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
+    <nav class="rounded-lg border-2 border-ink bg-card p-4 text-sm shadow-pop-sm">
+      <p class="mb-2 text-base font-bold text-ink">สารบัญ</p>
+      <ol class="space-y-1.5">
+        <li><a class="block hover:text-accent" href="#basics">1. ระบบพื้นฐานของเกม</a></li>
+        <li>
+          <a class="block hover:text-accent" href="#story">2. เนื้อเรื่อง (Walkthrough)</a>
+          <ol class="ml-3 mt-1 space-y-1 text-xs text-muted">
+            <li><a class="block hover:text-accent" href="#intro">Introduction</a></li>
+            <li><a class="block hover:text-accent" href="#prologue">Prologue</a></li>
+            <li><a class="block hover:text-accent" href="#ch1">Chapter 1 - Gate 1: Beginning</a></li>
+            <li><a class="block hover:text-accent" href="#ch2">Chapter 2 - G Class</a></li>
+            <li><a class="block hover:text-accent" href="#ch3">Chapter 3 - Gate 2: Villager</a></li>
+            <li><a class="block hover:text-accent" href="#ch4">Chapter 4 - Gate 3: Talisman</a></li>
+            <li><a class="block hover:text-accent" href="#ch5">Chapter 5 - Bazaar Gate</a></li>
+            <li><a class="block hover:text-accent" href="#ch6">Chapter 6 - F Class</a></li>
+            <li><a class="block hover:text-accent" href="#ch7">Chapter 7 - Gate 4: Memories</a></li>
+            <li><a class="block hover:text-accent" href="#ch8">Chapter 8 - Gate 5: Bewilder</a></li>
+            <li><a class="block hover:text-accent" href="#ch9">Chapter 9 - E Class</a></li>
+            <li><a class="block hover:text-accent" href="#ch10">Chapter 10 - Gate 6: Peace</a></li>
+            <li><a class="block hover:text-accent" href="#ch11">Chapter 11 - Gate 7: Bravery</a></li>
+            <li><a class="block hover:text-accent" href="#ch12">Chapter 12 - Well Gate</a></li>
+            <li><a class="block hover:text-accent" href="#ch13">Chapter 13 - D Class</a></li>
+            <li><a class="block hover:text-accent" href="#ch14">Chapter 14 - Gate 8: Anger</a></li>
+            <li><a class="block hover:text-accent" href="#ch15">Chapter 15 - Gate 9: Strength</a></li>
+            <li><a class="block hover:text-accent" href="#ch16">Chapter 16 - Monster Farm Gate</a></li>
+            <li><a class="block hover:text-accent" href="#ch17">Chapter 17 - Goopi's Gate</a></li>
+            <li><a class="block hover:text-accent" href="#ch18">Chapter 18 - Medal Man's Gate</a></li>
+            <li><a class="block hover:text-accent" href="#ch19">Chapter 19 - C Class</a></li>
+            <li><a class="block hover:text-accent" href="#ch20">Chapter 20 - Gate 10: Joy</a></li>
+            <li><a class="block hover:text-accent" href="#ch21">Chapter 21 - Gate 11: Wisdom</a></li>
+            <li><a class="block hover:text-accent" href="#ch22">Chapter 22 - B Class</a></li>
+            <li><a class="block hover:text-accent" href="#ch23">Chapter 23 - Gate 12: Happiness</a></li>
+            <li><a class="block hover:text-accent" href="#ch24">Chapter 24 - Gate 13: Temptation</a></li>
+            <li><a class="block hover:text-accent" href="#ch25">Chapter 25 - A Class</a></li>
+            <li><a class="block hover:text-accent" href="#ch26">Chapter 26 - Gate 14: Labyrinth</a></li>
+            <li><a class="block hover:text-accent" href="#ch27">Chapter 27 - Gate 15: Judgement</a></li>
+            <li><a class="block hover:text-accent" href="#ch28">Chapter 28 - Library Gate</a></li>
+            <li><a class="block hover:text-accent" href="#ch29">Chapter 29 - S Class</a></li>
+            <li><a class="block hover:text-accent" href="#ch30">Chapter 30 - Gate 16: Reflection</a></li>
+            <li><a class="block hover:text-accent" href="#ch31">Chapter 31 - Starry Night Tournament</a></li>
+            <li><a class="block hover:text-accent" href="#final">Final Chapter - The End</a></li>
+          </ol>
+        </li>
+        <li>
+          <a class="block hover:text-accent" href="#postgame">3. หลังจบเกม (Post Chapter)</a>
+          <ol class="ml-3 mt-1 space-y-1 text-xs text-muted">
+            <li><a class="block hover:text-accent" href="#post1">Post 1 - Gate 17: Ambition</a></li>
+            <li><a class="block hover:text-accent" href="#post2">Post 2 - Gate 18: Demolition</a></li>
+            <li><a class="block hover:text-accent" href="#post3">Post 3 - Gate 19: Mastermind</a></li>
+            <li><a class="block hover:text-accent" href="#post4">Post 4 - Gate 20: Control</a></li>
+            <li><a class="block hover:text-accent" href="#post5">Post 5 - Gate 21: Extinction</a></li>
+            <li><a class="block hover:text-accent" href="#post6">Post 6 - Gate 22: Sleep</a></li>
+            <li><a class="block hover:text-accent" href="#post7">Post 7 - Bazaar Gate 2</a></li>
+            <li><a class="block hover:text-accent" href="#post8">Post 8 - Goopi's Gate 2</a></li>
+            <li><a class="block hover:text-accent" href="#post9">Post 9 - Grandpa's Gate</a></li>
+            <li><a class="block hover:text-accent" href="#post10">Post 10 - The Master Battle</a></li>
+            <li><a class="block hover:text-accent" href="#secret">??? (ด่านลับ)</a></li>
+          </ol>
+        </li>
+        <li>
+          <a class="block hover:text-accent" href="#breeding">4. ตารางผสมมอนสเตอร์ (Breeding)</a>
+          <ol class="ml-3 mt-1 grid grid-cols-2 gap-x-2 gap-y-1 text-xs text-muted">
+            <li><a class="block hover:text-accent" href="#breed-slime">Slime Family</a></li>
+            <li><a class="block hover:text-accent" href="#breed-dragon">Dragon Family</a></li>
+            <li><a class="block hover:text-accent" href="#breed-beast">Beast Family</a></li>
+            <li><a class="block hover:text-accent" href="#breed-bird">Bird Family</a></li>
+            <li><a class="block hover:text-accent" href="#breed-plant">Plant Family</a></li>
+            <li><a class="block hover:text-accent" href="#breed-bug">Bug Family</a></li>
+            <li><a class="block hover:text-accent" href="#breed-devil">Devil Family</a></li>
+            <li><a class="block hover:text-accent" href="#breed-zombie">Zombie Family</a></li>
+            <li><a class="block hover:text-accent" href="#breed-material">Material Family</a></li>
+            <li><a class="block hover:text-accent" href="#breed-boss">Boss Family</a></li>
+          </ol>
+        </li>
+        <li>
+          <a class="block hover:text-accent" href="#ref">5. ข้อมูลอ้างอิง</a>
+          <ol class="ml-3 mt-1 space-y-1 text-xs text-muted">
+            <li><a class="block hover:text-accent" href="#ref-arena">Arena ทุก Class</a></li>
+            <li><a class="block hover:text-accent" href="#ref-medal">TinyMedal &amp; รางวัล</a></li>
+            <li><a class="block hover:text-accent" href="#ref-shop">ร้านค้า Bazaar</a></li>
+            <li><a class="block hover:text-accent" href="#ref-queen">คำขอของ Queen</a></li>
+            <li><a class="block hover:text-accent" href="#ref-bosses">บอสทุก Travelers' Gate</a></li>
+          </ol>
+        </li>
+      </ol>
+    </nav>
+  </aside>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="prose-th min-w-0 flex-1 space-y-10">
+
+    <div class="rounded-lg border-2 border-accent bg-card p-4 text-sm shadow-pop-sm">
+      <p class="mb-1 flex items-center gap-1.5 font-bold text-accent">
+        <svg class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+        ข้อแนะนำก่อนเริ่มเล่น
+      </p>
+      <p><b>เซฟเกมบ่อย ๆ</b> ด้วยเมนู <b>OPTN → JOURNAL</b> ทุกครั้งที่กลับถึง Castle และก่อนเข้า Travelers' Gate ใหม่</p>
+      <p class="mt-1">แผนที่ใน Travelers' Gate <b>สุ่มใหม่ทุกครั้ง</b> บทสรุปนี้จึงบอกแค่จำนวนชั้น มอนสเตอร์ที่เจอ และวิธีจัดการชั้นสุดท้าย (ชั้นบอส) ส่วนชั้นระหว่างทางให้เดินสำรวจเก็บไอเทม เงิน และ TinyMedal ให้ครบ</p>
+      <p class="mt-1">ทีมที่ดีควรมี <b>ตัวโจมตี 1 ตัว + ตัวฮีล 1 ตัว + ตัวซัพพอร์ต 1 ตัว</b></p>
+    </div>
+
+    <section class="rounded-lg border-2 border-edge bg-card p-4 text-sm">
+      <p>บทสรุปนี้ใช้ชื่อ<b>มอนสเตอร์ ไอเทม สกิล สถานที่ ตัวละคร และเมนู เป็นภาษาอังกฤษ</b>ตามที่ปรากฏในเกม ส่วนเนื้อเรื่อง คำอธิบาย และวิธีเล่นเป็นภาษาไทย เพื่อให้อ้างอิงกับชื่อภายในเกมได้ตรง</p>
+    </section>
+
+    <!-- 1 -->
+    <section id="basics">
+      <h2 class="text-xl font-bold text-navy">1. ระบบพื้นฐานของเกม</h2>
+      <p>Dragon Warrior Monsters (ญี่ปุ่นคือ Dragon Quest Monsters: Terry's Wonderland) เป็นเกมจับ เลี้ยง และผสมมอนสเตอร์ ผู้เล่นรับบทเป็น <b>Terry</b> เด็กชายที่ต้องตามหาน้องสาว <b>Milayou</b> ที่ถูกมอนสเตอร์ลักพาตัวไป เกมมีฉากและบอสอ้างอิงจาก Dragon Quest I–VI เยอะมาก ถ้าเคยเล่นซีรีส์หลักมาก่อนจะสนุกขึ้นอีกเยอะ</p>
+
+      <h3 class="mt-5 font-bold text-accent">Travelers' Gate (ประตูต่างมิติ)</h3>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>เป็นดันเจียนหลักของเกม แผนที่และไอเทมที่ตกตามพื้น <b>สุ่มใหม่ทุกครั้ง</b> กด <b>SELECT</b> เพื่อดูแผนที่</li>
+        <li>ชั้นสุดท้ายของแต่ละ Gate คือชั้นบอส ชนะแล้ว Watabou จะมารับกลับ Castle</li>
+        <li>เดินทับไอเทมเพื่อเก็บ พกไอเทมได้สูงสุด <b>20 ชิ้น</b></li>
+        <li>บางชั้นมีห้องเล็ก ๆ ที่ <b>บันทึกเกม (Journal) ได้</b> เป็นที่เดียวที่เซฟได้ใน Gate</li>
+        <li>MP ของมอนสเตอร์จะฟื้นขึ้นทีละนิดขณะเดิน</li>
+        <li>เข้า Gate ที่ผ่านแล้วซ้ำได้ไม่จำกัด ใช้ฟาร์มเลเวล เงิน และไอเทมไปขาย</li>
+        <li>ระวัง <b>Foreign Master</b> (มาสเตอร์ต่างเมือง) ที่อาจโผล่มาท้าสู้ใน Gate ค่อนข้างเก่ง</li>
+      </ul>
+
+      <h3 class="mt-5 font-bold text-accent">การจับมอนสเตอร์</h3>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>โยน <b>Meat (เนื้อ)</b> ให้มอนสเตอร์ระหว่างต่อสู้ เพื่อเพิ่มโอกาสที่มันจะขอเข้าร่วมหลังชนะ บางตัวก็ขอเข้าร่วมเองโดยไม่ต้องให้เนื้อ</li>
+        <li>ความอร่อยของเนื้อเรียงจากน้อยไปมาก: <b>BeefJerky → PorkChop → Rib → Sirloin</b> (ยิ่งดียิ่งจับง่าย)</li>
+        <li>พามอนสเตอร์ไปด้วยได้ครั้งละ <b>3 ตัว</b> ตัวที่เหลือส่งไปเลี้ยงที่ Monster Farm</li>
+        <li>บอสส่วนใหญ่ขอเข้าร่วมหลังชนะ แต่<b>ไม่ใช่ทุกตัว</b> บางตัวต้องให้เนื้อก่อน (ดูช่อง Recruitable ของแต่ละบอส)</li>
+      </ul>
+
+      <h3 class="mt-5 font-bold text-accent">เมนูภาคสนาม (กดปุ่ม A)</h3>
+      <table class="wt-table mt-2">
+        <thead><tr><th>เมนู</th><th>รายละเอียด</th></tr></thead>
+        <tbody>
+          <tr><td>INFO</td><td>ดูสเตตัสของมอนสเตอร์ในทีม</td></tr>
+          <tr><td>ITEM</td><td>ใช้ / ทิ้งไอเทม</td></tr>
+          <tr><td>SKIL</td><td>ใช้สกิลนอกการต่อสู้ เช่น Heal</td></tr>
+          <tr><td>OPTN</td><td>ตั้งค่า และ <b>JOURNAL</b> สำหรับบันทึกเกม</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="mt-5 font-bold text-accent">Monster Farm (ฟาร์มมอนสเตอร์)</h3>
+      <p>อยู่ชั้นบนของ Castle ดูแลโดย <b>Pulio</b> ฝากมอนสเตอร์และไข่ได้ <b>19 ช่อง</b> มอนสเตอร์ที่อยู่ในฟาร์มได้ EXP ไปด้วย แต่น้อยกว่าตัวที่พาไปผจญภัย ถ้าทิ้งไว้ในฟาร์มนาน ๆ มันจะเชื่อฟังน้อยลง ให้ขนม (เนื้อ) เพื่อเพิ่มความผูกพัน</p>
+      <table class="wt-table mt-2">
+        <thead><tr><th>คำสั่ง</th><th>รายละเอียด</th></tr></thead>
+        <tbody>
+          <tr><td>DROP OFF</td><td>ฝากมอนสเตอร์ไว้ที่ฟาร์ม</td></tr>
+          <tr><td>PICK UP</td><td>รับมอนสเตอร์เข้าทีม</td></tr>
+          <tr><td>CHECK</td><td>ดูข้อมูลมอนสเตอร์ในฟาร์ม</td></tr>
+          <tr><td>SEPARATE</td><td>ปล่อยมอนสเตอร์ไป (แยกทางถาวร)</td></tr>
+          <tr><td>SLEEP</td><td>ให้มอนสเตอร์<b>ทั้งหมด</b>ในฟาร์มหลับ แล้วจะฝากเพิ่มได้อีก 19 ตัว ถ้าเต็มอีกรอบต้องปล่อยบางตัวไป</td></tr>
+          <tr><td>EXIT</td><td>ออก</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="mt-5 font-bold text-accent">Arena &amp; คำสั่งแบบแผนการรบ</h3>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>Arena แบ่งเป็น Class <b>G → F → E → D → C → B → A → S</b> แต่ละ Class ต้องสู้ 3 รอบติดกัน ชนะครบจึงเลื่อน Class ได้ ผ่าน S Class แล้วจะได้เป็นตัวแทนของอาณาจักรใน Starry Night Tournament</li>
+        <li>ในการแข่ง <b>สั่งมอนสเตอร์เป็นรายตัวไม่ได้ และใช้ไอเทมไม่ได้</b> เลือกได้แค่แนวทางการรบ ถ้าเลือก RUN คือยอมแพ้</li>
+        <li>คุยกับ <b>Viking มุมตะวันตกเฉียงใต้ของ Arena back</b> (หลัง Arena) แล้วตอบ YES เพื่อดูว่ารอบชิงของ Class ถัดไปจะเจอใคร</li>
+      </ul>
+      <table class="wt-table mt-2">
+        <thead><tr><th>แนวทาง</th><th>ผลต่อมอนสเตอร์</th></tr></thead>
+        <tbody>
+          <tr><td>CHARGE</td><td>บุกเต็มที่ ฝึกให้กล้าหาญ มอนสเตอร์ที่กล้าจะติดคริติคอลบ่อยขึ้น</td></tr>
+          <tr><td>MIXED</td><td>ผสมผสาน ฝึกให้ฉลาด เลือกใช้สกิลซัพพอร์ตได้เหมาะกับสถานการณ์</td></tr>
+          <tr><td>CAUTIOUS</td><td>ระมัดระวัง ไม่ใช้ MP แต่บางครั้งจะฮีลตัวเอง เหมาะกับตัวฮีล</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="mt-5 font-bold text-accent">การผสมพันธุ์ (Breed) &amp; ฟักไข่ (Hatch)</h3>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>ทำได้ที่ <b>Starry Shrine</b> ใต้ Village กับ Old Man คนที่พาเรามา Castle ตอนแรก (ปลดล็อกใน Chapter 6)</li>
+        <li>ผสมได้เฉพาะมอนสเตอร์<b>ต่างเพศ</b> และทั้งคู่ต้อง<b>เลเวล 10 ขึ้นไป</b></li>
+        <li>หลังผสม พ่อแม่จะกลับสู่ธรรมชาติ (หายไปจากทีม) แต่<b>สกิลของพ่อแม่จะถ่ายทอดให้ลูก</b></li>
+        <li>ลูกที่เกิดใหม่เริ่มที่ <b>เลเวล 1</b> เสมอ แต่ค่าพลังและเลเวลสูงสุดจะดีกว่าพ่อแม่ (ค่า "+" ยิ่งสูงยิ่งเก่ง)</li>
+        <li>บุคลิก (Personality) ของมอนสเตอร์ส่งผลต่อการผสม</li>
+        <li>เมื่อมอนสเตอร์ถึงเลเวลสูงสุด จะมีเครื่องหมาย <b>"STAR"</b> ขึ้นที่เลเวล</li>
+        <li>ไข่ที่ได้มาต้องฝากไว้ที่ฟาร์มก่อน แล้วนำไป <b>HATCH</b> ที่ Starry Shrine รอหนึ่งคืนมอนสเตอร์ก็จะเกิด</li>
+        <li><b>Egg consultant</b> (Bard ในถ้ำฝั่งตะวันออก ท้าย Village) ช่วยประเมินไข่และ<b>เปลี่ยนเพศ</b>มอนสเตอร์ในไข่ได้</li>
+        <li>NPC หลายคน (Mick, Teto, May, Medal Man ฯลฯ) จะเสนอให้เอามอนสเตอร์ของเราไปผสมกับของเขา ได้ลูกมาฟรีโดยมอนสเตอร์ของเขาไม่หาย</li>
+      </ul>
+      <p class="text-sm text-muted">สูตรผสมทั้งหมดดูได้ที่ <a class="underline hover:text-accent" href="#breeding">หัวข้อ 4 ตารางผสมมอนสเตอร์</a></p>
+    </section>
+
+    <!-- 2 -->
+    <section id="story">
+      <h2 class="text-xl font-bold text-navy">2. เนื้อเรื่อง (Walkthrough)</h2>
+
+      <!-- Introduction -->
+      <h3 id="intro" class="chap">Introduction</h3>
+      <p>เกมภาคนี้ตั้งใจให้เล่นหลังจาก Dragon Quest I–VI จะได้เข้าใจมุกและฉากอ้างอิงต่าง ๆ</p>
+      <p>เปิดเกมจะเห็นดาวตกก่อนเข้าหน้า Title กดปุ่มใดก็ได้เพื่อเข้าเมนู แล้วเลือก <b>New Game</b></p>
+
+      <!-- Prologue -->
+      <h3 id="prologue" class="chap">Prologue<small>Home (บ้านของ Terry)</small></h3>
+      <p>เด็กชาย <b>Terry</b> กับน้องสาว <b>Milayou</b> วิ่งเล่นกันอยู่ Milayou เตือนว่าถึงเวลานอนแล้ว พ่อแม่บอกว่าถ้านอนดึก มอนสเตอร์จะมาลักตัวไป แต่ Terry กลับอยากเจอมอนสเตอร์ จากนั้นทั้งคู่ก็เข้านอน</p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>รอสักพักแล้วกด <b>ขวา</b> เพื่อลุกจากเตียง</li>
+        <li>สำรวจห้องได้: ตุ๊กตาของ Milayou, ชั้นหนังสือมี Fairy Tale และ Milayou's Diary, ตู้เสื้อผ้าซ้ายเป็นของ Terry ขวาเป็นของ Milayou</li>
+        <li>เดินออกทางตะวันออกไปห้องถัดไป</li>
+      </ul>
+      <p>มอนสเตอร์สีดำโผล่ออกมาจากตู้ ถามว่า Terry ใช่ Milayou ไหม มันแนะนำตัวว่าชื่อ <b>Warubou</b> มาจาก <b>Kingdom of GreatLog</b> แล้วผลัก Terry ออกไป ก่อนจะลาก Milayou เข้าตู้หายไป</p>
+      <p>ตามมาด้วยมอนสเตอร์สีขาวชื่อ <b>Watabou</b> ที่มาช้าไป มันรู้ว่า Terry ฟังภาษามอนสเตอร์ออก จึงชวนให้ตามไปเพื่อช่วย Milayou และหวังว่า Terry จะเป็นมาสเตอร์ฝีมือดี</p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>ชั้นหนังสือมี Encyclopedia of Monsters (ไม่ทราบผู้เขียน) นาฬิกาบอกเวลาเที่ยงคืน</li>
+        <li>สำรวจ <b>ตู้เสื้อผ้า</b> แล้ว Terry จะเข้าไปในตู้</li>
+      </ul>
+
+      <!-- Chapter 1 -->
+      <h3 id="ch1" class="chap">Chapter 1<small>Kingdom of GreatTree → Gate 1: Beginning</small></h3>
+      <p class="text-sm"><b>ไอเทมที่เก็บได้:</b> Herb ×2</p>
+
+      <h4 class="mt-4 font-bold text-accent">Village</h4>
+      <p>Terry ถูกส่งมายัง <b>Kingdom of GreatTree</b> อาณาจักรที่สร้างอยู่ในต้นไม้ยักษ์ มี Old Man มารับ บอกว่า Watabou พามาในฐานะ "มาสเตอร์" คนใหม่ แล้วพาปีนบันไดขึ้นไปยัง Castle ที่อยู่ยอดต้นไม้ ระหว่างทาง Warrior อวยพรให้โชคดีใน <b>Starry Night Tournament</b></p>
+
+      <h4 class="mt-4 font-bold text-accent">Castle</h4>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>Minister (เสนาบดี) ต้อนรับ แล้วเดินขึ้นเหนือไปหา King</li>
+        <li>King ให้<b>ตั้งชื่อตัวละคร</b> (ค่าเริ่มต้นคือ Terry) แล้วขอให้ชนะ Starry Night Tournament ตำนานว่าผู้ชนะจะได้รับพรหนึ่งข้อ ถ้าชนะ Terry ก็ขอพรให้เจอ Milayou ได้</li>
+        <li>King บอกให้ไปรับมอนสเตอร์จาก <b>Pulio</b> ที่ Monster Farm ชั้นบน</li>
+        <li>Jester เล่าตำนาน: Tournament จัดทุก ๆ พระจันทร์เต็มดวงครั้งที่ 47 คืนที่ดาวนับแสนร่วงลงมาเต็มฟ้า เรียกว่า Starry Night</li>
+        <li>ห้องตะวันตกมีหนังสือ <i>The Kingdom of GreatTree</i> (ทุกอาณาจักรสร้างในต้นไม้ยักษ์ และมี Travelers' Gate ที่เชื่อมไปยังโลกมอนสเตอร์ เมื่อใกล้ Tournament ต้นไม้จะสั่นเพราะกำลังเติบโต) และ <i>The Master of Monsters</i></li>
+      </ul>
+
+      <h4 class="mt-4 font-bold text-accent">Monster Farm</h4>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>คุยกับ Slime ชื่อ <b>Slio</b> (หลานของ Slib) ตอบ YES เพื่อฟังวิธีใช้ฟาร์ม</li>
+        <li>คุยกับเด็กชาย ตอบ <b>NO</b> (ไม่ได้มาขโมยมอนสเตอร์) เขาคือ Pulio ซึ่งปล่อยมอนสเตอร์หนีไปหมด เหลือแค่ <b>Slib</b> (Slime Lv1 ตัวโปรดของ King องค์ก่อน)</li>
+        <li>เลือก <b>PICK UP → Slib</b> แล้ว EXIT จากนั้นเปิดเมนู <b>OPTN → JOURNAL เพื่อเซฟ</b></li>
+      </ul>
+
+      <h4 class="mt-4 font-bold text-accent">กลับไปหา King</h4>
+      <p>King ไม่พอใจที่ได้แค่ Slib พอรู้ว่า <b>Hale</b> สัตว์เลี้ยงของ King หนีไปด้วย ก็สั่งจับ Pulio ขังคุก Terry อาสาไปตาม Hale กลับมาแลกกับอิสรภาพของ Pulio ซึ่ง Hale หนีเข้า Travelers' Gate ไป</p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>หีบ 2 ใบห้องตะวันตกตอนนี้เปิดได้: ได้ <b>[HERB] ×2</b> (ใช้กับมอนสเตอร์)</li>
+        <li>ลงบันไดไปยัง Chambers of the Travelers' Gate แล้วเหยียบวง Spiral (ก้นหอย)</li>
+      </ul>
+
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 1 - Beginning</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>5 (บอสอยู่ชั้น 5)</dd>
+          <dt>มอนสเตอร์</dt><dd>Slime, Dracky, AntEater</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>Slib เลเวล 5 · จับ Dracky และ AntEater</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายมี Healer ตัวหนึ่งคือ <b>Hale</b> มันบอกว่าฟาร์มน่าเบื่อ ไม่อยากกลับไป</p>
+      <div class="boss">
+        <b>Boss: Hale (Healer)</b> — Recruitable: Yes
+        <ul class="ml-5 mt-1 list-disc space-y-1">
+          <li>ถ้า Slib เลเวล 5 และมี Dracky กับ AntEater ช่วย ศึกนี้ง่ายมาก</li>
+          <li>ชนะแล้ว <b>รับ Hale เข้าทีมแน่นอน</b> เป็นตัวฮีลที่มีประโยชน์มาก</li>
+          <li>ทีมมีได้แค่ 3 ตัว ให้ส่ง Dracky หรือ AntEater กลับฟาร์ม</li>
+        </ul>
+      </div>
+      <p>Watabou มาชมว่า Terry เก่ง แล้วพากลับ Castle</p>
+
+      <!-- Chapter 2 -->
+      <h3 id="ch2" class="chap">Chapter 2<small>Kingdom of GreatTree → Arena: G Class</small></h3>
+      <p class="text-sm"><b>ไอเทมที่เก็บได้:</b> TinyMedal #1, Egg of a SkyDragon, TinyMedal #2</p>
+
+      <h4 class="mt-4 font-bold text-accent">Castle &amp; Monster Farm</h4>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>King ยอมให้ Hale อยู่กับเรา และปล่อย Pulio แล้วสั่งให้ไป Arena เพื่อเอาชนะคู่แข่งให้ได้สิทธิ์ลง Tournament</li>
+        <li>Minister ฮีลให้ (ทุกครั้งที่กลับจาก Gate จะฮีลและให้ Herb)</li>
+        <li>Pulio บอกความลับ: มี <b>SkyDragon</b> บินอยู่เหนือฟาร์ม ถ้ายืนรอใต้มัน จะมีเรื่องดี ๆ</li>
+        <li>ห้องตะวันตก: ค้นไหได้ <b>[TINY MEDAL #1]</b></li>
+        <li>ขึ้นเหนือ ยืนใต้ SkyDragon มันจะไข่ใส่หัว Terry ได้ <b>[EGG] of a SkyDragon</b> (ไข่พกไม่ได้ จะฝากไว้กับ Pulio) ถ้ายืนใต้มันอีกจะโดนขี้ใส่ อย่าโลภ</li>
+        <li>มอนสเตอร์ในฟาร์มเล่าว่า ขนมยิ่งดีมอนสเตอร์ยิ่งติดเรา: BeefJerky แย่สุด, Rib ดีกว่า PorkChop, Sirloin ดีที่สุด</li>
+        <li>ตอนนี้ Hale Lv6 มีเวท <b>Heal</b></li>
+      </ul>
+
+      <h4 class="mt-4 font-bold text-accent">Village</h4>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>ออกจาก Castle กระโดดลงหน้าผาหรือลงบันไดก็ได้</li>
+        <li>Bard บอกว่าใน Travelers' Gate บางทีจะเจอห้องเล็ก ๆ ที่บันทึกเกมได้</li>
+        <li>บ้านทางเหนือ (ต้องลงหลุม) คือบ้านของ <b>Medal Man</b> ที่สะสม TinyMedal ยิ่งให้เหรียญมากยิ่งได้รางวัล (ดู <a class="underline hover:text-accent" href="#ref-medal">ตาราง TinyMedal</a>)</li>
+      </ul>
+
+      <h4 class="mt-4 font-bold text-accent">Arena &amp; Arena back</h4>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>พนักงานเคาน์เตอร์ขวาอธิบายกติกา เคาน์เตอร์ซ้ายใช้สมัครแข่ง (ยังไม่ต้องสมัคร)</li>
+        <li>ห้องตะวันออกเจอ <b>Teto</b> คู่แข่งขี้ตื่นเต้น</li>
+        <li>ถังไม้ 4 ใบ: ใบที่ 3 จากล่างมี <b>[TINY MEDAL #2]</b> (สลักว่า "Warubou was here")</li>
+        <li>ไหซ้ายมีสมุด <i>Educational Guide</i> อธิบาย CHARGE / MIXED / CAUTIOUS ไหขวามีกระดาษเขียนว่า "เป่ายิ้งฉุบชนะ Goopi 5 ครั้งติดจะมีเรื่องดี"</li>
+        <li>ในร้านอาหาร Bard พูดปริศนา <b>"Army, Bomb, Army, Bubble, Army"</b> ส่วน Bartender แนะนำให้มีทั้งตัวโจมตีและตัวฮีล</li>
+      </ul>
+
+      <h4 class="mt-4 font-bold text-accent">เป่ายิ้งฉุบกับ Goopi → Queen's Room</h4>
+      <p>เหยียบแผ่นเพื่อเลือก จากซ้ายไปขวา: <b>Rock (ค้อน) · Scissors (กรรไกร) · Paper (กระดาษ)</b> คำใบ้ Army = กรรไกร, Bomb = ค้อน, Bubble = กระดาษ</p>
+      <p class="note">ลำดับที่ชนะ: <b>Scissors → Rock → Scissors → Paper → Scissors</b> ชนะครบ 5 ครั้ง Goopi จะเปิดบันไดลับไปยัง Queen's Room</p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>Queen มีแขกชื่อ <b>Mick</b> ตอนนี้ Queen ยังไม่สนใจเราเพราะยังอ่อนอยู่</li>
+        <li>กระจกหน้า Monster Master School กลายเป็นร่าง Terry อีกคน (Copycat) แล้วหนีไป</li>
+        <li>ใน Monster Master School ฟังบทเรียนเรื่องการจับมอนสเตอร์ และอ่านกระดานดำ</li>
+        <li>Viking บอกว่ารอบชิง G Class คือครูใหญ่ของโรงเรียน</li>
+      </ul>
+
+      <table class="wt-table mt-3">
+        <thead><tr><th colspan="2">G CLASS (ค่าสมัคร 0 Gold)</th></tr></thead>
+        <tbody>
+          <tr><td>ทีมตัวอย่าง</td><td>Slib Lv5, Hale Lv6</td></tr>
+          <tr><td>รอบ 1</td><td>Dracky, AntEater, Dracky</td></tr>
+          <tr><td>รอบ 2</td><td>Slime, StubSuck, Slime</td></tr>
+          <tr><td>รอบชิง</td><td>Spooky, Hork, Spooky</td></tr>
+          <tr><td>แนวทาง</td><td>Slib = CHARGE, Hale = CAUTIOUS</td></tr>
+        </tbody>
+      </table>
+      <p>ชนะแล้ว Minister มาบอกว่า King เรียกพบ</p>
+
+      <!-- Chapter 3 -->
+      <h3 id="ch3" class="chap">Chapter 3<small>Kingdom of GreatTree → Gate 2: Villager</small></h3>
+      <p class="text-sm"><b>ไอเทมที่เก็บได้:</b> TinyMedal #3</p>
+      <p>ขณะ King กำลังชม King of GreatLog (อาณาจักรของ Warubou) ก็มาดูถูกเรา King จึงเปิด <b>Gate of Villager</b> และ <b>Gate of Talisman</b> ให้เป็นรางวัล Jester เล่าว่า Dragon ใน Gate of Villager ลักพาเจ้าหญิงไป (อ้างอิง DQ I) ส่วน Golem ใน Gate of Talisman หลับเพราะเสียงขลุ่ย</p>
+
+      <h4 class="mt-4 font-bold text-accent">Village (ส่วนล่าง)</h4>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>ลงบันไดใต้ Arena ไปส่วนใหม่ของ Village ทางลงต่อถูกเด็กผู้หญิงขวางไว้</li>
+        <li><b>Well (บ่อน้ำ)</b>: เจอ Monster Master (ศาสตราจารย์วิจัยมอนสเตอร์) กับผู้ช่วยหญิงชรา</li>
+        <li><b>Library</b>: เคาน์เตอร์ดูรายชื่อมอนสเตอร์ที่เคยจับได้ ประตูหลังเคาน์เตอร์จะเปิดเมื่อจับครบ <b>100 ชนิด</b> ชั้นบนมีหนังสือ Family, The 9 family of Monsters และ Seon Prophecy บทที่ 1–9</li>
+        <li><b>Vault</b>: ฝากเงินได้</li>
+      </ul>
+
+      <h4 class="mt-4 font-bold text-accent">Bazaar</h4>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>ค้นไหได้ <b>[TINY MEDAL #3]</b></li>
+        <li>ร้านค้าแรกเปิดแล้ว (ดู <a class="underline hover:text-accent" href="#ref-shop">ร้านค้า</a>) <b>BeastTail</b> ชี้ทิศไปยังหลุมลงชั้นถัดไปใน Gate มีประโยชน์มาก</li>
+        <li>มุมตะวันออกเฉียงใต้ Viking 2 คนหิวและอยากได้<b>มอนสเตอร์ที่พ่นไฟได้</b> (ไว้กลับมาทีหลัง)</li>
+        <li>หาเงินด้วยการขายไอเทมที่เก็บได้จาก Gate และเข้า Gate ซ้ำได้ไม่จำกัด</li>
+      </ul>
+      <p>MadKnight ที่มุมตะวันออกเฉียงเหนือของ Monster Farm พยายามข้ามหลุมไปหา Lipsy ถ้าตกหลุมจะไปโผล่ที่ Arena จากนั้นลงไปห้อง Travelers' Gate แล้วเข้าประตูซ้ายทางเหนือ <b>เซฟเกม</b> Spiral ทางเหนือคือ Gate of Villager ทางใต้คือ Gate of Talisman</p>
+
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 2 - Villager</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>5</dd>
+          <dt>มอนสเตอร์</dt><dd>StubSuck, GoHopper, AntEater, Picky, Gremlin, PillowRat</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>Slib Lv7 · Hale Lv8 · จับ StubSuck, GoHopper, Picky, <b>Gremlin</b>, PillowRat</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายเหมือนถ้ำใน DQ I มังกรกำลังหลับ คุยกับเจ้าหญิง <b>Laura</b> ตอบ YES Terry จะพยายามอุ้มเธอแต่หนักเกินไป เธอจะรอฮีโร่ที่แข็งแรงกว่า</p>
+      <div class="boss">
+        <b>Boss: Dragon (Dran)</b> — Recruitable: Yes
+        <ul class="ml-5 mt-1 list-disc space-y-1">
+          <li>Hale สำคัญมาก ใช้ Heal และ Increase ซัพพอร์ต ส่วน Slib บุก</li>
+          <li>ชนะแล้ว<b>รับ Dran เข้าทีม</b> ทีมตอนนี้: Slib, Hale, Dran</li>
+        </ul>
+      </div>
+
+      <!-- Chapter 4 -->
+      <h3 id="ch4" class="chap">Chapter 4<small>Gate 3: Talisman</small></h3>
+      <p>King ชมว่าเราเก่งกว่าที่เห็น Minister ฮีลและให้ <b>[HERB]</b> (Dran เริ่มที่ Lv6) แนะนำให้กลับไปฟาร์มไอเทมและเงินจาก Gate เก่า ขายไอเทม แล้วซื้อ Meat ไว้จับมอนสเตอร์ <b>เซฟเกม</b> แล้วเข้า Gate of Talisman</p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 3 - Talisman</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>6</dd>
+          <dt>มอนสเตอร์</dt><dd>Spooky, GoHopper, ArmyAnt, AntEater, MiniDrak, Goopi, Picky</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>Slib Lv9 · Hale Lv10 · Dran Lv8 · จับ Spooky, ArmyAnt, MiniDrak, Goopi</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายเป็นหน้าหมู่บ้านคล้าย Melkido ใน DQ I Golem เฝ้าหมู่บ้านอยู่ Warubou โดนเตะกระเด็น พอเราจะเดินเข้าหมู่บ้าน Golem จะโกรธ</p>
+      <div class="boss">
+        <b>Boss: Golem (Golm)</b> — Recruitable: Yes
+        <ul class="ml-5 mt-1 list-disc space-y-1">
+          <li>ให้ Hale ฮีล / Increase ส่วน Slib กับ Dran บุก</li>
+          <li>รับ Golm เข้าทีม ทีม: Golm, Hale, Dran</li>
+        </ul>
+      </div>
+      <p>Watabou เฉลยว่าหมู่บ้านนั้นเป็นภาพลวงตาของ Golem จึงเข้าไม่ได้</p>
+
+      <!-- Chapter 5 -->
+      <h3 id="ch5" class="chap">Chapter 5<small>Bazaar Gate</small></h3>
+      <p>King ชมแล้วแซวว่า Terry ตัวเตี้ย ได้ [HERB] ตามปกติ (Golm เริ่มที่ Lv7) ฟาร์มเงินแล้วซื้อ Meat และ <b>BeastTail</b> <b>เซฟเกม</b></p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>ไป Monster Farm ฝาก Hale ไว้ชั่วคราว แล้วรับ <b>Gremlin</b> เข้าทีม</li>
+        <li>ไปมุมตะวันออกเฉียงใต้ของ Bazaar คุยกับ Viking คนขวา ตอบ YES แล้วเลือก <b>Gremlin</b> (<b>อย่าให้ Dran</b> เพราะตอนนี้ยังหามังกรตัวอื่นไม่ได้)</li>
+        <li>Gremlin จุดไฟเตาบาร์บีคิวให้ และ<b>จะหายไปถาวร</b> (จับใหม่จาก Gate เก่าได้) ใต้เตาย่างมี Travelers' Gate ซ่อนอยู่</li>
+        <li><b>เซฟเกม</b> กลับไปรับ Hale แล้วเข้า Bazaar Gate</li>
+      </ul>
+      <div class="gate">
+        <p class="mb-1 font-bold">Bazaar Gate</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>9</dd>
+          <dt>มอนสเตอร์</dt><dd>FairyRat, BigRoost, SpotSlime, Crestpent, DragonKid, Catapila, BeanMan, Demonite, Hork, 1EyeClown</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>Hale Lv14 · Dran Lv12 · Golm Lv11 · จับมอนสเตอร์ทุกชนิดข้างบน</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายคือเมือง Domdora จาก DQ I (ที่เก็บ Armor of Roto) และมีอัศวินปีศาจรออยู่</p>
+      <div class="boss">
+        <b>Boss: MadKnight (Pash)</b> — Recruitable: Yes
+        <ul class="ml-5 mt-1 list-disc space-y-1">
+          <li>บอสแข็งมาก ใช้ Hale ฮีลทุกครั้งที่ HP ใครต่ำกว่าครึ่ง ให้ Dran กับ Golm บุก</li>
+          <li>รับ Pash เข้าทีม ทีม: Pash, Hale, Dran</li>
+        </ul>
+      </div>
+      <p>Watabou บอกว่าที่นี่เคยถูกมอนสเตอร์ทำลายมาก่อน</p>
+
+      <!-- Chapter 6 -->
+      <h3 id="ch6" class="chap">Chapter 6<small>Arena: F Class → Starry Shrine</small></h3>
+      <p class="text-sm"><b>ไอเทมที่เก็บได้:</b> Herb, TinyMedal #4</p>
+      <p>King ชม ได้ [HERB] (Pash เริ่มที่ Lv12) <b>เซฟเกม</b> Viking บอกว่ารอบชิง F Class คือศาสตราจารย์จาก Well ที่ใช้ PutrePup, MadRaven, Skullroo</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th colspan="2">F CLASS (ค่าสมัคร 10 Gold)</th></tr></thead>
+        <tbody>
+          <tr><td>ทีมตัวอย่าง</td><td>Hale Lv14, Dran Lv12, Pash Lv12</td></tr>
+          <tr><td>รอบ 1</td><td>SpotSlime, SpotSlime, SpotSlime</td></tr>
+          <tr><td>รอบ 2</td><td>MudDoll, Almiraj, MudDoll</td></tr>
+          <tr><td>รอบชิง</td><td>PutrePup, MadRaven, Skullroo</td></tr>
+          <tr><td>แนวทาง</td><td>Dran &amp; Pash = CHARGE, Hale = CAUTIOUS</td></tr>
+        </tbody>
+      </table>
+      <p>King เปิด <b>Gate of Memories</b> และ <b>Gate of Bewilder</b> ให้ Teto ผ่าน E Class ไปแล้ว แต่ไม่ต้องรีบตาม ค่อย ๆ เก็บเลเวลดีกว่า Monster Master School สอนเรื่องลักษณะนิสัยของมอนสเตอร์</p>
+
+      <h4 class="mt-4 font-bold text-accent">Village (ส่วนล่างสุด)</h4>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>เด็กผู้หญิงที่เคยขวางทางยอมหลบแล้ว (แต่ยังไม่เชื่อว่าเราจะชนะ)</li>
+        <li><b>Top Cave</b>: บ้านของพ่อแม่เด็กผู้หญิง ค้นตู้ได้ <b>[TINY MEDAL #4]</b> ชั้นหนังสือมี <i>Journey of my Baby, Part 1</i> (เรื่องจะเพิ่มตอนตามเนื้อเรื่อง) คุณลุงเจ้าของ Travelers' Gate ยังไม่ให้ใช้</li>
+        <li><b>Bottom Cave</b>: Viking ไม่ยอมให้เข้าบ้านของ Betty</li>
+        <li><b>ถ้ำฝั่งตะวันออก</b>: หนังสือ Genders of Monsters, The Limit of Monster Levels, Skills of Monsters และ <b>Egg consultant</b> ที่ประเมินไข่และเปลี่ยนเพศได้</li>
+        <li>ลงบันไดไปยัง <b>Starry Shrine</b></li>
+      </ul>
+
+      <h4 class="mt-4 font-bold text-accent">Starry Shrine (ศาลเจ้าแห่งราตรีดวงดาว)</h4>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>NPC ในนี้อธิบายการผสมพันธุ์ ปีนเถาวัลย์ขึ้นไปจะถึง Monster Farm</li>
+        <li>ประตูลึกสุดสลักว่า "เฉพาะผู้ชนะเท่านั้นที่ผ่านได้ในคืน Starry Night"</li>
+        <li>คุยกับ Old Man (คนที่พาเรามา Castle) เลือก <b>HATCH → SkyDragon Egg</b> รอหนึ่งคืนจะได้ <b>SkyDragon</b></li>
+        <li>จากนี้ไป <b>BREED</b> ได้แล้ว ดูสูตรที่ <a class="underline hover:text-accent" href="#breeding">ตารางผสมมอนสเตอร์</a></li>
+      </ul>
+      <div class="party"><b>ทีมตัวอย่าง:</b> Pash, Hale, SkyDragon</div>
+
+      <h4 class="mt-4 font-bold text-accent">Queen's Room</h4>
+      <p>คุยกับ Mick เพื่อฟังเรื่องการผสม Queen จะใจดีขึ้นและขอดูมอนสเตอร์หลายชนิด แต่ละตัวที่พาไปให้ดูจะได้รางวัล (ดู <a class="underline hover:text-accent" href="#ref-queen">คำขอของ Queen</a>) ถ้าให้ดูครบ Queen จะเริ่มคิดกลับบ้าน</p>
+      <p>จากนั้นลงไปห้อง Travelers' Gate ผ่านประตูเล็กด้านขวา <b>เซฟเกม</b> Gate ซ้ายคือ Memories</p>
+
+      <!-- Chapter 7 -->
+      <h3 id="ch7" class="chap">Chapter 7<small>Gate 4: Memories</small></h3>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 4 - Memories</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>5</dd>
+          <dt>มอนสเตอร์</dt><dd>Goopi, PillowRat, Catapila, Picky, FairyRat, SpotSlime</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวลทีม</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายเจอเสือตัวใหญ่ที่เหมือน Saber จาก DQ V (ตัวที่ Hero กับ Bianca ช่วยจากพวกอันธพาล) คุยกับมันไปเรื่อย ๆ จนมันโจมตี</p>
+      <div class="boss"><b>Boss: MadCat (Gig)</b> — Recruitable: Yes</div>
+      <p>Watabou บอกว่า MadCat ติดใจ Terry แล้ว</p>
+
+      <!-- Chapter 8 -->
+      <h3 id="ch8" class="chap">Chapter 8<small>Gate 5: Bewilder</small></h3>
+      <p>King ถามว่าไป Starry Shrine มาหรือยัง Minister ฮีลตามปกติ <b>เซฟเกม</b></p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 5 - Bewilder</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>6</dd>
+          <dt>มอนสเตอร์</dt><dd>MiniDrak, BigRoost, DragonKid, SpotSlime, EvilSeed, Demonite, Crestpent</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับ EvilSeed</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายเป็นป่า ป้ายเขียนว่า <i>"วัยหนุ่มชอบรีบร้อน แต่ทางที่ไกลที่สุดคือทางที่สั้นที่สุด"</i> คุยกับต้นไม้เล็ก (StubSuck จับไม่ได้) เพื่อสู้ให้หมด แล้วค่อยคุยกับต้นไม้ใหญ่</p>
+      <div class="boss"><b>Boss: FaceTree (Face)</b> — Recruitable: Yes</div>
+      <p>Watabou ชมที่ผ่านเขาวงกตป่าได้</p>
+
+      <!-- Chapter 9 -->
+      <h3 id="ch9" class="chap">Chapter 9<small>Arena: E Class</small></h3>
+      <p class="text-sm"><b>ไอเทมที่เก็บได้:</b> Herb, TinyMedal #7</p>
+      <p>King อยากให้ FaceTree ไปสาปใส่ King of GreatLog (ขำ ๆ) <b>เซฟเกม</b> รอบชิง E Class คือ Teto</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th colspan="2">E CLASS (ค่าสมัคร 50 Gold)</th></tr></thead>
+        <tbody>
+          <tr><td>ทีมตัวอย่าง</td><td>Hale Lv16, Pash Lv13, SkyDragon Lv11</td></tr>
+          <tr><td>รอบ 1</td><td>Crestpent, TreeSlime, Poisongon</td></tr>
+          <tr><td>รอบ 2</td><td>DrakSlime, Dragon, FairyDrak</td></tr>
+          <tr><td>รอบชิง</td><td>Snaily, Armorpede, Snaily</td></tr>
+          <tr><td>แนวทาง</td><td>Pash = CHARGE, Hale &amp; SkyDragon = CAUTIOUS</td></tr>
+        </tbody>
+      </table>
+      <p>King เปิด <b>Gate of Peace</b> และ <b>Gate of Bravery</b></p>
+
+      <h4 class="mt-4 font-bold text-accent">ผสมกับ NPC</h4>
+      <ul class="ml-5 list-disc space-y-1">
+        <li><b>Teto</b> ขอผสมกับ IceMan ของเขา → ผสมกับ <b>Bird ตัวไหนก็ได้ ได้ Blizzardy</b> มอนสเตอร์ดีมากสำหรับช่วงนี้</li>
+        <li><b>Warrior ในร้านอาหาร</b> ขอผสมกับ CatFly → ผสมกับ Devil ได้ <b>Gremlin</b> เลี้ยงให้ดีแล้วผสมกับ Dragon (แนะนำ Dran) ได้ <b>AgDevil</b></li>
+        <li><b>Mick</b> ใน Queen's Room (คุยซ้ำ ๆ) ขอผสมกับ LizardMan → ผสมกับ AgDevil ได้ <b>Lionex</b></li>
+      </ul>
+      <table class="wt-table mt-2">
+        <thead><tr><th>CatFly + ...</th><th>ได้</th></tr></thead>
+        <tbody>
+          <tr><td>Slime ใดก็ได้</td><td>SpotSlime</td></tr>
+          <tr><td>Dragon ใดก็ได้</td><td>Tortragon</td></tr>
+          <tr><td>Bird ใดก็ได้</td><td>BullBird</td></tr>
+          <tr><td>Plant ใดก็ได้</td><td>FloraMan</td></tr>
+          <tr><td>Bug ใดก็ได้</td><td>Gophecada</td></tr>
+          <tr><td>Devil ใดก็ได้</td><td>Gremlin</td></tr>
+          <tr><td>Zombie ใดก็ได้</td><td>PutrePup</td></tr>
+          <tr><td>Material ใดก็ได้</td><td>MadCandle</td></tr>
+        </tbody>
+      </table>
+
+      <h4 class="mt-4 font-bold text-accent">สำรวจเพิ่ม</h4>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>Monster Master ใน Well อยากได้<b>มอนสเตอร์ที่มีสกิลสายฟ้า</b>เพื่อวิจัยการชุบชีวิต (ไว้กลับมาหลังผ่าน 2 Gate ใหม่ — <b>BoneSlave</b> มีสกิลสายฟ้า)</li>
+        <li>Bazaar: Warubou โผล่มาผลักผู้หญิงตกหน้าผาแล้วหนีไป</li>
+        <li>Monster Farm มุมตะวันตกเฉียงใต้มีบันไดลงไปยัง <b>Monster Stable</b>: ค้นตู้ซ้ายได้ <b>[TINY MEDAL #7]</b> ตู้ขวามี SleepAir คุยกับ Watabou ที่กำลังกินเนื้อจนเขาชวนกิน ตอบ YES</li>
+        <li>มอนสเตอร์ใน Stable ให้ข้อมูลเรื่องค่า "+", บุคลิก, BigEye มี IceBolt, AntEater เรียน MetalCut ได้ และ Vivify พัฒนาเป็น Revive</li>
+      </ul>
+      <div class="party"><b>ทีมตัวอย่าง:</b> Blizzardy, Lionex, SkyDragon</div>
+      <p>ไปห้อง Travelers' Gate ผ่านประตูเล็กด้านขวา Gate ซ้ายคือ Peace ขวาคือ Bravery</p>
+
+      <!-- Chapter 10 -->
+      <h3 id="ch10" class="chap">Chapter 10<small>Gate 6: Peace</small></h3>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 6 - Peace</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>8</dd>
+          <dt>มอนสเตอร์</dt><dd>BigRoost, SpotSlime, CoilBird, Crestpent, DragonKid, BoneSlave, Almiraj, Hork, BullBird</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับ CoilBird, <b>BoneSlave</b>, Almiraj, BullBird</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายเป็นคาสิโน เหรียญที่นี่ใช้ได้แค่กับมอนสเตอร์ เล่นเครื่องสล็อตบ่อย ๆ มันจะเสีย สำรวจ<b>ด้านหลัง</b>สล็อตของมอนสเตอร์ตัวที่เล่นไม่ได้อะไรเลย Terry จะได้แจ็กพอต มอนสเตอร์ตัวนั้นอิจฉาจึงท้าสู้</p>
+      <div class="boss"><b>Boss: FangSlime (Fang)</b> — Recruitable: Yes</div>
+
+      <!-- Chapter 11 -->
+      <h3 id="ch11" class="chap">Chapter 11<small>Gate 7: Bravery</small></h3>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 7 - Bravery</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>9</dd>
+          <dt>มอนสเตอร์</dt><dd>Demonite, BeanMan, 1EyeClown, FloraMan, SabreMan, GiantWorm, BullBird</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับ FloraMan, GiantWorm, SabreMan</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายมี<b>สะพานล่องหน</b>แบบหอคอยใน DQ V</p>
+      <p class="note">เดินไปด้านซ้ายของขอบ แล้วเดิน <b>เหนือ 2 → ตะวันออก 1 → เหนือ 2</b> จะถึงตัวมอนสเตอร์ มีนินจาโผล่มาพูดว่า "ไม่อยู่ที่นี่เหมือนกัน" แล้วจากไป</p>
+      <div class="boss"><b>Boss: BigEye</b> — Recruitable: <b>No</b></div>
+
+      <!-- Chapter 12 -->
+      <h3 id="ch12" class="chap">Chapter 12<small>Well Gate</small></h3>
+      <p>King อธิบายว่าบอสบางตัวไม่ยอมเป็นพวกเรา <b>เซฟเกม</b></p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>พา <b>BoneSlave</b> ไปให้ Monster Master ใน Well</li>
+        <li>ออกแล้วกลับเข้ามาใหม่ การทดลองล้มเหลว หม้อต้มใหญ่ระเบิดกระจุย (ผู้ช่วยหญิงชราทำพังเอง) ตรงที่หม้อเคยตั้งกลายเป็น Travelers' Gate ศาสตราจารย์ยกให้เรา</li>
+        <li>กลับไปรับมอนสเตอร์ตัวหลักคืนก่อนเข้า Gate</li>
+      </ul>
+      <div class="gate">
+        <p class="mb-1 font-bold">Well Gate</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>12</dd>
+          <dt>มอนสเตอร์</dt><dd>BoneSlave, Almiraj, GiantSlug, FloraMan, TreeSlime, GiantWorm, BullBird, MudDoll, SabreMan, Metaly</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับ TreeSlime, Metaly, MudDoll, GiantSlug</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายมีหลุมเต็มพื้นเหมือน Rhone Cave ใน DQ II อย่ารีบ</p>
+      <p class="note">เดิน <b>ตะวันตก 1 → เหนือ 1 → ตะวันตก 1</b> (Warubou จะมาแล้วตกหลุม) แล้วต่อด้วย <b>เหนือ 1 → ตะวันตก 2 → ใต้ 2 → ตะวันตก 3 → ใต้ 2 → ตะวันออก 5 → ใต้ 1 → ตะวันออก 2</b></p>
+      <div class="boss"><b>Boss: Gigantes (Gant)</b> — Recruitable: Yes (ต้องให้ Meat)</div>
+
+      <!-- Chapter 13 -->
+      <h3 id="ch13" class="chap">Chapter 13<small>Arena: D Class</small></h3>
+      <p>King บอกว่า Gigantes มีแต่พลังไม่มีสมอง <b>เซฟเกม</b> รอบชิง D Class คือ Mick</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th colspan="2">D CLASS (ค่าสมัคร 100 Gold)</th></tr></thead>
+        <tbody>
+          <tr><td>ทีมตัวอย่าง</td><td>SkyDragon Lv22, Blizzardy Lv18, Lionex Lv16</td></tr>
+          <tr><td>รอบ 1</td><td>Saccer, FloraJay, MadPlant</td></tr>
+          <tr><td>รอบ 2</td><td>MedusaEye, MadGopher, MedusaEye</td></tr>
+          <tr><td>รอบชิง</td><td>MadCat, RogueNite, MadCat</td></tr>
+          <tr><td>แนวทาง</td><td>Lionex = CAUTIOUS, Blizzardy &amp; SkyDragon = CHARGE</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Chapter 14 -->
+      <h3 id="ch14" class="chap">Chapter 14<small>Gate 8: Anger</small></h3>
+      <p>King ชมแล้วบอกว่ามีมอนสเตอร์จำนวนมหาศาลโผล่ออกมาจาก Gate of Anger และ Strength ขอให้ไปแก้ปัญหาด่วน (Arena ปิดรับจนกว่าจะแก้เสร็จ) <b>เซฟเกม</b></p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>Jester เล่าว่า บรรพบุรุษของ Watabou ขังมอนสเตอร์ไว้หลัง Travelers' Gate เพื่อปกป้องมนุษย์ และกำหนดให้จัด Tournament ทุกคืน Starry Night</li>
+        <li>Monster School สอนเรื่องการเปลี่ยนเพศมอนสเตอร์</li>
+        <li><b>Mick</b> ขอผสมกับ DeadNite → ผสม Zombie + Devil ให้ได้ DeadNite ของเราเองก่อน เลี้ยงแล้วผสมกับของ Mick ได้ <b>DeadNoble</b></li>
+      </ul>
+      <div class="party">
+        <b>ตัวอย่างการผสม:</b>
+        <ul class="ml-5 mt-1 list-disc space-y-1">
+          <li>DragonKid + DragonKid = Dragon → Dragon + Lionex = <b>BattleRex</b></li>
+          <li>Hork + AntEater = PutrePup → PutrePup + Pash (MadKnight) = DeadNite → DeadNite + DeadNite ของ Mick = <b>DeadNoble</b></li>
+        </ul>
+        <p class="mt-1"><b>ทีม:</b> BattleRex, DeadNoble, Blizzardy</p>
+      </div>
+      <p>ห้อง Travelers' Gate ผ่านประตูใหญ่ ตอนนี้เข้าได้แค่ Gate ขวา (Anger)</p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 8 - Anger</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>11</dd>
+          <dt>มอนสเตอร์</dt><dd>GiantWorm, GiantSlug, Poisongon, CatFly, Eyeder, PutrePup, DrakSlime</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับ Poisongon, CatFly, Eyeder, PutrePup, DrakSlime</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายเต็มไปด้วยไข่ (อ้างอิง DQ VI) สำรวจไข่จะได้สู้กับ DragonKid (EXP ดี) แม่มอนสเตอร์โกรธที่ไข่แตก นินจาโผล่มาอีกครั้ง ทำลายไข่ที่เหลือ แล้วหาว่า Terry ขี้ขลาดที่ใช้มอนสเตอร์สู้แทนดาบ</p>
+      <div class="boss"><b>Boss: BattleRex (Wrex)</b> — Recruitable: Yes</div>
+      <p>Wrex บอกว่านินจาหน้าตาเหมือนเรา Watabou เฉลยว่าไข่พวกนี้คือต้นเหตุที่มอนสเตอร์ล้นออกมา</p>
+
+      <!-- Chapter 15 -->
+      <h3 id="ch15" class="chap">Chapter 15<small>Gate 9: Strength</small></h3>
+      <p>King of DeadTree มาดูถูกอาณาจักรและ Terry จากนั้น King อนุญาตให้ลง <b>C Class ขึ้นไป</b> แล้วมีฉาก <b>GreatTree เติบโต</b> ภูมิประเทศหลายจุดจะเปลี่ยน <b>เซฟเกม</b></p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 9 - Strength</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>11</dd>
+          <dt>มอนสเตอร์</dt><dd>MudDoll, TreeSlime, SkulRider, FairyDrak, WingTree</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับ SkulRider, FairyDrak, WingTree</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายไม่มีมอนสเตอร์ มีแต่รูปปั้น เดินเข้าใกล้หีบ รูปปั้นจะขยับ (หีบคือ Mimic แต่ไม่โจมตี) คุยกับรูปปั้นเพื่อสู้</p>
+      <div class="boss"><b>Boss: StoneMan</b> — Recruitable: <b>No</b></div>
+
+      <!-- Chapter 16 -->
+      <h3 id="ch16" class="chap">Chapter 16<small>Monster Farm Gate</small></h3>
+      <p class="text-sm"><b>ไอเทมที่เก็บได้:</b> Herb, TinyMedal #8</p>
+      <p><b>เซฟเกม</b> แล้วไปสำรวจสิ่งที่เปลี่ยนไปหลัง GreatTree โต</p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>มอนสเตอร์ใน Monster Farm บอกเลเวลสูงสุดของมอนสเตอร์ในทีมได้</li>
+        <li>ห้องตะวันตก ค้นไหได้ <b>[TINY MEDAL #8]</b></li>
+        <li>มุมตะวันออกเฉียงเหนือ: MadKnight กับ Lipsy ได้อยู่ด้วยกันแล้ว ข้ามไปยัง Travelers' Gate ได้ (หลุมซ้ายไป Arena หลุมขวาไป Starry Shrine)</li>
+      </ul>
+      <div class="gate">
+        <p class="mb-1 font-bold">Monster Farm Gate</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>12</dd>
+          <dt>มอนสเตอร์</dt><dd>FairyDrak, Butterfly, MadRaven, Skullroo, Mudron, DrakSlime, Facer</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับ Butterfly, MadRaven, Skullroo, Mudron, Facer</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายคือบ้านของ <b>Betty</b> ท้าย Village คุยกับเธอ แล้วตอบตามนี้:</p>
+      <p class="note">NO (ไม่ได้แอบเข้ามาเพราะเธอสวย) → NO (ไม่ได้มาขโมย) → NO อีกครั้ง → <b>YES</b> (เป็น Monster Master ที่มาจับเธอ) แล้วเธอจะโจมตี</p>
+      <div class="boss"><b>Boss: Copycat (Mime)</b> — Recruitable: Yes</div>
+      <p>Betty ที่แท้คือ Copycat ยอมรับว่าเราไม่ใช่คนเลว</p>
+
+      <!-- Chapter 17 -->
+      <h3 id="ch17" class="chap">Chapter 17<small>Goopi's Gate</small></h3>
+      <p>King บอกว่าไม่มีใครเลียนแบบความสง่างามของเขาได้ <b>เซฟเกม</b></p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>ตอนนี้ควรมี TinyMedal ครบ 13 เหรียญ ไปแลก <b>ZapBird Egg</b> ที่ Medal Man (ยังไม่ต้องคุยกับ Metaly ของเขา)</li>
+        <li>บ้านเด็กผู้หญิงมี Part 2 ของหนังสือแล้ว</li>
+        <li>ทางใหม่ด้านตะวันออกท้าย Village มีถ้ำที่มี Goopi อีกตัวให้เล่นเป่ายิ้งฉุบ</li>
+      </ul>
+      <p class="note">ลำดับที่ชนะ (ไม่มีคำใบ้): <b>Rock → Scissors → Paper → Paper → Rock</b> ชนะแล้ว Goopi บอกให้ไปรับรางวัลกับพี่ชายของมันที่ Arena</p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>Bazaar มี <b>Item Shop 2</b> เปิดใหม่ที่มุมตะวันออกเฉียงเหนือ</li>
+        <li>Teto ขึ้นไป C Class แล้ว</li>
+        <li><b>May</b> ในร้านอาหารเสนอผสม <b>Rayburn</b> ส่วน <b>Medal Man</b> ใน Queen's Room เสนอผสม <b>FangSlime</b></li>
+      </ul>
+      <div class="party">
+        <b>ตัวอย่างการผสม:</b>
+        <ul class="ml-5 mt-1 list-disc space-y-1">
+          <li>Dracky + Rayburn ของ May = WhipBird → DeadNoble + WhipBird = <b>WhiteKing</b></li>
+          <li>ZapBird + Copycat = Phoenix → Blizzardy + Phoenix = <b>RainHawk</b></li>
+          <li>MadCat + FangSlime ของ Medal Man = Unicorn → BattleRex + Unicorn = GreatDrak</li>
+          <li>Demonite + DragonKid = MedusaEye → GreatDrak + MedusaEye = Orochi → SkyDragon + Orochi = <b>Divinegon</b></li>
+        </ul>
+        <p class="mt-1"><b>ทีม:</b> WhiteKing, RainHawk, Divinegon</p>
+      </div>
+      <p>เหยียบ Travelers' Gate ข้าง Goopi ตัวแรก (Arena back)</p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Goopi's Gate</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>16</dd>
+          <dt>มอนสเตอร์</dt><dd>WingSlime, MadCandle, MedusaEye, MadGopher, Slabbit, WindBeast, Gasgon</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับทุกชนิดข้างบน</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายคือน้ำพุแบบ Aurhea Fountain ใน DQ III เดินเข้าใกล้ Warubou จะโยนมอนสเตอร์ของเราลงน้ำพุ เสียงของเทพธิดาถามว่าให้ช่วยไหม ตอบตามนี้:</p>
+      <p class="note"><b>YES</b> (ให้ช่วย) → <b>NO</b> (เนื้อไม่ใช่ของเรา) → <b>NO</b> (ผู้ชายคนนั้นไม่ใช่) → <b>YES</b> (มอนสเตอร์ของเรา) แล้วจะได้มอนสเตอร์คืน และเทพธิดาจะมอบ Digster ให้ ถ้าชนะมันได้</p>
+      <div class="boss"><b>Boss: Digster (Ebi)</b> — Recruitable: Yes</div>
+
+      <!-- Chapter 18 -->
+      <h3 id="ch18" class="chap">Chapter 18<small>Medal Man's Gate</small></h3>
+      <p>King ไม่เชื่อว่าเราได้ยินเสียง Aurhea <b>เซฟเกม</b> ไปบ้าน Medal Man แล้วคุยกับ <b>Metaly</b> (ต้องให้เหรียญครบ 13 แล้ว) มันจะเปิด Travelers' Gate ให้ ออกแล้วกลับเข้าบ้านใหม่เพื่อให้ Gate ปรากฏ</p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Medal King's Gate</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>19</dd>
+          <dt>มอนสเตอร์</dt><dd>NiteWhip, BoxSlime, Gismo, Orc, RogueNite, Reaper</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับทุกชนิดข้างบน</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายมีประตู 3 บาน (เหมือน Gardsbane Tower ใน DQ VI) <b>เลือกได้บานเดียว เข้าแล้วย้อนกลับไม่ได้</b></p>
+      <table class="wt-table mt-2">
+        <thead><tr><th>ประตู</th><th>บอส</th><th>Recruitable</th></tr></thead>
+        <tbody>
+          <tr><td>ซ้าย</td><td>Lipsy (LP)</td><td>Yes (ต้องให้ Meat)</td></tr>
+          <tr><td>กลาง ⭐ แนะนำ</td><td>KingSlime (Kix)</td><td>Yes (ต้องให้ Meat)</td></tr>
+          <tr><td>ขวา</td><td>Toadstool (TS)</td><td>Yes (ต้องให้ Meat)</td></tr>
+        </tbody>
+      </table>
+      <p>KingSlime ดีที่สุดในสามตัว</p>
+
+      <!-- Chapter 19 -->
+      <h3 id="ch19" class="chap">Chapter 19<small>Arena: C Class</small></h3>
+      <p><b>เซฟเกม</b> รอบชิง C Class คือ Teto</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th colspan="2">C CLASS (ค่าสมัคร 500 Gold)</th></tr></thead>
+        <tbody>
+          <tr><td>ทีมตัวอย่าง</td><td>RainHawk Lv13, WhiteKing Lv13, Divinegon Lv12</td></tr>
+          <tr><td>รอบ 1</td><td>SpikyBoy, StubBird, SpikyBoy</td></tr>
+          <tr><td>รอบ 2</td><td>Healer, RogueNite, Healer</td></tr>
+          <tr><td>รอบชิง</td><td>BoxSlime, RockSlime, BoxSlime</td></tr>
+          <tr><td>แนวทาง</td><td>WhiteKing = CAUTIOUS, RainHawk &amp; Divinegon = CHARGE</td></tr>
+        </tbody>
+      </table>
+      <p>King เปิด <b>Gate of Joy</b> และ <b>Gate of Wisdom</b> Teto ขอผสมกับ Eyeder (ไม่มีสูตรพิเศษ)</p>
+      <div class="party">
+        <b>ตัวอย่างการผสม:</b> WhiteKing + Gigantes = <b>Servant</b>
+        <p class="mt-1"><b>ทีม:</b> Servant, RainHawk, Divinegon</p>
+      </div>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>May ในร้านอาหารให้คำใบ้วิธีเจอ Bishop ใน Travelers' Gate</li>
+        <li>ห้อง Travelers' Gate ผ่านประตูเล็กด้านซ้าย Gate ซ้ายคือ Joy</li>
+      </ul>
+
+      <!-- Chapter 20 -->
+      <h3 id="ch20" class="chap">Chapter 20<small>Gate 10: Joy</small></h3>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 10 - Joy</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>14</dd>
+          <dt>มอนสเตอร์</dt><dd>Snaily, Saccer, Gulpple, MadPecker, EyeBall, Babble, Mummy</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับทุกชนิดข้างบน</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายเป็นเวทีการแสดง (อ้างอิงต้นบทที่ 4 ของ DQ IV) คุยกับนกนักเต้น 2 ครั้งแล้วมันจะโจมตี</p>
+      <div class="boss"><b>Boss: FunkyBird (Func)</b> — Recruitable: Yes</div>
+
+      <!-- Chapter 21 -->
+      <h3 id="ch21" class="chap">Chapter 21<small>Gate 11: Wisdom</small></h3>
+      <p>King เรียกเราว่า "Funky Terry" <b>เซฟเกม</b> แล้วเข้า Gate ต่อทันที</p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 11 - Wisdom</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>15</dd>
+          <dt>มอนสเตอร์</dt><dd>Facer, Tonguella, FloraJay, Pteranod, Armorpede</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับ Tonguella, FloraJay, Pteranod, Armorpede</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายเป็นทางเชือกแบบ Arp Tower ใน DQ III</p>
+      <p class="note">เดินบน<b>เชือกเส้นตะวันออกสุด</b>ขึ้นเหนือ SkyDragon จะย้ายไปปลายเชือกเส้นที่ 2 แล้วเดินกลับลงใต้ ขึ้น<b>เชือกเส้นที่ 2</b> เดินเหนือไปคุยกับมัน</p>
+      <div class="boss"><b>Boss: SkyDragon</b> — Recruitable: <b>No</b></div>
+
+      <!-- Chapter 22 -->
+      <h3 id="ch22" class="chap">Chapter 22<small>Arena: B Class</small></h3>
+      <p><b>เซฟเกม</b> รอบชิง B Class คือ Bard จากร้านอาหาร</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th colspan="2">B CLASS (ค่าสมัคร 1000 Gold)</th></tr></thead>
+        <tbody>
+          <tr><td>ทีมตัวอย่าง</td><td>Servant Lv18, RainHawk Lv14, Divinegon Lv14</td></tr>
+          <tr><td>รอบ 1</td><td>HammerMan, HammerMan, HammerMan</td></tr>
+          <tr><td>รอบ 2</td><td>AgDevil, WindMerge, TreeBoy</td></tr>
+          <tr><td>รอบชิง</td><td>ArmyCrab, MadDragon, ArmyCrab</td></tr>
+          <tr><td>แนวทาง</td><td>Servant &amp; Divinegon = CAUTIOUS, RainHawk = CHARGE</td></tr>
+        </tbody>
+      </table>
+      <p>King เปิด <b>Gate of Happiness</b> และ <b>Gate of Temptation</b></p>
+      <div class="party">
+        <b>ตัวอย่างการผสม:</b>
+        <ul class="ml-5 mt-1 list-disc space-y-1">
+          <li>Crestpent + Crestpent = WingSnake (ทำ 2 ตัว) → WingSnake + WingSnake = Coatol → Coatol + Gulpple = Andreal → Servant + Andreal = <b>DracoLord1</b></li>
+          <li>Demonite + Demonite = GateGuard (ทำ 2 ตัว) → GateGuard + Reaper = ArcDemon → ArcDemon + GateGuard = Akubar → RainHawk + Akubar = <b>Jamirus</b></li>
+          <li>Tonguella + Slime (Slib) = Unicorn · Golem (Golm) + SkulRider = Roboster → Roboster + Unicorn = <b>KingLeo</b></li>
+        </ul>
+        <p class="mt-1"><b>ทีม:</b> DracoLord1, Jamirus, KingLeo</p>
+      </div>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>Monster School สอนเรื่องการถ่ายทอดสกิล</li>
+        <li>บ้านเด็กผู้หญิงมี Part 3 ของหนังสือแล้ว</li>
+        <li>Bazaar มี <b>Item Shop 3</b> (ไปตะวันออก 1 ใต้ 1)</li>
+        <li>ห้อง Travelers' Gate ผ่านประตูเล็กด้านขวา Gate ซ้ายคือ Happiness ขวาคือ Temptation</li>
+      </ul>
+
+      <!-- Chapter 23 -->
+      <h3 id="ch23" class="chap">Chapter 23<small>Gate 12: Happiness</small></h3>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 12 - Happiness</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>18</dd>
+          <dt>มอนสเตอร์</dt><dd>Oniono, Gophecada, Pixy, Gasgon, DeadNite, StubBird, SpikyBoy</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับ Oniono, Gophecada, Pixy, DeadNite, StubBird, SpikyBoy</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายเหมือน Isle o' Smiles ใน DQ VI คุยกับ Jamirus จากด้านหลัง 3 ครั้ง (เขากำลังปราศรัยให้มอนสเตอร์รวมตัวสร้างโลกของมอนสเตอร์) จนเขาสังเกตเห็นเรา</p>
+      <div class="boss"><b>Boss: Jamirus</b> — Recruitable: <b>No</b></div>
+
+      <!-- Chapter 24 -->
+      <h3 id="ch24" class="chap">Chapter 24<small>Gate 13: Temptation</small></h3>
+      <p>King บอกว่าใช้เนื้อฝึกมอนสเตอร์ได้ <b>เซฟเกม</b> แล้วเข้า Gate ต่อทันที</p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 13 - Temptation</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>20</dd>
+          <dt>มอนสเตอร์</dt><dd>SpikyBoy, KingCobra, Monnonja, SlimeNite, StagBug, MistyWing, DarkEye</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับ KingCobra, Monnonja, SlimeNite, StagBug, MistyWing, DarkEye</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายคือหมู่บ้านที่กำลังไฟไหม้ (Weaver's Peak ใน DQ VI) คุยกับมอนสเตอร์หน้าบ้าน มันชวนมาเผาหมู่บ้านด้วยกัน ตอบ <b>NO</b> เพื่อเริ่มสู้</p>
+      <div class="boss"><b>Boss: Servant (Mats), Centasaur, EvilArmor</b> — Recruitable: เฉพาะ Servant (ต้องให้ Meat)</div>
+      <p>Watabou ช่วยดับไฟแล้วพากลับ</p>
+
+      <!-- Chapter 25 -->
+      <h3 id="ch25" class="chap">Chapter 25<small>Arena: A Class</small></h3>
+      <p>King ชมว่าใจของ Terry บริสุทธิ์ <b>เซฟเกม</b> รอบชิง A Class คือ May</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th colspan="2">A CLASS (ค่าสมัคร 5000 Gold)</th></tr></thead>
+        <tbody>
+          <tr><td>ทีมตัวอย่าง</td><td>DracoLord1 Lv14, Jamirus Lv23, KingLeo Lv28</td></tr>
+          <tr><td>รอบ 1</td><td>FireWeed, EvilBeast, Wyvern</td></tr>
+          <tr><td>รอบ 2</td><td>Grizzly, Lionex, Grizzly</td></tr>
+          <tr><td>รอบชิง</td><td>Toadstool, Lipsy, Toadstool</td></tr>
+          <tr><td>แนวทาง</td><td>KingLeo &amp; DracoLord1 = CAUTIOUS, Jamirus = CHARGE</td></tr>
+        </tbody>
+      </table>
+      <p>King เปิด <b>Gate of Labyrinth</b> และ <b>Gate of Judgement</b> Teto ขอผสมกับ Yeti และ <b>May จะให้ StoneMan ฟรี รับไว้ด้วย</b></p>
+      <div class="party">
+        <b>ตัวอย่างการผสม:</b>
+        <ul class="ml-5 mt-1 list-disc space-y-1">
+          <li>DracoLord1 + Divinegon = <b>DracoLord2</b></li>
+          <li>MistyWing + Yeti ของ Teto = Blizzardy → BoneSlave + Blizzardy = WhiteKing</li>
+          <li>DragonKid + BattleRex = GreatDrak → GreatDrak + StoneMan (จาก May) = MetalDrak → KingSlime + MetalDrak = MetalKing → WhiteKing + MetalKing = <b>Hargon</b></li>
+          <li>KingCobra + Gulpple = Andreal → Servant + Andreal = DracoLord1 → FaceTree + DracoLord1 = Rosevine → Jamirus + Rosevine = <b>Sidoh</b></li>
+        </ul>
+        <p class="mt-1"><b>ทีม:</b> DracoLord2, Hargon, Sidoh</p>
+      </div>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>ตอนนี้ควรมี TinyMedal เกิน 30 แล้ว ไปรับรางวัลที่เหลือกับ Medal Man ถ้าให้เกิน 30 จะได้คำใบ้วิธีทำ DracoLord2</li>
+        <li>Monster Stable: Warubou กำลังกินเนื้อ คุยจนได้ของเหลือ (<b>BadMeat</b>) Orochi บน KingSlime Throne บอกข้อมูลมอนสเตอร์ในแต่ละ Gate และมอนสเตอร์ตัวอื่นก็มีเคล็ดลับเพียบ (มังกรตัวหนึ่งบอกวิธีผ่านเขาวงกตของ Gate ถัดไป)</li>
+        <li>ห้อง Travelers' Gate ผ่านประตูเล็กด้านซ้าย Gate ซ้ายคือ Labyrinth ขวาคือ Judgement</li>
+      </ul>
+
+      <!-- Chapter 26 -->
+      <h3 id="ch26" class="chap">Chapter 26<small>Gate 14: Labyrinth</small></h3>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 14 - Labyrinth</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>23</dd>
+          <dt>มอนสเตอร์</dt><dd>RockSlime, Chamelgon, CactiBall, TailEater, Gismo, DuckKite, WindMerge, AgDevil</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับ RockSlime, Chamelgon, CactiBall, TailEater, DuckKite, AgDevil, WindMerge</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายเป็นเขาวงกตแบบ Cryptic Catacombs ใน DQ VI มี Gate อยู่ใกล้ ๆ <b>อย่าเหยียบ</b></p>
+      <p class="note">เดิน <b>เหนือ 3 หน้าจอ → ตะวันตก 1 หน้าจอ → ใต้ 2 หน้าจอ</b> แล้วเข้า<b>ทางบนสุดที่ไปทางตะวันตก</b></p>
+      <div class="boss"><b>Boss: DarkHorn (Dark)</b> — Recruitable: Yes (ต้องให้ Meat)</div>
+      <p>Watabou ถามว่าตุ๊กตาตัวนั้นหน้าเหมือน Terry ไหม</p>
+
+      <!-- Chapter 27 -->
+      <h3 id="ch27" class="chap">Chapter 27<small>Gate 15: Judgement</small></h3>
+      <p>King ชมว่า Terry ฉลาดที่ไม่หลงในเขาวงกต <b>เซฟเกม</b> แล้วเข้า Gate ต่อทันที</p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 15 - Judgement</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>25</dd>
+          <dt>มอนสเตอร์</dt><dd>WeedBug, HammerMan, MadGoose, TreeBoy, SpotKing, Droll, LizardFly, GiantMoth</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับทุกชนิดข้างบน</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายมีกิโยติน (แบบ Gallows Moor ใน DQ VI) มอนสเตอร์ตัดสินว่าเราทำร้ายมอนสเตอร์มานับไม่ถ้วน ต้องโทษประหาร ตอบตามนี้:</p>
+      <p class="note">ยอมรับบาป <b>YES</b> → ยอมรับโทษ <b>YES</b> → สำรวจกิโยติน (Terry นึกขึ้นได้ว่ายังต้องช่วย Milayou) → คุยกับมอนสเตอร์อีกครั้ง ตอบ <b>YES</b> (มีอะไรจะพูดก่อนตาย) แล้วมันจะลงมือเอง</p>
+      <div class="boss"><b>Boss: Akubar</b> — Recruitable: <b>No</b></div>
+      <p>Watabou บอกว่ามอนสเตอร์ของเราไว้ใจเรา เราไม่ได้ทำร้ายพวกมัน</p>
+
+      <!-- Chapter 28 -->
+      <h3 id="ch28" class="chap">Chapter 28<small>Library Gate (ไม่บังคับ)</small></h3>
+      <p>King บอกว่าใครบ่นเรื่องเราจะโดนจับขังคุก <b>เซฟเกม</b></p>
+      <p>ไป Library คุยกับผู้หญิงข้างเคาน์เตอร์ ถ้าจับมอนสเตอร์ครบ <b>100 ชนิด</b> เธอจะหอมแก้ม Terry แล้วเปิดประตูให้ ข้างในมี Travelers' Gate และหนังสือสูตรผสมเพิ่ม</p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Library Gate</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>25</dd>
+          <dt>มอนสเตอร์</dt><dd>ArcDemon, AmberWeed, ArmyCrab, MadSpirit, CurseLamp, WildApe, Tortragon, LandOwl</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับทุกชนิดข้างบน</dd>
+        </dl>
+      </div>
+      <div class="boss"><b>Boss: Orochi</b> — Recruitable: <b>No</b></div>
+      <p>Orochi อาละวาด นินจาโผล่มาจัดการ แล้วโชว์ดาบ Kusanagi ของ Orochi เขาบอกว่าไม่ได้ตามหาดาบกระจอก ๆ แบบนี้ แต่ตามหา<b>ดาบที่แข็งแกร่งที่สุด</b>เพื่อเป็นผู้ที่แข็งแกร่งที่สุด ตอบ <b>NO</b> ตอนเขาจะไป นินจาคนนี้คือ <b>Terry ตอนโต</b> (จาก DQ VI) นั่นเอง เขาอยากให้เราฝึกใช้ดาบ</p>
+
+      <!-- Chapter 29 -->
+      <h3 id="ch29" class="chap">Chapter 29<small>Arena: S Class</small></h3>
+      <p>King ภูมิใจที่เราจับมอนสเตอร์ได้เกิน 100 ชนิด <b>เซฟเกม</b> รอบชิง S Class คือ Medal Man ใน Queen's Room</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th colspan="2">S CLASS (ค่าสมัคร 10000 Gold)</th></tr></thead>
+        <tbody>
+          <tr><td>ทีมตัวอย่าง</td><td>DracoLord2 Lv16, Hargon Lv18, Sidoh Lv16</td></tr>
+          <tr><td>รอบ 1</td><td>DanceVegi, Voodoll, DanceVegi</td></tr>
+          <tr><td>รอบ 2</td><td>Slime, Dracky, ArmyAnt</td></tr>
+          <tr><td>รอบชิง</td><td>Metabble, Roboster, MetalDrak</td></tr>
+          <tr><td>แนวทาง</td><td>Hargon = CAUTIOUS, DracoLord2 &amp; Sidoh = CHARGE</td></tr>
+        </tbody>
+      </table>
+      <p>เราได้เป็น<b>ตัวแทนของ GreatTree</b> แล้ว! King of GreatLog มาอีกครั้งและคิดว่า Terry เป็นภารโรง หลังเขากลับไป King บอกให้ไป <b>Gate of Reflection</b> ที่ว่ากันว่าจะได้พบตัวเองในอนาคต แล้ว GreatTree ก็โตขึ้นอีกครั้ง</p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>Jester พูดถึง Monster Master ในตำนานชื่อ Mary และคำใบ้: ผสม Devil เด็ก 2 ตัว (Demonite) ได้ GateGuard</li>
+        <li><b>Medal Man</b> ใน Queen's Room เสนอผสม Metaly → Metaly + Metaly = Metabble → Metabble + Metabble (รางวัล 30 เหรียญ) = <b>MetalKing</b> เก็บไว้ผสมภายหลัง</li>
+        <li>May ใบ้สูตร Ogre: Devil + HammerMan</li>
+        <li>พ่อค้า Bazaar ที่เคยติดเกาะกลับมาแล้ว และมี <b>Item Shop 4</b> ที่มุมตะวันตกเฉียงใต้</li>
+        <li>ห้อง Travelers' Gate ผ่านประตูใหญ่ มี Gate เดียว ทหารจะเตือนเรา</li>
+      </ul>
+
+      <!-- Chapter 30 -->
+      <h3 id="ch30" class="chap">Chapter 30<small>Gate 16: Reflection</small></h3>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 16 - Reflection</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>29</dd>
+          <dt>มอนสเตอร์</dt><dd>EvilBeast, Shadow, EvilWand, SlimeBorg, LizardMan, Grizzly, Wyvern, MadHornet, FireWeed, Lionex, RotRaven, JewelBag</dd>
+          <dt>เป้าหมายก่อนลงชั้นสุดท้าย</dt><dd>เก็บเลเวล · จับทุกชนิดข้างบน</dd>
+        </dl>
+      </div>
+      <p>ผู้พิทักษ์ชั้นสุดท้ายคือ <b>Durran</b> (Stormsgate Citadel ใน DQ VI) เขาจะส่งลูกน้องมาทดสอบเราก่อน</p>
+      <ol class="ml-5 list-decimal space-y-1">
+        <li>สู้กับ <b>Servant ×2</b> — มีโอกาสจับได้ ถ้ายังไม่มี Servant ในทีมหรือในฟาร์ม</li>
+        <li>สู้กับ <b>Adult Terry</b> — จับไม่ได้ สู้ตามปกติ</li>
+        <li>สู้กับ <b>Durran</b></li>
+      </ol>
+      <div class="boss"><b>Boss: Durran</b> — Recruitable: <b>No</b></div>
+      <p>Durran ยอมแพ้และบอกว่าเป็นเกียรติที่ได้สู้ด้วย Adult Terry ที่เคยแพ้ Durran ขอถอนคำที่ดูถูกเรา แล้วถามชื่อ ตอบ <b>YES</b> Terry ตอนโตรู้ทันทีว่าเราคือตัวเขาเอง เขาทำงานให้ Warubou และไม่อยากให้เรากระหายพลังแบบเขา ก่อนไปเขาบอกว่า "ถึงเวลาตื่นแล้ว" ถ้าฟังคำแนะนำอีกข้อ (YES) เขาจะฝากให้ดูแล Milayou</p>
+      <p class="note">ถ้าเคยเล่น DQ VI จะรู้ว่า Terry ตอนโตมีน้องสาวชื่อ Milly และสุดท้ายก็ได้กลับมาเจอกัน เนื้อเรื่องภาคนี้จึงเหมือนเกิดขึ้นในความฝันของ Terry ตอนโต</p>
+
+      <!-- Chapter 31 -->
+      <h3 id="ch31" class="chap">Chapter 31<small>Starry Night Tournament</small></h3>
+      <p>King มั่นใจว่าเราจะชนะ ทั้งอาณาจักรตื่นเต้นกับคืน Starry Night Terry กับมอนสเตอร์นอนพักที่คอกจนเช้า คืนนี้คือวันแข่ง</p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>Monster Farm: คุยกับ <b>Slio</b> ตอบ YES เพื่อเพิ่มเข้าสมุดมอนสเตอร์</li>
+        <li>เด็กผู้หญิงท้าย Village บอกว่า "อย่าแพ้นะ" (คำพูดที่ใจดีที่สุดของเธอ) บ้านเธอมี Part 4 ของหนังสือ</li>
+        <li>คู่แข่งในร้านอาหารใบ้วิธีได้ KingSlime: ผสม Slime ที่ค่า +5 กับ Slime อีกตัว</li>
+        <li>พร้อมแล้วคุยกับเคาน์เตอร์ซ้ายของ Arena ตอบ YES</li>
+      </ul>
+      <table class="wt-table mt-3">
+        <thead><tr><th colspan="2">STARRY NIGHT TOURNAMENT</th></tr></thead>
+        <tbody>
+          <tr><td>ทีมตัวอย่าง</td><td>DracoLord2 Lv35, Hargon Lv37, Sidoh Lv35</td></tr>
+          <tr><td>รอบ 1 (BigTrunk)</td><td>Centasaur, Orochi, Swordgon</td></tr>
+          <tr><td>รอบ 2 (DeadTree)</td><td>Andreal, Unicorn, MadDragon</td></tr>
+          <tr><td>รอบชิง (GreatLog)</td><td>MetalKing, Coatol, RainHawk</td></tr>
+        </tbody>
+      </table>
+      <p>ตัวแทนของ GreatLog คือ <b>Milayou</b>! เธอถูกพามาที่ GreatLog และกลับบ้านไม่ได้จนกว่าจะชนะ Tournament จึงต้องฝึกหนัก เธอดีใจที่ได้เจอพี่ แต่จะไม่ออมมือ</p>
+      <p>หลังชนะ Warubou มาบอกว่า Milayou หมดประโยชน์แล้ว แล้วลากเธอหายไป Terry พยายามช่วยแต่ไม่ทัน</p>
+      <p>ที่ Castle King และ Queen แสดงความยินดี ฝนดาวตกเริ่มขึ้น King ขอให้เราอยู่ที่ GreatTree ต่อ ตอบ <b>NO</b> (ยังต้องหา Milayou) King บอกให้ไปห้องลึกสุดของ Starry Shrine ที่เฉพาะผู้ชนะเข้าได้ คุยกับทุกคนให้ครบ แล้วคุยกับ Old Man มุมตะวันออกเฉียงเหนือของ Monster Farm ตอบ YES</p>
+      <p>ที่แท่นบูชา ดาวที่ร่วงลงมาส่องแสง แล้วมีไข่ดาวตกลงมา ฟักออกมาเป็น <b>Watabou ตัวใหม่</b> วิญญาณผู้พิทักษ์ GreatTree ที่เกิดจากมาสเตอร์ตัวจริงกับพลังของ GreatTree นี่คือความหมายที่แท้จริงของ Starry Night และเหตุผลที่บรรพบุรุษของ Watabou จัด Tournament ขึ้น Watabou จะออกเดินทางไปสร้าง GreatTree ใหม่ต่อไป แตะ Watabou เพื่อกลับบ้าน</p>
+
+      <!-- Final -->
+      <h3 id="final" class="chap">Final Chapter<small>The End · Home</small></h3>
+      <p>กลับถึงบ้าน Milayou หลับอยู่บนเตียงข้าง ๆ ทุกอย่างเป็นแค่ความฝันหรือเปล่า? ห้องถัดไปมีหนังสือ <b>Encyclopedia of Monsters</b> ที่ผู้เขียนคือ <b>Terry</b>! มันไม่ใช่ความฝัน</p>
+      <p>Milayou ตื่นขึ้นมาเล่าเรื่องที่คิดว่าเป็นความฝัน (บอกว่าเกือบชนะแล้ว) Terry เล่าฝั่งของตัวเอง ตอบ YES แล้วตอนเดินไปที่เตียง Milayou เห็นว่ามี<b>เนื้อ</b>อยู่ในกระเป๋าของ Terry → <b>ขึ้นเครดิต</b></p>
+      <p>หลังเครดิต Watabou โผล่มาที่บ้าน อยากได้เนื้อชิ้นนั้น และจะเป็นเพื่อนเราถ้าให้ ...TO BE CONTINUED</p>
+      <p class="note"><b>เซฟเกม</b> แล้วปิดเครื่องเปิดใหม่ ยังไม่จบ! เนื้อหาหลังจบเกมยังมีอีกเยอะ</p>
+    </section>
+
+    <!-- 3 -->
+    <section id="postgame">
+      <h2 class="text-xl font-bold text-navy">3. หลังจบเกม (Post Chapter)</h2>
+
+      <h3 id="post1" class="chap">Post Chapter 1<small>Gate 17: Ambition</small></h3>
+      <p>Watabou ปลุก Terry ชวนออกผจญภัยครั้งใหม่ ตามเข้าตู้เสื้อผ้าในห้องถัดไป ทุกคนใน GreatTree ต้อนรับกลับ King มอบมอนสเตอร์คืนและเปิด Gate ใหม่ในห้อง Travelers' Gate</p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>ม่านหลังบัลลังก์ King ไม่ได้ล็อก เปิดไปจะเจอบ้าน Medal Man — <b>King คือ Medal Man</b> มาตลอด!</li>
+        <li>คุยกับ Watabou ใน Monster Stable เขาจะมาเป็นพวก<b>เมื่อพิชิต Travelers' Gate ทั้งหมดในอาณาจักร</b></li>
+        <li>ห้อง Travelers' Gate: ลงบันได ตะวันตก 1 ลงบันไดอีก ตะวันออก 1 ผ่านประตูเล็กซ้าย Gate ซ้ายคือ Ambition</li>
+      </ul>
+      <p class="note">Gate หลังจบเกม<b>แต่ละ Gate มีมอนสเตอร์ตระกูลเดียว</b> (Bug, Plant, Bird, Slime, Devil, Zombie, Material, Beast, Dragon) ใช้จับมอนสเตอร์ที่ต้องการไปผสมได้สบาย</p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 17 - Ambition (ตระกูล Bug)</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>30</dd>
+          <dt>มอนสเตอร์</dt><dd>GoHopper, ArmyAnt, Catapila, GiantWorm, GiantSlug, Eyeder, Butterfly, Armorpede, Gophecada, StagBug, TailEater, WeedBug, Droll, GiantMoth, ArmyCrab, MadHornet</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายคือ DracoLord จาก DQ I เขาเสนอแบ่งโลกให้ครึ่งหนึ่งถ้ามาเป็นพวก ตอบ <b>NO</b> แล้วตอบ <b>YES</b> เพื่อเริ่มสู้</p>
+      <div class="boss"><b>Boss: DracoLord</b> — Recruitable: <b>No</b> · สู้ DracoLord1 แล้วต่อด้วย DracoLord2</div>
+
+      <h3 id="post2" class="chap">Post Chapter 2<small>Gate 18: Demolition</small></h3>
+      <p>King อยากให้เราเป็นกษัตริย์แทน (ล้อเล่น) <b>เซฟเกม</b> แล้วเข้า Gate ต่อทันที</p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 18 - Demolition (ตระกูล Plant)</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>29</dd>
+          <dt>มอนสเตอร์</dt><dd>StubSuck, EvilSeed, BeanMan, FloraMan, WingTree, Gulpple, MadPlant, Oniono, CactiBall, TreeBoy, AmberWeed, FireWeed, ManEater, DanceVegi, Snapper</dd>
+        </dl>
+      </div>
+      <p>Hargon จาก DQ II ถามว่ารู้จักเขาไหม ตอบ <b>NO</b> แล้วเขาจะแนะนำตัวว่าเป็นมหานักบวชแห่งเทพแห่งการทำลายล้าง</p>
+      <div class="boss"><b>Boss: Hargon</b> — Recruitable: <b>No</b></div>
+      <p>Watabou บอกว่ายังได้กลิ่นมอนสเตอร์อยู่ แต่พากลับหา King ก่อน <b>ให้กลับเข้า Gate นี้อีกครั้งแล้วลงไปชั้นล่างสุด</b> จะเจอ Sidoh เทพแห่งการทำลายล้างจาก DQ II</p>
+      <div class="boss"><b>Boss: Sidoh</b> — Recruitable: <b>No</b></div>
+
+      <h3 id="post3" class="chap">Post Chapter 3<small>Gate 19: Mastermind</small></h3>
+      <p><b>เซฟเกม</b> ห้อง Travelers' Gate: ลงบันได ตะวันตก 1 ลงบันได ตะวันออก 1 ผ่านประตูเล็กขวา Gate บนคือ Mastermind</p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 19 - Mastermind (ตระกูล Bird)</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>27</dd>
+          <dt>มอนสเตอร์</dt><dd>Dracky, Picky, BigRoost, BullBird, MadRaven, MadPecker, FloraJay, StubBird, MistyWing, DuckKite, MadGoose, LandOwl, Wyvern, MadCondor, ZapBird, WhipBird</dd>
+        </dl>
+      </div>
+      <div class="boss"><b>Boss: Baramos</b> (DQ III) — Recruitable: <b>No</b></div>
+
+      <h3 id="post4" class="chap">Post Chapter 4<small>Gate 20: Control</small></h3>
+      <p><b>เซฟเกม</b> แล้วเข้า Gate of Control ต่อ</p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 20 - Control (ตระกูล Slime)</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>30</dd>
+          <dt>มอนสเตอร์</dt><dd>Slime, SpotSlime, Metaly, TreeSlime, DrakSlime, Snaily, Babble, WingSlime, Slabbit, SlimeNite, BoxSlime, RockSlime, SpotKing, SlimeBorg, Metabble</dd>
+        </dl>
+      </div>
+      <p>Zoma จาก DQ III ต้อนรับสู่แท่นบูชายัญ ประกาศจะปกคลุมโลกด้วยความสิ้นหวัง</p>
+      <div class="boss"><b>Boss: Zoma</b> — Recruitable: <b>No</b></div>
+      <p>หลังแพ้ Zoma ถามชื่อ Terry และบอกว่า ตราบใดที่มีแสงสว่าง ความมืดก็ยังคงอยู่</p>
+
+      <h3 id="post5" class="chap">Post Chapter 5<small>Gate 21: Extinction</small></h3>
+      <p><b>เซฟเกม</b> ห้อง Travelers' Gate: ลงบันได ตะวันตก 1 ลงบันได ตะวันออก 1 ผ่านประตูใหญ่ (มี Gate of Extinction และ Sleep)</p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 21 - Extinction (ตระกูล Devil)</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>30</dd>
+          <dt>มอนสเตอร์</dt><dd>Gremlin, Demonite, 1EyeClown, SkulRider, EyeBall, MedusaEye, Pixy, DarkEye, Orc, AgDevil, ArcDemon, EvilBeast, Lionex, Grendal, Ogre, GoatHorn</dd>
+        </dl>
+      </div>
+      <p>Pizzaro ร่างวิวัฒนาการจาก DQ IV จำตัวเองไม่ได้ ถามว่าเข้าใจไหม ตอบ <b>NO</b> เขาบอกว่ามาเพื่อกำจัดมนุษย์ทั้งหมด</p>
+      <div class="boss"><b>Boss: Pizzaro</b> — Recruitable: <b>No</b></div>
+      <p>หลังแพ้ Pizzaro นึกชื่อ <b>Rosalie</b> คนรักของเขาได้ Watabou เล่าว่า Rosalie ถูกมนุษย์ทรมานเพราะน้ำตาของเธอ (เรื่องราวใน DQ IV)</p>
+
+      <h3 id="post6" class="chap">Post Chapter 6<small>Gate 22: Sleep</small></h3>
+      <p><b>เซฟเกม</b> แล้วเข้า Gate of Sleep</p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Gate 22 - Sleep (ตระกูล Zombie)</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>30</dd>
+          <dt>มอนสเตอร์</dt><dd>Spooky, Hork, BoneSlave, PutrePup, Mudron, Mummy, DeadNite, NiteWhip, Reaper, WindMerge, MadSpirit, Shadow, RotRaven, DarkCrab, Skullgon, Skeletor, DeadNoble</dd>
+        </dl>
+      </div>
+      <p>Esterk จาก DQ IV ความจำเสื่อม จำได้แค่ชื่อตัวเอง ไม่รู้ว่าตัวเองดีหรือเลว ถามว่ามาทำลายเขาหรือ ตอบ <b>NO</b> เขาจะไล่ให้ไป คุยอีกครั้งเพื่อสู้</p>
+      <div class="boss"><b>Boss: Esterk</b> — Recruitable: <b>No</b></div>
+      <p>Esterk เล่าว่าฝันเห็นตัวเองพ่ายแพ้ Watabou ยืนยันว่าเรื่องราวทั้งหมดของภาคนี้เกิดขึ้นใน<b>ความฝันของ Terry ตอนโต</b></p>
+
+      <h3 id="post7" class="chap">Post Chapter 7<small>Bazaar Gate 2</small></h3>
+      <p>พิชิต Gate ใน Castle ครบแล้ว <b>เซฟเกม</b> ออกไปสำรวจ GreatTree</p>
+      <h4 class="mt-4 font-bold text-accent">Village</h4>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>มีห้องใหม่ด้านตะวันออกท้าย Village (เกิดจากแผ่นดินไหว) มี <b>Priest (Monster Namer)</b> ที่เปลี่ยนชื่อมอนสเตอร์ได้ และ Goopi ตัวที่ 3</li>
+        <li>ลำดับเป่ายิ้งฉุบที่ชนะ: <b>Scissors → Rock → Scissors → Rock → Paper</b> ชนะแล้ว Goopi ให้ไปหาพี่ชายที่ Arena back</li>
+        <li>หนังสือบ้านเด็กผู้หญิงมี Part 5 แล้ว เธอชื่อ <b>Santi</b> คุยกับเธอ ตอบ YES แล้วตามเธอไปพบคุณปู่ ซึ่งจะให้ใช้ Travelers' Gate ถ้าเอา <b>GoldSlime</b> มาให้ดู</li>
+        <li>Old Man ที่ Starry Shrine เล่าว่าเขาก็เคยถูก Watabou พามาเมื่อหลายปีก่อน และเคยชนะ Tournament</li>
+      </ul>
+      <h4 class="mt-4 font-bold text-accent">Bazaar</h4>
+      <p>Viking 2 คนมุมตะวันออกเฉียงใต้ตั้งเตาย่างใหม่ทับ Travelers' Gate อันที่ 2 คราวนี้อยากเห็นมอนสเตอร์ที่ใช้สกิล <b>"Call"</b> (มอนสเตอร์ไม่หายไป)</p>
+      <table class="wt-table mt-2">
+        <thead><tr><th>สกิล Call</th><th>มอนสเตอร์ที่มี TatsuCall ติดตัว</th></tr></thead>
+        <tbody>
+          <tr><td>TatsuCall → อัปเกรดเป็น DiagoCall, SamsiCall, BazooCall</td><td>DeathMore1, DeadNoble, GoldGolem, Hargon, WhipBird<br><span class="text-muted">หาง่ายสุดคือ DeadNoble และ WhipBird</span></td></tr>
+        </tbody>
+      </table>
+      <div class="gate">
+        <p class="mb-1 font-bold">Bazaar Gate 2 (ตระกูล Material)</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>30</dd>
+          <dt>มอนสเตอร์</dt><dd>Goopi, SabreMan, CoilBird, MudDoll, Facer, MadCandle, SpikyBoy, RogueNite, Gismo, CurseLamp, EvilWand, JewelBag, MadMirror, Voodoll, Balzak, MetalDrak, Roboster, BombCrag</dd>
+        </dl>
+      </div>
+      <p>Mirudraas จาก DQ V รอเราอยู่ เรียกเราว่าโง่ ถามว่ารู้จักเขาไหม ตอบ <b>NO</b></p>
+      <div class="boss"><b>Boss: Mirudraas (Mirudraas1)</b> — Recruitable: <b>No</b></div>
+      <p>หลังแพ้เขาตระหนักว่านี่คือความฝัน แล้วหายไป</p>
+
+      <h3 id="post8" class="chap">Post Chapter 8<small>Goopi's Gate 2</small></h3>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>เคาน์เตอร์ซ้ายของ Arena บอกว่ามีคนมาท้าสู้ <b>ยังไม่ต้องรับคำท้า</b></li>
+        <li>Teto พูดถึงตระกูล Boss ที่ได้จากการผสมเท่านั้น Monster School สอนเรื่องมอนสเตอร์ที่ได้จากการผสมเท่านั้น</li>
+        <li><b>Milayou</b> อยู่ใน Queen's Room เสนอผสม Skeletor → Skeletor + Skeletor = <b>Servant</b></li>
+        <li>Travelers' Gate ใหม่อยู่ข้าง Goopi ที่ Arena back</li>
+      </ul>
+      <div class="gate">
+        <p class="mb-1 font-bold">Goopi's Gate 2 (ตระกูล Beast)</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>27</dd>
+          <dt>มอนสเตอร์</dt><dd>PillowRat, FairyRat, Almiraj, CatFly, Skullroo, Saccer, Tonguella, MadGopher, WindBeast, Monnonja, Goategon, HammerMan, WildApe, Grizzly, SuperTen, Yeti, GulpBeast, IronTurt, Trumpeter, Unicorn</dd>
+        </dl>
+      </div>
+      <p>Mudou จาก DQ VI เรียกเราว่าไร้ค่า ถามว่ารู้จักเขาไหม ตอบ <b>YES</b> ถามว่าพร้อมไหม ตอบ <b>YES</b></p>
+      <div class="boss"><b>Boss: Mudou</b> — Recruitable: <b>No</b></div>
+
+      <h3 id="post9" class="chap">Post Chapter 9<small>Grandpa's Gate</small></h3>
+      <p><b>เซฟเกม</b> ผสม <b>MetalKing + MetalKing = GoldSlime</b> แล้วพาไปให้คุณปู่ของ Santi ดู เขาจะให้ใช้ Travelers' Gate</p>
+      <div class="gate">
+        <p class="mb-1 font-bold">Grandpa's Gate (ตระกูล Dragon)</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>30</dd>
+          <dt>มอนสเตอร์</dt><dd>MiniDrak, DragonKid, Poisongon, Crestpent, FairyDrak, Pteranod, Gasgon, KingCobra, Chamelgon, LizardFly, Tortragon, LizardMan, Swordgon, WingSnake, Rayburn, Spikerous, MadDragon, Andreal, GreatDrak</dd>
+        </dl>
+      </div>
+      <p>ชั้นสุดท้ายขึ้นบันไดไปเจอ DeathMore จาก DQ VI เขาอยากเป็นราชาของโลก บอกว่าไม่ต้องแนะนำตัวแต่ก็บอกชื่อเองอยู่ดี</p>
+      <div class="boss"><b>Boss: DeathMore</b> — Recruitable: <b>No</b></div>
+      <p>Watabou บอกว่า DeathMore คือจอมมารที่แข็งแกร่งที่สุด แต่ตอนนี้อยู่ในร่างชายชราจึงอ่อนกว่าปกติ</p>
+
+      <h3 id="post10" class="chap">Post Chapter 10<small>The Master Battle</small></h3>
+      <p>King ประกาศว่าเราคือมาสเตอร์ที่แข็งแกร่งที่สุดในจักรวาล และขอบคุณสำหรับ TinyMedal <b>เซฟเกม</b></p>
+      <p>พิชิต Travelers' Gate ครบทุกอันแล้ว ไป Monster Stable คุยกับ <b>Watabou</b> เขาจะเข้าร่วมทีม ในเกมมี Watabou <b>ตัวเดียว</b> ใช้ผสมเป็นมอนสเตอร์ที่แข็งแกร่งที่สุดในเกม</p>
+      <div class="party">
+        <b>สายผสมสู่ DarkDrium (มอนสเตอร์ที่แข็งที่สุด):</b>
+        <ol class="ml-5 mt-1 list-decimal space-y-1">
+          <li>DracoLord2 + Sidoh = Zoma</li>
+          <li>Hargon + Orochi = Baramos</li>
+          <li>Durran + Divinegon = Pizzaro</li>
+          <li>Pizzaro + KingLeo = Esterk</li>
+          <li>Esterk + GoldSlime = Mirudraas1</li>
+          <li>Mirudraas1 + Spikerous = Mirudraas2</li>
+          <li>Baramos + DarkHorn = Mudou</li>
+          <li>Zoma + Mirudraas2 = DeathMore1</li>
+          <li>DeathMore1 + Armorpion = DeathMore2</li>
+          <li>DeathMore2 + Mudou = DeathMore3</li>
+          <li>DeathMore3 + <b>Watabou</b> = <b>DarkDrium</b></li>
+        </ol>
+        <p class="mt-2"><b>GoldGolem:</b> MetalDrak + Skullgon = IceMan · MetalDrak + Orochi = LavaMan → IceMan + LavaMan = GoldGolem</p>
+        <p><b>GoldSlime:</b> KingSlime + GoldGolem = GoldSlime</p>
+        <p class="mt-1"><b>ทีมสุดท้าย:</b> DarkDrium, GoldGolem, GoldSlime</p>
+      </div>
+      <p>สิ่งสุดท้ายคือรับคำท้าที่เคาน์เตอร์ซ้ายของ Arena</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th colspan="2">THE MASTER BATTLE</th></tr></thead>
+        <tbody>
+          <tr><td>ทีมตัวอย่าง</td><td>DarkDrium, GoldGolem, GoldSlime</td></tr>
+          <tr><td>Master Monster Tamer</td><td>GoldSlime, Divinegon, Rosevine</td></tr>
+        </tbody>
+      </table>
+      <p>ผู้ท้าชิงคือ <b>Old Man</b> ที่ช่วยเราผสมและฟักไข่มาตลอดนั่นเอง ชนะแล้ว <b>ตำนานบทใหม่ได้ถือกำเนิดขึ้น</b> เราคือมาสเตอร์ที่แข็งแกร่งที่สุด</p>
+      <ul class="ml-5 list-disc space-y-1">
+        <li>เป้าหมายสุดท้าย: สะสมมอนสเตอร์ให้ครบ <b>215 ชนิด</b> (ถาม Old Man ที่ Starry Shrine)</li>
+        <li>สะสมครบไม่มีรางวัล แต่ผู้หญิงที่ Library จะเรียกเราว่า "ผู้ถูกเลือก"</li>
+      </ul>
+
+      <h3 id="secret" class="chap">???<small>ด่านลับที่ถูกตัดออกจากเกม</small></h3>
+      <p>มี Travelers' Gate ที่ถูกตัดออกจากเกม เข้าได้ด้วยโค้ดโกงเท่านั้น</p>
+      <ol class="ml-5 list-decimal space-y-1">
+        <li>เปิดโค้ด GameShark: <code class="rounded bg-paper px-1.5 py-0.5 font-bold">011F35C9</code></li>
+        <li>เข้า Travelers' Gate ใดก็ได้</li>
+        <li>เหยียบทางลงไปชั้นถัดไป</li>
+      </ol>
+      <div class="gate">
+        <p class="mb-1 font-bold">??? Gate</p>
+        <dl>
+          <dt>จำนวนชั้น</dt><dd>99</dd>
+          <dt>มอนสเตอร์</dt><dd>Skeletor, Trumpeter, MetalDrak, MadDragon, Snapper, GoatHorn, DeadNoble, Roboster, BombCrag, Andreal, Unicorn, ZapBird, WhipBird, Metaly, Metabble</dd>
+        </dl>
+      </div>
+      <p>ผ่าน 98 ชั้นลงไปจะเจอแค่<b>แท่นบูชาว่างเปล่า</b> ไม่มีอะไรอื่น และ Watabou ก็ไม่มารับด้วย ... หรือนี่คือตอนที่ Terry ตอนโตกำลังจะตื่นจากความฝัน?</p>
+    </section>
+
+    <!-- 4 -->
+    <section id="breeding">
+      <h2 class="text-xl font-bold text-navy">4. ตารางผสมมอนสเตอร์ (Breeding)</h2>
+      <p>อ่านตาราง: <b>Pedigree</b> คือพ่อหรือแม่ฝั่งที่กำหนดตระกูลของลูก <b>Mate</b> คือคู่ผสม คำว่า "Any Slime" หมายถึงมอนสเตอร์ตระกูล Slime ตัวไหนก็ได้ ทั้งคู่ต้องต่างเพศและเลเวล 10 ขึ้นไป</p>
+      <table class="wt-table mt-3">
+        <thead><tr><th>สัญลักษณ์ในเกม</th><th>ตระกูล</th></tr></thead>
+        <tbody>
+          <tr><td>Slime</td><td>Slime Family</td></tr>
+          <tr><td>Dragon Head (หัวมังกร)</td><td>Dragon Family</td></tr>
+          <tr><td>Beast Paw (อุ้งเท้า)</td><td>Beast Family</td></tr>
+          <tr><td>Feather (ขนนก)</td><td>Bird Family</td></tr>
+          <tr><td>Tree (ต้นไม้)</td><td>Plant Family</td></tr>
+          <tr><td>Bug Head (หัวแมลง)</td><td>Bug Family</td></tr>
+          <tr><td>Pitchfork (สามง่าม)</td><td>Devil Family</td></tr>
+          <tr><td>Skeleton Head (หัวกะโหลก)</td><td>Zombie Family</td></tr>
+          <tr><td>Head (หัว)</td><td>Material Family</td></tr>
+          <tr><td>?</td><td>Boss Family (แข็งแกร่งที่สุด ได้จากการผสมเท่านั้น)</td></tr>
+        </tbody>
+      </table>
+      <p class="text-sm text-muted">ยังมีสูตรอื่นอีกหลายแบบที่ให้ผลเดียวกัน ตารางนี้คือสูตรที่ทดสอบแล้วว่าใช้ได้</p>
+      <h3 id="breed-slime" class="mt-8 border-b-2 border-navy/30 pb-1 text-lg font-bold text-navy">Slime Family (ตระกูลสไลม์)</h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>Offspring (ลูก)</th><th>Pedigree</th><th>Mate</th></tr></thead>
+        <tbody>
+          <tr><td>DrakSlime</td><td>Any Slime</td><td>Any Dragon</td></tr>
+          <tr><td>SpotSlime</td><td>Any Slime</td><td>Any Beast</td></tr>
+          <tr><td>WingSlime</td><td>Any Slime</td><td>Any Bird</td></tr>
+          <tr><td>TreeSlime</td><td>Any Slime</td><td>Any Plant</td></tr>
+          <tr><td>Snaily</td><td>Any Slime</td><td>Any Bug</td></tr>
+          <tr><td>SlimeNite</td><td>Any Slime</td><td>Any Devil</td></tr>
+          <tr><td>Babble</td><td>Any Slime</td><td>Any Zombie</td></tr>
+          <tr><td>BoxSlime</td><td>Any Slime</td><td>Any Material</td></tr>
+          <tr><td>Slime</td><td>Slime</td><td>Any Slime</td></tr>
+          <tr><td>Healer</td><td>Slime</td><td>PillowRat</td></tr>
+          <tr><td>RockSlime</td><td>Any Slime</td><td>BombCrag</td></tr>
+          <tr><td>SlimeBorg</td><td>Any Slime</td><td>Roboster</td></tr>
+          <tr><td>FangSlime</td><td>Any Slime</td><td>Almiraj</td></tr>
+          <tr><td>Slabbit</td><td>Any Slime</td><td>Skullroo</td></tr>
+          <tr><td>Metaly</td><td>Any Slime</td><td>MetalDrak</td></tr>
+          <tr><td>Metabble</td><td>Metaly</td><td>Metaly</td></tr>
+          <tr><td>MetalKing</td><td>Metabble</td><td>Metabble</td></tr>
+          <tr><td>SpotKing</td><td>MetalKing</td><td>MadCondor</td></tr>
+          <tr><td>KingSlime</td><td>SpotKing</td><td>MadCondor</td></tr>
+          <tr><td>GoldSlime</td><td>MetalKing</td><td>MetalKing</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h3 id="breed-dragon" class="mt-8 border-b-2 border-navy/30 pb-1 text-lg font-bold text-navy">Dragon Family (ตระกูลมังกร)</h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>Offspring (ลูก)</th><th>Pedigree</th><th>Mate</th></tr></thead>
+        <tbody>
+          <tr><td>DragonKid</td><td>Any Dragon</td><td>Any Slime</td></tr>
+          <tr><td>Tortragon</td><td>Any Dragon</td><td>Any Beast</td></tr>
+          <tr><td>Pteranod</td><td>Any Dragon</td><td>Any Bird</td></tr>
+          <tr><td>Gasgon</td><td>Any Dragon</td><td>Any Plant</td></tr>
+          <tr><td>FairyDrak</td><td>Any Dragon</td><td>Any Bug</td></tr>
+          <tr><td>LizardMan</td><td>Any Dragon</td><td>Any Devil</td></tr>
+          <tr><td>Poisongon</td><td>Any Dragon</td><td>Any Zombie</td></tr>
+          <tr><td>Swordgon</td><td>Any Dragon</td><td>Any Material</td></tr>
+          <tr><td>Dragon</td><td>DragonKid</td><td>DragonKid</td></tr>
+          <tr><td>WingSnake</td><td>Crestpent</td><td>Crestpent</td></tr>
+          <tr><td>Coatol</td><td>WingSnake</td><td>WingSnake</td></tr>
+          <tr><td>MadDragon</td><td>Any Dragon</td><td>GulpBeast</td></tr>
+          <tr><td>Chamelgon</td><td>Any Dragon</td><td>Voodoll</td></tr>
+          <tr><td>Andreal</td><td>Any Dragon</td><td>Gulpple</td></tr>
+          <tr><td>MiniDrak</td><td>Any Dragon</td><td>Picky</td></tr>
+          <tr><td>LizardFly</td><td>Any Dragon</td><td>GoHopper</td></tr>
+          <tr><td>KingCobra</td><td>Any Dragon</td><td>Babble</td></tr>
+          <tr><td>Crestpent</td><td>Any Dragon</td><td>BigRoost</td></tr>
+          <tr><td>BattleRex</td><td>Any Dragon</td><td>Lionex</td></tr>
+          <tr><td>Rayburn</td><td>Any Dragon</td><td>MadCondor</td></tr>
+          <tr><td>Spikerous</td><td>Any Dragon</td><td>ArmyCrab</td></tr>
+          <tr><td>GreatDrak</td><td>Any Dragon</td><td>SpotKing</td></tr>
+          <tr><td>SkyDragon</td><td>Any Dragon</td><td>Phoenix</td></tr>
+          <tr><td>Orochi</td><td>GreatDrak</td><td>MedusaEye</td></tr>
+          <tr><td>Divinegon</td><td>SkyDragon</td><td>Orochi</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h3 id="breed-beast" class="mt-8 border-b-2 border-navy/30 pb-1 text-lg font-bold text-navy">Beast Family (ตระกูลสัตว์ร้าย)</h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>Offspring (ลูก)</th><th>Pedigree</th><th>Mate</th></tr></thead>
+        <tbody>
+          <tr><td>Tonguella</td><td>Any Beast</td><td>Any Slime</td></tr>
+          <tr><td>Almiraj</td><td>Any Beast</td><td>Any Dragon</td></tr>
+          <tr><td>CatFly</td><td>Any Beast</td><td>Any Bird</td></tr>
+          <tr><td>PillowRat</td><td>Any Beast</td><td>Any Plant</td></tr>
+          <tr><td>Saccer</td><td>Any Beast</td><td>Any Bug</td></tr>
+          <tr><td>GulpBeast</td><td>Grizzly</td><td>Any Dragon</td></tr>
+          <tr><td>Skullroo</td><td>Any Beast</td><td>Any Zombie</td></tr>
+          <tr><td>WindBeast</td><td>Any Beast</td><td>Any Material</td></tr>
+          <tr><td>AntEater</td><td>AntEater</td><td>Any Beast</td></tr>
+          <tr><td>Unicorn</td><td>Any Beast</td><td>FangSlime</td></tr>
+          <tr><td>SuperTen</td><td>Any Beast</td><td>Mudron</td></tr>
+          <tr><td>IronTurt</td><td>Any Beast</td><td>Tortragon</td></tr>
+          <tr><td>Monnonja</td><td>Any Beast</td><td>DuckKite</td></tr>
+          <tr><td>HammerMan</td><td>Any Beast</td><td>StubSuck</td></tr>
+          <tr><td>Yeti</td><td>Any Beast</td><td>Orc</td></tr>
+          <tr><td>MadGopher</td><td>Any Beast</td><td>SabreMan</td></tr>
+          <tr><td>Grizzly</td><td>Any Beast</td><td>Any Devil</td></tr>
+          <tr><td>FairyRat</td><td>Any Beast</td><td>LizardFly</td></tr>
+          <tr><td>WildApe</td><td>Any Beast</td><td>MadPecker</td></tr>
+          <tr><td>MadCat</td><td>Any Beast</td><td>Dragon</td></tr>
+          <tr><td>BigEye</td><td>Any Beast</td><td>EyeBall</td></tr>
+          <tr><td>Trumpeter</td><td>WildApe</td><td>WildApe</td></tr>
+          <tr><td>KingLeo</td><td>Trumpeter</td><td>Trumpeter</td></tr>
+          <tr><td>Goategon</td><td>Any Beast</td><td>DrakSlime</td></tr>
+          <tr><td>DarkHorn</td><td>Any Beast</td><td>Any Boss</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h3 id="breed-bird" class="mt-8 border-b-2 border-navy/30 pb-1 text-lg font-bold text-navy">Bird Family (ตระกูลนก)</h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>Offspring (ลูก)</th><th>Pedigree</th><th>Mate</th></tr></thead>
+        <tbody>
+          <tr><td>Picky</td><td>Any Bird</td><td>Any Slime</td></tr>
+          <tr><td>Wyvern</td><td>Any Bird</td><td>Any Dragon</td></tr>
+          <tr><td>BullBird</td><td>Any Bird</td><td>Any Beast</td></tr>
+          <tr><td>FloraJay</td><td>Any Bird</td><td>Any Plant</td></tr>
+          <tr><td>DuckKite</td><td>Any Bird</td><td>Any Bug</td></tr>
+          <tr><td>MadPecker</td><td>Any Bird</td><td>Any Devil</td></tr>
+          <tr><td>MadRaven</td><td>Any Bird</td><td>Any Zombie</td></tr>
+          <tr><td>MistyWing</td><td>Any Bird</td><td>Any Material</td></tr>
+          <tr><td>Dracky</td><td>Dracky</td><td>Any Bird</td></tr>
+          <tr><td>BigRoost</td><td>BigRoost</td><td>Any Bird</td></tr>
+          <tr><td>LandOwl</td><td>BullBird</td><td>Any Beast</td></tr>
+          <tr><td>StubBird</td><td>Any Bird</td><td>RockSlime</td></tr>
+          <tr><td>MadGoose</td><td>Any Bird</td><td>Droll</td></tr>
+          <tr><td>MadCondor</td><td>Any Bird</td><td>CoilBird</td></tr>
+          <tr><td>Phoenix</td><td>Any Bird</td><td>DrakSlime</td></tr>
+          <tr><td>WhipBird</td><td>Any Bird</td><td>Rayburn</td></tr>
+          <tr><td>FunkyBird</td><td>Any Bird</td><td>DanceVegi</td></tr>
+          <tr><td>Blizzardy</td><td>Any Bird</td><td>IceMan</td></tr>
+          <tr><td>RainHawk</td><td>Blizzardy</td><td>Phoenix</td></tr>
+          <tr><td>ZapBird</td><td>Any Bird</td><td>Any Boss</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h3 id="breed-plant" class="mt-8 border-b-2 border-navy/30 pb-1 text-lg font-bold text-navy">Plant Family (ตระกูลพืช)</h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>Offspring (ลูก)</th><th>Pedigree</th><th>Mate</th></tr></thead>
+        <tbody>
+          <tr><td>MadPlant</td><td>Any Plant</td><td>Any Slime</td></tr>
+          <tr><td>FireWeed</td><td>Any Plant</td><td>Any Dragon</td></tr>
+          <tr><td>FloraMan</td><td>Any Plant</td><td>Any Beast</td></tr>
+          <tr><td>WingTree</td><td>Any Plant</td><td>Any Bird</td></tr>
+          <tr><td>CactiBall</td><td>Any Plant</td><td>Any Bug</td></tr>
+          <tr><td>Gulpple</td><td>Any Plant</td><td>Any Devil</td></tr>
+          <tr><td>Toadstool</td><td>Any Plant</td><td>Any Zombie</td></tr>
+          <tr><td>AmberWeed</td><td>Any Plant</td><td>Any Material</td></tr>
+          <tr><td>StubSuck</td><td>StubSuck</td><td>Any Plant</td></tr>
+          <tr><td>BeanMan</td><td>Any Plant</td><td>PillowRat</td></tr>
+          <tr><td>HerbMan</td><td>Any Plant</td><td>FunkyBird</td></tr>
+          <tr><td>Oniono</td><td>Any Plant</td><td>Gophecada</td></tr>
+          <tr><td>DanceVegi</td><td>Any Plant</td><td>Facer</td></tr>
+          <tr><td>TreeBoy</td><td>Any Plant</td><td>Pixy</td></tr>
+          <tr><td>FaceTree</td><td>Any Plant</td><td>NiteWhip</td></tr>
+          <tr><td>EvilSeed</td><td>Any Plant</td><td>Butterfly</td></tr>
+          <tr><td>ManEater</td><td>EvilSeed</td><td>EvilSeed</td></tr>
+          <tr><td>Snapper</td><td>ManEater</td><td>ManEater</td></tr>
+          <tr><td>RoseVine</td><td>Any Plant</td><td>Any Boss</td></tr>
+          <tr><td>Watabou</td><td colspan="2">ได้จากเนื้อเรื่องหลังจบเกม (Post Chapter 10)</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h3 id="breed-bug" class="mt-8 border-b-2 border-navy/30 pb-1 text-lg font-bold text-navy">Bug Family (ตระกูลแมลง)</h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>Offspring (ลูก)</th><th>Pedigree</th><th>Mate</th></tr></thead>
+        <tbody>
+          <tr><td>GiantSlug</td><td>Any Bug</td><td>Any Slime</td></tr>
+          <tr><td>Catapila</td><td>Any Bug</td><td>Any Dragon</td></tr>
+          <tr><td>Gophecada</td><td>Any Bug</td><td>Any Beast</td></tr>
+          <tr><td>Butterfly</td><td>Any Bug</td><td>Any Bird</td></tr>
+          <tr><td>WeedBug</td><td>Any Bug</td><td>Any Plant</td></tr>
+          <tr><td>GiantWorm</td><td>Any Bug</td><td>Any Devil</td></tr>
+          <tr><td>Lipsy</td><td>Any Bug</td><td>Any Zombie</td></tr>
+          <tr><td>StagBug</td><td>Any Bug</td><td>Any Material</td></tr>
+          <tr><td>ArmyAnt</td><td>ArmyAnt</td><td>Any Bug</td></tr>
+          <tr><td>GoHopper</td><td>GoHopper</td><td>Any Bug</td></tr>
+          <tr><td>TailEater</td><td>Any Bug</td><td>FloraMan</td></tr>
+          <tr><td>Armorpede</td><td>Any Bug</td><td>IronTurt</td></tr>
+          <tr><td>Eyeder</td><td>Any Bug</td><td>AmberWeed</td></tr>
+          <tr><td>GiantMoth</td><td>Any Bug</td><td>Saccer</td></tr>
+          <tr><td>Droll</td><td>Any Bug</td><td>Spooky</td></tr>
+          <tr><td>MadHornet</td><td>Any Bug</td><td>FairyRat</td></tr>
+          <tr><td>ArmyCrab</td><td>Any Bug</td><td>DarkCrab</td></tr>
+          <tr><td>HornBeet</td><td>StagBug</td><td>StagBug</td></tr>
+          <tr><td>Armorpion</td><td>HornBeet</td><td>HornBeet</td></tr>
+          <tr><td>Digster</td><td>Any Bug</td><td>Any Boss</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h3 id="breed-devil" class="mt-8 border-b-2 border-navy/30 pb-1 text-lg font-bold text-navy">Devil Family (ตระกูลปีศาจ)</h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>Offspring (ลูก)</th><th>Pedigree</th><th>Mate</th></tr></thead>
+        <tbody>
+          <tr><td>Pixy</td><td>Any Devil</td><td>Any Slime</td></tr>
+          <tr><td>MedusaEye</td><td>Any Devil</td><td>Any Dragon</td></tr>
+          <tr><td>Gremlin</td><td>Any Devil</td><td>Any Beast</td></tr>
+          <tr><td>Demonite</td><td>Any Devil</td><td>Any Bird</td></tr>
+          <tr><td>DarkEye</td><td>Any Devil</td><td>Any Plant</td></tr>
+          <tr><td>EyeBall</td><td>Any Devil</td><td>Any Bug</td></tr>
+          <tr><td>SkulRider</td><td>Any Devil</td><td>Any Zombie</td></tr>
+          <tr><td>EvilBeast</td><td>Any Devil</td><td>Any Material</td></tr>
+          <tr><td>1EyeClown</td><td>Pixy</td><td>Any Slime</td></tr>
+          <tr><td>Centasaur</td><td>GateGuard</td><td>Any Beast</td></tr>
+          <tr><td>AgDevil</td><td>Gremlin</td><td>Any Dragon</td></tr>
+          <tr><td>Lionex</td><td>Any Devil</td><td>LizardMan</td></tr>
+          <tr><td>Orc</td><td>Any Devil</td><td>BeanMan</td></tr>
+          <tr><td>Ogre</td><td>Any Devil</td><td>HammerMan</td></tr>
+          <tr><td>Grendal</td><td>Any Devil</td><td>MadDragon</td></tr>
+          <tr><td>EvilArmor</td><td>Any Devil</td><td>Armorpede</td></tr>
+          <tr><td>MadKnight</td><td>Any Devil</td><td>RogueNite</td></tr>
+          <tr><td>Gigantes</td><td>Any Devil</td><td>BigEye</td></tr>
+          <tr><td>GoatHorn</td><td>Any Devil</td><td>DarkHorn</td></tr>
+          <tr><td>GateGuard</td><td>Demonite</td><td>Demonite</td></tr>
+          <tr><td>ChopClown</td><td>1EyeClown</td><td>1EyeClown</td></tr>
+          <tr><td>Akubar</td><td>Grendal</td><td>Grendal</td></tr>
+          <tr><td>Jamirus</td><td>Akubar</td><td>RainHawk</td></tr>
+          <tr><td>Durran</td><td>Centasaur</td><td>GoldGolem</td></tr>
+          <tr><td>ArcDemon</td><td>Any Devil</td><td>Any Boss</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h3 id="breed-zombie" class="mt-8 border-b-2 border-navy/30 pb-1 text-lg font-bold text-navy">Zombie Family (ตระกูลซอมบี้)</h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>Offspring (ลูก)</th><th>Pedigree</th><th>Mate</th></tr></thead>
+        <tbody>
+          <tr><td>Spooky</td><td>Any Zombie</td><td>Any Slime</td></tr>
+          <tr><td>MadSpirit</td><td>Any Zombie</td><td>Any Dragon</td></tr>
+          <tr><td>PutrePup</td><td>Any Zombie</td><td>Any Beast</td></tr>
+          <tr><td>RotRaven</td><td>Any Zombie</td><td>Any Bird</td></tr>
+          <tr><td>Mummy</td><td>Any Zombie</td><td>Any Plant</td></tr>
+          <tr><td>DarkCrab</td><td>Any Zombie</td><td>Any Bug</td></tr>
+          <tr><td>DeadNite</td><td>Any Zombie</td><td>Any Devil</td></tr>
+          <tr><td>Shadow</td><td>Any Zombie</td><td>Any Material</td></tr>
+          <tr><td>Hork</td><td>Hork</td><td>Any Zombie</td></tr>
+          <tr><td>CopyCat</td><td>Copycat</td><td>Zombie</td></tr>
+          <tr><td>Skullgon</td><td>Any Zombie</td><td>Swordgon</td></tr>
+          <tr><td>Mudron</td><td>Any Zombie</td><td>GiantSlug</td></tr>
+          <tr><td>NiteWhip</td><td>Any Zombie</td><td>MistyWing</td></tr>
+          <tr><td>WindMerge</td><td>Any Zombie</td><td>WindBeast</td></tr>
+          <tr><td>Reaper</td><td>Any Zombie</td><td>WeedBug</td></tr>
+          <tr><td>DeadNoble</td><td>DeadNite</td><td>DeadNite</td></tr>
+          <tr><td>BoneSlave</td><td>Hork</td><td>Hork</td></tr>
+          <tr><td>Skeletor</td><td>BoneSlave</td><td>BoneSlave</td></tr>
+          <tr><td>Servant</td><td>Skeletor</td><td>Skeletor</td></tr>
+          <tr><td>WhiteKing</td><td>Any Zombie</td><td>Any Boss</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h3 id="breed-material" class="mt-8 border-b-2 border-navy/30 pb-1 text-lg font-bold text-navy">Material Family (ตระกูลวัตถุ)</h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>Offspring (ลูก)</th><th>Pedigree</th><th>Mate</th></tr></thead>
+        <tbody>
+          <tr><td>JewelBag</td><td>Any Material</td><td>Any Slime</td></tr>
+          <tr><td>EvilWand</td><td>Any Material</td><td>Any Dragon</td></tr>
+          <tr><td>MadCandle</td><td>Any Material</td><td>Any Beast</td></tr>
+          <tr><td>CoilBird</td><td>Any Material</td><td>Any Bird</td></tr>
+          <tr><td>Facer</td><td>Any Material</td><td>Any Plant</td></tr>
+          <tr><td>SpikyBoy</td><td>Any Material</td><td>Any Bug</td></tr>
+          <tr><td>MadMirror</td><td>Any Material</td><td>Any Devil</td></tr>
+          <tr><td>RogueNite</td><td>Any Material</td><td>Any Zombie</td></tr>
+          <tr><td>Goopi</td><td>Goopi</td><td>Any Material</td></tr>
+          <tr><td>Voodoll</td><td>Any Material</td><td>Lipsy</td></tr>
+          <tr><td>SabreMan</td><td>Any Material</td><td>GiantWorm</td></tr>
+          <tr><td>CurseLamp</td><td>Any Material</td><td>WingTree</td></tr>
+          <tr><td>Roboster</td><td>Any Material</td><td>SkulRider</td></tr>
+          <tr><td>EvilPot</td><td>Any Material</td><td>Snaily</td></tr>
+          <tr><td>Mimic</td><td>Any Material</td><td>BoxSlime</td></tr>
+          <tr><td>MetalDrak</td><td>Any Material</td><td>Andreal</td></tr>
+          <tr><td>Gismo</td><td>Goopi</td><td>FireWeed</td></tr>
+          <tr><td>MudDoll</td><td>Goopi</td><td>Goopi</td></tr>
+          <tr><td>Golem</td><td>MudDoll</td><td>MudDoll</td></tr>
+          <tr><td>StoneMan</td><td>Golem</td><td>Golem</td></tr>
+          <tr><td>BombCrag</td><td>SpikyBoy</td><td>SpikyBoy</td></tr>
+          <tr><td>IceMan</td><td>MetalDrak</td><td>Skullgon</td></tr>
+          <tr><td>LavaMan</td><td>MetalDrak</td><td>ArcDemon</td></tr>
+          <tr><td>GoldGolem</td><td>IceMan</td><td>LavaMan</td></tr>
+          <tr><td>Balzak</td><td>Any Material</td><td>Any Boss</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h3 id="breed-boss" class="mt-8 border-b-2 border-navy/30 pb-1 text-lg font-bold text-navy">Boss Family (ตระกูลบอส)</h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>Offspring (ลูก)</th><th>Pedigree</th><th>Mate</th></tr></thead>
+        <tbody>
+          <tr><td>DracoLord1</td><td>Servant</td><td>GreatDrak</td></tr>
+          <tr><td>DracoLord2</td><td>DracoLord1</td><td>Divinegon</td></tr>
+          <tr><td>Hargon</td><td>WhiteKing</td><td>MetalKing</td></tr>
+          <tr><td>Sidoh</td><td>Jamirus</td><td>Rosevine</td></tr>
+          <tr><td>Baramos</td><td>Hargon</td><td>Orochi</td></tr>
+          <tr><td>Zoma</td><td>DracoLord1</td><td>Sidoh</td></tr>
+          <tr><td>Pizzaro</td><td>Durran</td><td>Divinegon</td></tr>
+          <tr><td>Esterk</td><td>Pizzaro</td><td>KingLeo</td></tr>
+          <tr><td>Mirudraas1</td><td>Esterk</td><td>GoldSlime</td></tr>
+          <tr><td>Mirudraas2</td><td>Mirudraas1</td><td>Spikerous</td></tr>
+          <tr><td>Mudou</td><td>Baramos</td><td>DarkHorn</td></tr>
+          <tr><td>DeathMore1</td><td>Zoma</td><td>Mirudraas1</td></tr>
+          <tr><td>DeathMore2</td><td>DeathMore1</td><td>Armorpion</td></tr>
+          <tr><td>DeathMore3</td><td>DeathMore2</td><td>Mudou</td></tr>
+          <tr><td>Darkdrium</td><td>DeathMore3</td><td>Watabou</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section id="ref">
+      <h2 class="text-xl font-bold text-navy">5. ข้อมูลอ้างอิง</h2>
+
+      <h3 id="ref-arena" class="mt-6 border-b-2 border-navy/30 pb-1 text-lg font-bold text-navy">Arena ทุก Class</h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>Class</th><th>ค่าสมัคร</th><th>รอบ 1</th><th>รอบ 2</th><th>รอบชิง</th><th>คู่ชิง</th></tr></thead>
+        <tbody>
+          <tr><td>G</td><td>0</td><td>Dracky, AntEater, Dracky</td><td>Slime, StubSuck, Slime</td><td>Spooky, Hork, Spooky</td><td>ครูใหญ่ Monster School</td></tr>
+          <tr><td>F</td><td>10</td><td>SpotSlime ×3</td><td>MudDoll, Almiraj, MudDoll</td><td>PutrePup, MadRaven, Skullroo</td><td>ศาสตราจารย์ใน Well</td></tr>
+          <tr><td>E</td><td>50</td><td>Crestpent, TreeSlime, Poisongon</td><td>DrakSlime, Dragon, FairyDrak</td><td>Snaily, Armorpede, Snaily</td><td>Teto</td></tr>
+          <tr><td>D</td><td>100</td><td>Saccer, FloraJay, MadPlant</td><td>MedusaEye, MadGopher, MedusaEye</td><td>MadCat, RogueNite, MadCat</td><td>Mick</td></tr>
+          <tr><td>C</td><td>500</td><td>SpikyBoy, StubBird, SpikyBoy</td><td>Healer, RogueNite, Healer</td><td>BoxSlime, RockSlime, BoxSlime</td><td>Teto</td></tr>
+          <tr><td>B</td><td>1000</td><td>HammerMan ×3</td><td>AgDevil, WindMerge, TreeBoy</td><td>ArmyCrab, MadDragon, ArmyCrab</td><td>Bard (ร้านอาหาร)</td></tr>
+          <tr><td>A</td><td>5000</td><td>FireWeed, EvilBeast, Wyvern</td><td>Grizzly, Lionex, Grizzly</td><td>Toadstool, Lipsy, Toadstool</td><td>May</td></tr>
+          <tr><td>S</td><td>10000</td><td>DanceVegi, Voodoll, DanceVegi</td><td>Slime, Dracky, ArmyAnt</td><td>Metabble, Roboster, MetalDrak</td><td>Medal Man</td></tr>
+          <tr><td>Starry Night</td><td>–</td><td>BigTrunk: Centasaur, Orochi, Swordgon</td><td>DeadTree: Andreal, Unicorn, MadDragon</td><td>GreatLog: MetalKing, Coatol, RainHawk</td><td>Milayou</td></tr>
+          <tr><td>Master Battle</td><td>–</td><td colspan="3">GoldSlime, Divinegon, Rosevine</td><td>Old Man (Master Monster Tamer)</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3 id="ref-medal" class="mt-8 border-b-2 border-navy/30 pb-1 text-lg font-bold text-navy">TinyMedal &amp; รางวัลจาก Medal Man</h3>
+      <table class="wt-table mt-2">
+        <thead><tr><th>จำนวนเหรียญสะสม</th><th>รางวัล</th></tr></thead>
+        <tbody>
+          <tr><td>13</td><td>ZapBird Egg (และ Metaly ของ Medal Man จะเปิด Medal King's Gate ให้)</td></tr>
+          <tr><td>18</td><td>Trumpeter Egg</td></tr>
+          <tr><td>25</td><td>Spikerous</td></tr>
+          <tr><td>30</td><td>Metabble</td></tr>
+          <tr><td>เกิน 30</td><td>คำใบ้วิธีผสม DracoLord2</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-3 font-bold">TinyMedal ที่วางไว้ตายตัว</p>
+      <table class="wt-table mt-2">
+        <thead><tr><th>#</th><th>ตำแหน่ง</th><th>บท</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>ไหใน Monster Farm (ห้องตะวันตก)</td><td>Chapter 2</td></tr>
+          <tr><td>2</td><td>ถังไม้ใบที่ 3 จากล่าง Arena back</td><td>Chapter 2</td></tr>
+          <tr><td>3</td><td>ไหใน Bazaar</td><td>Chapter 3</td></tr>
+          <tr><td>4</td><td>ตู้ในบ้าน Top Cave (ท้าย Village)</td><td>Chapter 6</td></tr>
+          <tr><td>5–6</td><td>รางวัลจาก Queen</td><td>Chapter 6 เป็นต้นไป</td></tr>
+          <tr><td>7</td><td>ตู้ซ้ายใน Monster Stable</td><td>Chapter 9</td></tr>
+          <tr><td>8</td><td>ไหใน Monster Farm (ห้องตะวันตก) หลัง GreatTree โต</td><td>Chapter 16</td></tr>
+        </tbody>
+      </table>
+      <p class="text-sm text-muted">เหรียญที่เหลือหาได้จากพื้นใน Travelers' Gate</p>
+
+      <h3 id="ref-shop" class="mt-8 border-b-2 border-navy/30 pb-1 text-lg font-bold text-navy">ร้านค้า Bazaar</h3>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <p class="font-bold">Item Shop 1 <span class="text-xs font-normal text-muted">(Chapter 3)</span></p>
+          <table class="wt-table mt-1">
+            <thead><tr><th>ไอเทม</th><th>ราคา</th></tr></thead>
+            <tbody>
+              <tr><td>Herb</td><td>8</td></tr>
+              <tr><td>Lovewater</td><td>80</td></tr>
+              <tr><td>Antidote</td><td>10</td></tr>
+              <tr><td>Repellent</td><td>200</td></tr>
+              <tr><td>BeefJerky</td><td>20</td></tr>
+              <tr><td>PorkChop</td><td>80</td></tr>
+              <tr><td>WarpWing</td><td>100</td></tr>
+              <tr><td>BeastTail</td><td>400</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <p class="font-bold">Item Shop 2 <span class="text-xs font-normal text-muted">(Chapter 17)</span></p>
+          <table class="wt-table mt-1">
+            <thead><tr><th>ไอเทม</th><th>ราคา</th></tr></thead>
+            <tbody>
+              <tr><td>Potion</td><td>200</td></tr>
+              <tr><td>WorldDew</td><td>500</td></tr>
+              <tr><td>SageStone</td><td>1000</td></tr>
+              <tr><td>WorldLeaf</td><td>1000</td></tr>
+              <tr><td>MapHerb</td><td>70</td></tr>
+              <tr><td>BookMark</td><td>100</td></tr>
+              <tr><td>Rib</td><td>300</td></tr>
+              <tr><td>MistStaff</td><td>700</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <p class="font-bold">Item Shop 3 <span class="text-xs font-normal text-muted">(Chapter 22)</span></p>
+          <table class="wt-table mt-1">
+            <thead><tr><th>ไอเทม</th><th>ราคา</th></tr></thead>
+            <tbody>
+              <tr><td>Sirloin</td><td>1000</td></tr>
+              <tr><td>ShinyHarp</td><td>3000</td></tr>
+              <tr><td>WindStaff</td><td>1500</td></tr>
+              <tr><td>LavaStaff</td><td>2000</td></tr>
+              <tr><td>BoltStaff</td><td>3000</td></tr>
+              <tr><td>SnowStaff</td><td>4000</td></tr>
+              <tr><td>FireStaff</td><td>5000</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <p class="font-bold">Item Shop 4 <span class="text-xs font-normal text-muted">(Chapter 29)</span></p>
+          <table class="wt-table mt-1">
+            <thead><tr><th>ไอเทม</th><th>ราคา</th></tr></thead>
+            <tbody>
+              <tr><td>QuestBK</td><td>5000</td></tr>
+              <tr><td>HorrorBK</td><td>5000</td></tr>
+              <tr><td>BeNiceBK</td><td>5000</td></tr>
+              <tr><td>CheaterBK</td><td>5000</td></tr>
+              <tr><td>SmartBK</td><td>5000</td></tr>
+              <tr><td>ComedyBK</td><td>5000</td></tr>
+            </tbody>
+          </table>
+          <p class="mt-1 text-xs text-muted">หนังสือ (BK) ใช้เปลี่ยนบุคลิกของมอนสเตอร์</p>
+        </div>
+      </div>
+
+      <h3 id="ref-queen" class="mt-8 border-b-2 border-navy/30 pb-1 text-lg font-bold text-navy">คำขอของ Queen</h3>
+      <p>พามอนสเตอร์ไปให้ Queen ดูทีละตัว (เริ่มได้ตั้งแต่ Chapter 6) แต่ละตัวจะได้รางวัลตามลำดับ</p>
+      <table class="wt-table mt-2">
+        <thead><tr><th>ลำดับ</th><th>มอนสเตอร์ที่ขอดู</th><th>รางวัล</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>WingSlime</td><td>Sirloin</td></tr>
+          <tr><td>2</td><td>KingSlime</td><td>INTseed</td></tr>
+          <tr><td>3</td><td>FloraJay</td><td>AGLseed</td></tr>
+          <tr><td>4</td><td>CurseLamp</td><td>DEFseed</td></tr>
+          <tr><td>5</td><td>Metaly</td><td>LifeAcorn</td></tr>
+          <tr><td>6</td><td>WildApe</td><td>ATKseed</td></tr>
+          <tr><td>7</td><td>HornBeet</td><td>MysticNut</td></tr>
+          <tr><td>8</td><td>Reaper</td><td>HorrorBK</td></tr>
+          <tr><td>9</td><td>Phoenix</td><td>CheaterBK</td></tr>
+          <tr><td>10</td><td>WhiteKing</td><td>ComedyBK</td></tr>
+          <tr><td>11</td><td>KingLeo</td><td>SmartBK</td></tr>
+          <tr><td>12</td><td>RainHawk</td><td>BeNiceBK</td></tr>
+          <tr><td>13</td><td>Armorpion</td><td>QuestBK</td></tr>
+          <tr><td>14</td><td>Rosevine</td><td>LifeAcorn</td></tr>
+          <tr><td>15</td><td>GoldGolem</td><td>TinyMedal #5</td></tr>
+          <tr><td>16</td><td>Divinegon</td><td>TinyMedal #6</td></tr>
+        </tbody>
+      </table>
+
+      <h3 id="ref-bosses" class="mt-8 border-b-2 border-navy/30 pb-1 text-lg font-bold text-navy">บอสทุก Travelers' Gate</h3>
+      <div class="overflow-x-auto">
+      <table class="wt-table mt-2">
+        <thead><tr><th>Gate</th><th>ชั้น</th><th>บอส</th><th>จับได้?</th></tr></thead>
+        <tbody>
+          <tr><td>Gate 1 - Beginning</td><td>5</td><td>Hale (Healer)</td><td>Yes</td></tr>
+          <tr><td>Gate 2 - Villager</td><td>5</td><td>Dragon</td><td>Yes</td></tr>
+          <tr><td>Gate 3 - Talisman</td><td>6</td><td>Golem</td><td>Yes</td></tr>
+          <tr><td>Bazaar Gate</td><td>9</td><td>MadKnight</td><td>Yes</td></tr>
+          <tr><td>Gate 4 - Memories</td><td>5</td><td>MadCat</td><td>Yes</td></tr>
+          <tr><td>Gate 5 - Bewilder</td><td>6</td><td>FaceTree</td><td>Yes</td></tr>
+          <tr><td>Gate 6 - Peace</td><td>8</td><td>FangSlime</td><td>Yes</td></tr>
+          <tr><td>Gate 7 - Bravery</td><td>9</td><td>BigEye</td><td>No</td></tr>
+          <tr><td>Well Gate</td><td>12</td><td>Gigantes</td><td>Yes (Meat)</td></tr>
+          <tr><td>Gate 8 - Anger</td><td>11</td><td>BattleRex</td><td>Yes</td></tr>
+          <tr><td>Gate 9 - Strength</td><td>11</td><td>StoneMan</td><td>No</td></tr>
+          <tr><td>Monster Farm Gate</td><td>12</td><td>Copycat</td><td>Yes</td></tr>
+          <tr><td>Goopi's Gate</td><td>16</td><td>Digster</td><td>Yes</td></tr>
+          <tr><td>Medal King's Gate</td><td>19</td><td>Lipsy / KingSlime / Toadstool (เลือก 1)</td><td>Yes (Meat)</td></tr>
+          <tr><td>Gate 10 - Joy</td><td>14</td><td>FunkyBird</td><td>Yes</td></tr>
+          <tr><td>Gate 11 - Wisdom</td><td>15</td><td>SkyDragon</td><td>No</td></tr>
+          <tr><td>Gate 12 - Happiness</td><td>18</td><td>Jamirus</td><td>No</td></tr>
+          <tr><td>Gate 13 - Temptation</td><td>20</td><td>Servant, Centasaur, EvilArmor</td><td>Servant (Meat)</td></tr>
+          <tr><td>Gate 14 - Labyrinth</td><td>23</td><td>DarkHorn</td><td>Yes (Meat)</td></tr>
+          <tr><td>Gate 15 - Judgement</td><td>25</td><td>Akubar</td><td>No</td></tr>
+          <tr><td>Library Gate</td><td>25</td><td>Orochi</td><td>No</td></tr>
+          <tr><td>Gate 16 - Reflection</td><td>29</td><td>Servant ×2 → Adult Terry → Durran</td><td>Servant เท่านั้น</td></tr>
+          <tr><td>Gate 17 - Ambition</td><td>30</td><td>DracoLord1 → DracoLord2</td><td>No</td></tr>
+          <tr><td>Gate 18 - Demolition</td><td>29</td><td>Hargon, Sidoh</td><td>No</td></tr>
+          <tr><td>Gate 19 - Mastermind</td><td>27</td><td>Baramos</td><td>No</td></tr>
+          <tr><td>Gate 20 - Control</td><td>30</td><td>Zoma</td><td>No</td></tr>
+          <tr><td>Gate 21 - Extinction</td><td>30</td><td>Pizzaro</td><td>No</td></tr>
+          <tr><td>Gate 22 - Sleep</td><td>30</td><td>Esterk</td><td>No</td></tr>
+          <tr><td>Bazaar Gate 2</td><td>30</td><td>Mirudraas</td><td>No</td></tr>
+          <tr><td>Goopi's Gate 2</td><td>27</td><td>Mudou</td><td>No</td></tr>
+          <tr><td>Grandpa's Gate</td><td>30</td><td>DeathMore</td><td>No</td></tr>
+          <tr><td>??? (ด่านลับ)</td><td>99</td><td>– (แท่นบูชาว่างเปล่า)</td><td>–</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="border-t-2 border-ink py-8 text-center text-xs text-muted">
+  <p><a class="underline hover:text-accent" href="https://gayray.netlify.app/">← กลับหน้าหลัก เกเรแปลไทย</a></p>
+</footer>
+
+</body>
+</html>
