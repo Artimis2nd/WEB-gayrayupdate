@@ -160,22 +160,22 @@
     {
       "id": "dragon-warrior-monsters-gbc",
       "titleTh": "ดราก้อนวอริเออร์ มอนสเตอร์",
-      "titleEn": "Dragon Warrior Monsters (GBC)",
-      "cover": "Walkthrough/dragon-warrior-monsters-gbc.png",
+      "titleEn": "Dragon Warrior Monsters (GBC / PS1)",
+      "cover": "Walkthrough/dragon-quest-monsters-1-2.jpg",
       "link": "Walkthrough/dragon-warrior-monsters-gbc.html",
-      "platform": "GBC",
+      "platform": "GBC · PS1",
       "updated": "26 ก.ย. 2569",
-      "note": "เพิ่มบทสรุปไทย"
+      "note": "อัปเดต — ใช้ได้ทั้ง GBC และ PS1 · ปกใหม่"
     },
     {
       "id": "dragon-warrior-monsters-2-cobi",
       "titleTh": "ดราก้อนวอริเออร์ มอนสเตอร์ 2 โคบี้",
-      "titleEn": "Dragon Warrior Monsters 2: Cobi's Journey (GBC)",
-      "cover": "Walkthrough/dragon-warrior-monsters-2-cobi.png",
+      "titleEn": "Dragon Warrior Monsters 2: Cobi's Journey (GBC / PS1)",
+      "cover": "Walkthrough/dragon-quest-monsters-1-2.jpg",
       "link": "Walkthrough/dragon-warrior-monsters-2-cobi.html",
-      "platform": "GBC",
+      "platform": "GBC · PS1",
       "updated": "26 ก.ย. 2569",
-      "note": "เพิ่มบทสรุปไทย"
+      "note": "อัปเดต — ใช้ได้ทั้ง GBC และ PS1 · ปกใหม่"
     },
     {
       "id": "romhack-guide",
