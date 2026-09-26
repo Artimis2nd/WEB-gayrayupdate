@@ -158,6 +158,16 @@
       "note": "เพิ่มบทสรุปไทย"
     },
     {
+      "id": "dragon-warrior-monsters-gbc",
+      "titleTh": "ดราก้อนวอริเออร์ มอนสเตอร์",
+      "titleEn": "Dragon Warrior Monsters (GBC)",
+      "cover": "Walkthrough/dragon-warrior-monsters-gbc.png",
+      "link": "Walkthrough/dragon-warrior-monsters-gbc.html",
+      "platform": "GBC",
+      "updated": "26 ก.ย. 2569",
+      "note": "เพิ่มบทสรุปไทย"
+    },
+    {
       "id": "romhack-guide",
       "titleTh": "คู่มือทำ ROM Hack มือใหม่",
       "titleEn": "ROM Hacking Guide (บทความ)",
