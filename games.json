@@ -114,6 +114,35 @@
         "md5": "7a531df897d124ff61598af730485226",
         "sha1": "fe603f3edb148dbd7dd4468fe76a6eff3ea8dc0e"
       }
+    },
+    {
+      "id": "rockman-and-forte-sfc",
+      "titleTh": "ร็อคแมน & ฟอร์เต้",
+      "titleEn": "Rockman & Forte (Japan)",
+      "platform": "SFC",
+      "cover": "covers/rnf-th.jpg",
+      "blurb": "ร็อคแมนและฟอร์เต้ออกล่าคิง หุ่นยนต์ที่บุกพิพิธภัณฑ์หุ่นยนต์ เก็บ CD ข้อมูลหุ่น 100 แผ่น และแลกชิ้นส่วนกับออโต้",
+      "version": "v1.0",
+      "versionStatus": "v1.0 · แปลบทสนทนา ร้าน และฐานข้อมูล CD",
+      "updated": "26 ก.ย. 2569",
+      "warning": "แพตช์นี้ต้องใช้ ROM ภาษาอังกฤษเป็นต้นทาง ไม่ใช่ ROM ญี่ปุ่น คือ Rockman & Forte (Japan) [T-En by Aeon Genesis v1.00]\nต่อยอดจากงานแปลอังกฤษของ Aeon Genesis",
+      "details": [
+        "แปลบทสนทนาเนื้อเรื่อง และฉากจบทั้งฝั่งร็อคแมนและฟอร์เต้ ครบแล้ว",
+        "แปลคำพูดและคำอธิบายไอเทมในร้านของออโต้ ครบแล้ว",
+        "แปลฐานข้อมูล CD ครบ 100 แผ่น",
+        "ไม่แปลชื่ออาวุธ ชื่อท่า ชื่อหุ่น เมนูและหน้าไตเติ้ล เพื่อคงความเดิม",
+        "ไม่แปลคำใบ้ของโรลและคำอธิบายชิ้นส่วน (ตามมาในเวอร์ชันถัดไป)"
+      ],
+      "patch": "patches/rnf-th.bps",
+      "patchLabel": "rnf-th.bps",
+      "source": {
+        "label": "Rockman & Forte (Japan) [T-En by Aeon Genesis v1.00]",
+        "ext": ".sfc",
+        "size": 4194304,
+        "crc32": "03bee91c",
+        "md5": "380841ee3047d81f863e2871112fe36d",
+        "sha1": "991641ff3ec9f94c5ac5149ee7627934d1cceb72"
+      }
     }
   ],
   "guides": [
