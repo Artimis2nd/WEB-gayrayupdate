@@ -39,35 +39,49 @@ jobs:
                   return r.read()
 
           def purge(f):
+              """คืนค่า วินาทีที่ต้องรอถ้าโดนระงับ (throttled) ไม่งั้น 0"""
               for attempt in range(3):
                   try:
                       body = json.loads(fetch(purge_base + urllib.parse.quote(f)))
+                      info = next(iter(body.get("paths", {}).values()), {})
+                      if info.get("throttled"):
+                          print(f"purge THROTTLED: {f} (ล้างได้อีกใน {info.get('throttlingReset')} วิ)")
+                          return info.get("throttlingReset") or 1
                       print(f"purge {body.get('status')}: {f}")
-                      return
+                      return 0
                   except Exception as e:
                       print(f"purge retry {attempt + 1}: {f} ({e})")
                       time.sleep(5)
+              return 0
 
-          # ถ้าล้างทันทีหลัง push jsDelivr ยังไม่เห็น commit ใหม่ จะดึงไฟล์เก่ามาเก็บซ้ำ
-          # (ทดสอบจริง 2026-09-26) — รอก่อน แล้วเช็คว่า games.json บน CDN ตรงกับ repo ถ้าไม่ตรงล้างซ้ำ
-          time.sleep(30)
-          for f in sorted(files):
-              purge(f)
-
-          want = subprocess.run(["git", "show", f"{after}:games.json"], capture_output=True).stdout
-          for attempt in range(8):
-              time.sleep(15)
+          def cdn_matches(want):
               try:
-                  got = fetch(cdn_base + "games.json")
+                  return fetch(cdn_base + "games.json") == want
               except Exception as e:
-                  got = b""
                   print(f"fetch error: {e}")
-              if got == want:
-                  print(f"CDN games.json ตรงกับ repo แล้ว (รอบ {attempt + 1})")
+                  return False
+
+          # บทเรียน (ทดสอบจริง 2026-09-26):
+          # - ล้างทันทีหลัง push → jsDelivr ยังไม่เห็น commit ใหม่ ดึงไฟล์เก่ามาเก็บซ้ำ
+          # - ล้างไฟล์เดิมถี่ๆ (9 ครั้งในไม่กี่นาที) → jsDelivr ระงับการล้างไฟล์นั้น ~50 นาที
+          # → รอนานก่อนล้าง และล้างไม่เกิน 3 รอบ เว้นรอบละ 2 นาที
+          want = subprocess.run(["git", "show", f"{after}:games.json"], capture_output=True).stdout
+          time.sleep(90)
+          for rnd in range(1, 4):
+              if cdn_matches(want):
+                  print(f"CDN games.json ตรงกับ repo แล้ว (ก่อนล้างรอบ {rnd})")
                   break
-              print(f"CDN games.json ยังเป็นของเก่า (รอบ {attempt + 1}) — ล้างซ้ำ")
-              for f in sorted(files):
-                  purge(f)
+              throttled = max(purge(f) for f in sorted(files))
+              if throttled:
+                  raise SystemExit(f"jsDelivr ระงับการล้างชั่วคราว — ของใหม่จะขึ้นเองภายใน 12 ชม. "
+                                   f"หรือกด Run workflow ในแท็บ Actions อีกครั้งหลัง {throttled} วิ")
+              time.sleep(20)
+              if cdn_matches(want):
+                  print(f"CDN games.json ตรงกับ repo แล้ว (หลังล้างรอบ {rnd})")
+                  break
+              print(f"CDN games.json ยังเป็นของเก่าหลังล้างรอบ {rnd}")
+              if rnd < 3:
+                  time.sleep(120)
           else:
-              raise SystemExit("CDN games.json ยังไม่ตรงกับ repo หลังลองซ้ำ 8 รอบ")
+              raise SystemExit("CDN games.json ยังไม่ตรงกับ repo หลังล้าง 3 รอบ")
           EOF
