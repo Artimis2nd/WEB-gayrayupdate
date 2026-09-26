@@ -86,6 +86,34 @@
         "md5": "de1b17031ae81503969f4db2b53251b6",
         "sha1": "5f500b11f4b57f6a7ad76d941cd65a47eba900a4"
       }
+    },
+    {
+      "id": "jojo-no-kimyou-na-bouken-sfc",
+      "titleTh": "โจโจ้ ล่าข้ามศตวรรษ",
+      "titleEn": "JoJo no Kimyou na Bouken (Japan)",
+      "platform": "SFC",
+      "cover": "covers/jojo-th.jpg",
+      "blurb": "RPG ภาค 3 สตาร์ดัสต์ ครูเซเดอร์ส ออกเดินทางจากญี่ปุ่นสู่อียิปต์เพื่อล้มดิโอ ต่อสู้ด้วยพลังสแตนด์และไพ่ทาโรต์",
+      "version": "v1.0",
+      "versionStatus": "v1.0 · แปลบทพูด/เมนู/ข้อความต่อสู้ครบ",
+      "updated": "26 ก.ย. 2569",
+      "warning": "แพตช์นี้ต้องใช้ ROM ภาษาอังกฤษเป็นต้นทาง ไม่ใช่ ROM ญี่ปุ่น คือ Jojo's Bizarre Adventure (Japan) [T-En by Aeon Genesis v1.00] [Add by brkmnly v1.2]\nต่อยอดจากงานแปลอังกฤษของ Aeon Genesis และ brkmnly",
+      "details": [
+        "แปลบทพูด เนื้อเรื่อง ครบแล้ว",
+        "แปลเมนู คำสั่ง ข้อความระบบ ข้อความต่อสู้ คำอธิบายไอเทม ครบแล้ว",
+        "แปลชื่อตัวละคร ชื่อสแตนด์ ชื่อศัตรู (ทับศัพท์) และโลโก้หน้าไตเติ้ลเป็นไทย",
+        "ไม่แปลชื่อไอเทม ค่าสถานะ ชื่อไพ่ทาโรต์ เครดิตตอนจบ เพื่อคงความเดิม"
+      ],
+      "patch": "patches/jojo-th.bps",
+      "patchLabel": "jojo-th.bps",
+      "source": {
+        "label": "Jojo's Bizarre Adventure (Japan) [T-En by Aeon Genesis v1.00] [Add by brkmnly v1.2]",
+        "ext": ".sfc",
+        "size": 1572864,
+        "crc32": "cf6b0dc8",
+        "md5": "7a531df897d124ff61598af730485226",
+        "sha1": "fe603f3edb148dbd7dd4468fe76a6eff3ea8dc0e"
+      }
     }
   ],
   "guides": [
