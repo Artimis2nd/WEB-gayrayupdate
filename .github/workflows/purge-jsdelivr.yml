@@ -31,23 +31,43 @@ jobs:
                                    capture_output=True, text=True).stdout
               files |= {f for f in out.splitlines() if f and not f.startswith(".github/")}
 
-          base = "https://purge.jsdelivr.net/gh/Artimis2nd/WEB-gayrayupdate@main/"
-          failed = 0
-          for f in sorted(files):
-              url = base + urllib.parse.quote(f)
+          purge_base = "https://purge.jsdelivr.net/gh/Artimis2nd/WEB-gayrayupdate@main/"
+          cdn_base = "https://cdn.jsdelivr.net/gh/Artimis2nd/WEB-gayrayupdate@main/"
+
+          def fetch(url):
+              with urllib.request.urlopen(url, timeout=30) as r:
+                  return r.read()
+
+          def purge(f):
               for attempt in range(3):
                   try:
-                      with urllib.request.urlopen(url, timeout=30) as r:
-                          body = json.loads(r.read())
-                      ok = body.get("status") == "finished" or all(
-                          not v.get("throttled") for v in body.get("paths", {}).values())
-                      print(("OK   " if ok else "WARN ") + f)
-                      break
+                      body = json.loads(fetch(purge_base + urllib.parse.quote(f)))
+                      print(f"purge {body.get('status')}: {f}")
+                      return
                   except Exception as e:
-                      print(f"retry {attempt + 1}: {f} ({e})")
+                      print(f"purge retry {attempt + 1}: {f} ({e})")
                       time.sleep(5)
-              else:
-                  failed += 1
-                  print("FAIL " + f)
-          raise SystemExit(1 if failed else 0)
+
+          # ถ้าล้างทันทีหลัง push jsDelivr ยังไม่เห็น commit ใหม่ จะดึงไฟล์เก่ามาเก็บซ้ำ
+          # (ทดสอบจริง 2026-09-26) — รอก่อน แล้วเช็คว่า games.json บน CDN ตรงกับ repo ถ้าไม่ตรงล้างซ้ำ
+          time.sleep(30)
+          for f in sorted(files):
+              purge(f)
+
+          want = subprocess.run(["git", "show", f"{after}:games.json"], capture_output=True).stdout
+          for attempt in range(8):
+              time.sleep(15)
+              try:
+                  got = fetch(cdn_base + "games.json")
+              except Exception as e:
+                  got = b""
+                  print(f"fetch error: {e}")
+              if got == want:
+                  print(f"CDN games.json ตรงกับ repo แล้ว (รอบ {attempt + 1})")
+                  break
+              print(f"CDN games.json ยังเป็นของเก่า (รอบ {attempt + 1}) — ล้างซ้ำ")
+              for f in sorted(files):
+                  purge(f)
+          else:
+              raise SystemExit("CDN games.json ยังไม่ตรงกับ repo หลังลองซ้ำ 8 รอบ")
           EOF
