@@ -168,6 +168,16 @@
       "note": "เพิ่มบทสรุปไทย"
     },
     {
+      "id": "dragon-warrior-monsters-2-cobi",
+      "titleTh": "ดราก้อนวอริเออร์ มอนสเตอร์ 2 โคบี้",
+      "titleEn": "Dragon Warrior Monsters 2: Cobi's Journey (GBC)",
+      "cover": "Walkthrough/dragon-warrior-monsters-2-cobi.png",
+      "link": "Walkthrough/dragon-warrior-monsters-2-cobi.html",
+      "platform": "GBC",
+      "updated": "26 ก.ย. 2569",
+      "note": "เพิ่มบทสรุปไทย"
+    },
+    {
       "id": "romhack-guide",
       "titleTh": "คู่มือทำ ROM Hack มือใหม่",
       "titleEn": "ROM Hacking Guide (บทความ)",
